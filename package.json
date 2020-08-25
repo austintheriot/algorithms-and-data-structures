@@ -1,0 +1,19 @@
+{
+  "name": "algorithms-and-data-structures",
+  "version": "1.0.0",
+  "description": "My personal study material for interview questions about algorithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austintheriot/algorithms-and-data-structures.git"
+  },
+  "author": "Austin Theriot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austintheriot/algorithms-and-data-structures/issues"
+  },
+  "homepage": "https://github.com/austintheriot/algorithms-and-data-structures#readme"
+}
