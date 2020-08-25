@@ -24,27 +24,26 @@ is necessary, here's a quick rundown of how to implement one:
 ## Steps
 
 1. Declare an array of a fixed size
-2. Use hash function to assign an array index to a key Requirements of a hash
-   function:
-
-   1. Fast
-   2. Uniform distribution
-   3. Mitigate collisions
-
-   An easy (dumb) implementation is:
-
-   ```js
-   function hash(string) {
-   	let total = 0;
-   	for (let i = 0; i < string.length; i++) {
-   		total += string[i].charCodeAt(0) * i;
-   	}
-   	return total % string.length;
-   	//or modulo by a prime number, such as 2069
-   }
-   ```
-
+2. Use hash function to assign an array index to a key.
 3. Store the values at each index with a linked list (to allow collisions)
+
+   - Requirements of a hash function:
+
+     1. Fast
+     2. Uniform distribution
+     3. Mitigate collisions
+
+   - An easy (dumb) implementation is:
+     ```js
+     function hash(string) {
+     	let total = 0;
+     	for (let i = 0; i < string.length; i++) {
+     		total += string[i].charCodeAt(0) * i;
+     	}
+     	return total % string.length;
+     	//or modulo by a prime number, such as 2069
+     }
+     ```
 
 ## More Info
 
