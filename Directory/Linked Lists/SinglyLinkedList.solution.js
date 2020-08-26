@@ -61,6 +61,7 @@ module.exports = class LinkedList {
 	delete(index) {
 		if (index < 0 || index > this.length - 1) return undefined;
 
+		//delete head node
 		if (index === 0) {
 			this.head = this.head.next;
 			this.length--;
@@ -72,6 +73,7 @@ module.exports = class LinkedList {
 		for (let i = 0; i < index - 1; i++) {
 			currentNode = currentNode.next;
 		}
+
 		//point the current node to the next next node (skip over the current node)
 		currentNode.next = currentNode.next.next;
 		this.length--;
