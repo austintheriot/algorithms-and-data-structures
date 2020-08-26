@@ -1,4 +1,4 @@
-const HashTable = require('./HashTable');
+const HashTable = require('./HashTable.solution');
 
 let hashTable;
 beforeAll(() => {
@@ -13,8 +13,8 @@ beforeAll(() => {
 let doesArrayIncludeKey = (hashTable, key) => {
 	return !!hashTable.array.find((linkedList) => {
 		//assumes a linked list implementation
-		return linkedList.find((nodeValue) => {
-			return nodeValue.key === key;
+		return linkedList.find((node) => {
+			return node.data.key === key;
 		});
 	});
 };

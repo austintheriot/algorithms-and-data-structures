@@ -1,4 +1,4 @@
-const LinkedList = require('../Linked Lists/LinkedList.solution');
+const LinkedList = require('../Linked Lists/SinglyLinkedList.solution');
 
 module.exports = class HashTable {
 	constructor(size) {
@@ -26,9 +26,9 @@ module.exports = class HashTable {
 		const address = this._hash(key);
 		const linkedList = this.array[address];
 		if (linkedList) {
-			let nodeValue = linkedList.find((nodeValue) => nodeValue.key === key);
-			if (nodeValue) {
-				return nodeValue.value;
+			let node = linkedList.find((node) => node.data.key === key);
+			if (node) {
+				return node.data.value;
 			}
 		}
 		return undefined;

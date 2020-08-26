@@ -1,4 +1,4 @@
-const LinkedList = require('./SinglyLinkedList');
+const LinkedList = require('./SinglyLinkedList.solution');
 
 describe('LinkedList', () => {
 	test('Should add data to the head', () => {
@@ -45,15 +45,9 @@ describe('LinkedList', () => {
 				key: '0',
 				value: 0,
 			});
-		expect(linkedList.find((nodeData) => nodeData.key === '2').data.value).toBe(
-			2
-		);
-		expect(linkedList.find((nodeData) => nodeData.key === '1').data.value).toBe(
-			1
-		);
-		expect(linkedList.find((nodeData) => nodeData.key === '0').data.value).toBe(
-			0
-		);
+		expect(linkedList.find((node) => node.data.key === '2').data.value).toBe(2);
+		expect(linkedList.find((node) => node.data.key === '1').data.value).toBe(1);
+		expect(linkedList.find((node) => node.data.key === '0').data.value).toBe(0);
 	});
 
 	test('Should return undefined when node not found', () => {

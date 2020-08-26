@@ -1,8 +1,8 @@
 //Very basic, singly Linked List
 
 class LinkedListNode {
-	constructor(value, next) {
-		this.value = value;
+	constructor(data, next) {
+		this.data = data;
 		this.next = next;
 	}
 }
@@ -13,8 +13,8 @@ module.exports = class LinkedList {
 		this.length = 0;
 	}
 
-	prepend(value) {
-		let newNode = new LinkedListNode(value, this.head);
+	prepend(data) {
+		let newNode = new LinkedListNode(data, this.head);
 		this.head = newNode;
 		this.length++;
 		return this;
@@ -38,8 +38,8 @@ module.exports = class LinkedList {
 		if (typeof search === 'function') {
 			let callback = search;
 			while (currentNode) {
-				if (callback(currentNode.value)) {
-					return currentNode.value;
+				if (callback(currentNode)) {
+					return currentNode;
 				}
 				currentNode = currentNode.next;
 			}
@@ -48,8 +48,9 @@ module.exports = class LinkedList {
 
 		//search using value
 		else {
+			let value = search;
 			while (currentNode) {
-				if (currentNode.value === search) {
+				if (currentNode.data === value) {
 					return currentNode;
 				}
 				currentNode = currentNode.next;
