@@ -21,14 +21,14 @@ There are three kinds of linked lists:
 ## Steps
 
 Deleting in a Linked List: 
-  1. For a given node n, point the n.prev node to n.next;
+  1. For a given node n, point the n.prev node to n.next
+      - In a doubly linked list, the n.next.prev must also be changed to point to n.prev 
   2. Check for a null pointer
   3. Update the head or tail as necessary
 
 ## Runtime
 
 A linked list accesses indexes in O(n) time, but can add and delete elements from the beginning in O(1) time. 
-
 
 
 ## More Info
