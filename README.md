@@ -9,7 +9,7 @@ will also be compiling information from other sources as well, such as [Andrei N
 take a look around and use this information for your own study benefits.
 
 In general my plan is to do the following: 
-- Collect general information about each data structure into a readme file (About.md).
+- Collect general information about each data structure into a readme file (DataStructure,about.md).
 - Find or create a good implementation of that data structure (DataStructure.solution.js).
 - Develop unit tests for that data structure using Jest (DataStructure.test.js).
 - Using [spaced repetition software](https://apps.ankiweb.net/) for maximum efficiency, test myself at regular intervals to ensure retention of that data structure's implementation. Use the unit tests to validate when I've implemented the data structure correctly.
