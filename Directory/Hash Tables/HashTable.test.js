@@ -1,4 +1,4 @@
-const HashTable = require('./HashTable.solution');
+const HashTable = require('./HashTable');
 
 let hashTable;
 
