@@ -6,11 +6,3 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
-
-//insertAtHead
-//getByIndex
-//removeHead
-//insertAtIndex
-//removeAtIndex
-//print
-//LinkedList.fromValues

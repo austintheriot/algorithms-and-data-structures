@@ -2,5 +2,7 @@
 const LinkedList = require('../Linked Lists/LinkedList.solution');
 
 module.exports = class HashTable {
-	//write out solution here
+	//_hash
+	//get
+	//set
 };
