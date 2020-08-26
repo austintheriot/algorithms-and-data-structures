@@ -1,15 +1,15 @@
 const LinkedList = require('./SinglyLinkedList');
 
 describe('LinkedList', () => {
-	test('Should add values to the head', () => {
+	test('Should add data to the head', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
-		expect(linkedList.head.value).toBe(1);
-		expect(linkedList.head.next.value).toBe(2);
-		expect(linkedList.head.next.next.value).toBe(3);
+		expect(linkedList.head.data).toBe(1);
+		expect(linkedList.head.next.data).toBe(2);
+		expect(linkedList.head.next.next.data).toBe(3);
 	});
 
-	test('Should update length when given new values', () => {
+	test('Should update length when given new data', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -22,15 +22,15 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(5);
 	});
 
-	test('Should find a node, given a value', () => {
+	test('Should find and return a node, given a value', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
-		expect(linkedList.find(1).value).toBe(1);
-		expect(linkedList.find(2).value).toBe(2);
-		expect(linkedList.find(3).value).toBe(3);
+		expect(linkedList.find(1).data).toBe(1);
+		expect(linkedList.find(2).data).toBe(2);
+		expect(linkedList.find(3).data).toBe(3);
 	});
 
-	test('Should find a node, given a callback', () => {
+	test('Should find and return a node, given a callback', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend({
@@ -45,9 +45,15 @@ describe('LinkedList', () => {
 				key: '0',
 				value: 0,
 			});
-		expect(linkedList.find((nodeValue) => nodeValue.key === '2').value).toBe(2);
-		expect(linkedList.find((nodeValue) => nodeValue.key === '1').value).toBe(1);
-		expect(linkedList.find((nodeValue) => nodeValue.key === '0').value).toBe(0);
+		expect(linkedList.find((nodeData) => nodeData.key === '2').data.value).toBe(
+			2
+		);
+		expect(linkedList.find((nodeData) => nodeData.key === '1').data.value).toBe(
+			1
+		);
+		expect(linkedList.find((nodeData) => nodeData.key === '0').data.value).toBe(
+			0
+		);
 	});
 
 	test('Should return undefined when node not found', () => {
@@ -68,9 +74,9 @@ describe('LinkedList', () => {
 			.prepend('an')
 			.prepend('is')
 			.prepend('This');
-		expect(linkedList.get(0).value).toBe('This');
-		expect(linkedList.get(3).value).toBe('example');
-		expect(linkedList.get(6).value).toBe('sentence.');
+		expect(linkedList.get(0).data).toBe('This');
+		expect(linkedList.get(3).data).toBe('example');
+		expect(linkedList.get(6).data).toBe('sentence.');
 	});
 
 	test('Should return undefined for indexes outside of range', () => {
@@ -99,22 +105,22 @@ describe('LinkedList', () => {
 			.prepend('This');
 		//test original length
 		expect(linkedList.length).toBe(7);
-		//test head value
-		expect(linkedList.get(0).value).toBe('This');
-		//test tail value
-		expect(linkedList.get(linkedList.length - 1).value).toBe('sentence.');
+		//test head data
+		expect(linkedList.get(0).data).toBe('This');
+		//test tail data
+		expect(linkedList.get(linkedList.length - 1).data).toBe('sentence.');
 
 		linkedList.delete(0);
 		//test length
 		expect(linkedList.length).toBe(6);
-		//test head value
-		expect(linkedList.get(0).value).toBe('is');
+		//test head data
+		expect(linkedList.get(0).data).toBe('is');
 
 		linkedList.delete(linkedList.length - 1);
 		//test length
 		expect(linkedList.length).toBe(5);
-		//test tail value
-		expect(linkedList.get(linkedList.length - 1).value).toBe('a');
+		//test tail data
+		expect(linkedList.get(linkedList.length - 1).data).toBe('a');
 	});
 
 	test('Should return undefined for deletions outside of index', () => {
@@ -141,6 +147,6 @@ describe('LinkedList', () => {
 			.prepend(2)
 			.prepend(1)
 			.prepend(0);
-		expect(linkedList.get(2).value).toBe(2);
+		expect(linkedList.get(2).data).toBe(2);
 	});
 });
