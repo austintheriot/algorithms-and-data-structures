@@ -30,16 +30,32 @@ module.exports = class LinkedList {
 		return currentNode;
 	}
 
-	find(value) {
+	find(search) {
 		if (this.length === 0) return undefined;
 		let currentNode = this.head;
-		while (currentNode) {
-			if (currentNode.value === value) {
-				return currentNode;
+
+		//search using callback
+		if (typeof search === 'function') {
+			let callback = search;
+			while (currentNode) {
+				if (callback(currentNode.value)) {
+					return currentNode;
+				}
+				currentNode = currentNode.next;
 			}
-			currentNode = currentNode.next;
+			return undefined;
 		}
-		return undefined;
+
+		//search using value
+		else {
+			while (currentNode) {
+				if (currentNode.value === search) {
+					return currentNode;
+				}
+				currentNode = currentNode.next;
+			}
+			return undefined;
+		}
 	}
 
 	delete(index) {

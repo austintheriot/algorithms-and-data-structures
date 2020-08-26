@@ -1,13 +1,12 @@
-const HashTable = require('./HashTable');
+const HashTable = require('./HashTable.solution');
 
 let hashTable;
 
 //dumb search for value (different implementation than .get())
 let doesArrayIncludeValue = (hashTable, value) => {
-	return !!hashTable.array.find((bucket) => {
-		return bucket.find((keyValuePair) => {
-			return keyValuePair[0] === value;
-		});
+	return !!hashTable.array.find((linkedList) => {
+		//assumes a linked list implementation
+		return linkedList.find(value);
 	});
 };
 
@@ -21,8 +20,8 @@ beforeAll(() => {
 
 describe(`Hash Tables:`, () => {
 	test('Should create an empty array when not given an array length', () => {
-		const hashTable0 = new HashTable();
-		expect(hashTable0.array.length).toBe(0);
+		const emptyHashTable = new HashTable();
+		expect(emptyHashTable.array.length).toBe(0);
 	});
 
 	test('HashTable._hash() should return an index within the length of the array', () => {

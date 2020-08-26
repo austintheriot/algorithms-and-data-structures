@@ -30,6 +30,26 @@ describe('LinkedList', () => {
 		expect(linkedList.find(3).value).toBe(3);
 	});
 
+	test('Should find a node, given a callback', () => {
+		const linkedList = new LinkedList();
+		linkedList
+			.prepend({
+				key: '2',
+				value: 2,
+			})
+			.prepend({
+				key: '1',
+				value: 1,
+			})
+			.prepend({
+				key: '0',
+				value: 0,
+			});
+		expect(linkedList.find((node) => node.key === '2').value.value).toBe(2);
+		expect(linkedList.find((node) => node.key === '1').value.value).toBe(1);
+		expect(linkedList.find((node) => node.key === '0').value.value).toBe(0);
+	});
+
 	test('Should return undefined when node not found', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);

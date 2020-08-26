@@ -1,3 +1,5 @@
+const LinkedList = require('../Linked Lists/LinkedList.solution');
+
 module.exports = class HashTable {
 	constructor(size) {
 		this.array = new Array(size || 0);
@@ -14,9 +16,9 @@ module.exports = class HashTable {
 	set(key, value) {
 		let address = this._hash(key);
 		if (!this.array[address]) {
-			this.array[address] = [];
+			this.array[address] = new LinkedList();
 		}
-		this.array[address].push([key, value]);
+		this.array[address].prepend({ key, value });
 		return this.array;
 	}
 
