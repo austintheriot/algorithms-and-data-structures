@@ -1,4 +1,4 @@
-const LinkedList = require('../Linked Lists/SinglyLinkedList.solution');
+const LinkedList = require('../Linked Lists/SinglyLinkedList');
 
 module.exports = class HashTable {
 	constructor(size) {
