@@ -45,9 +45,9 @@ describe('LinkedList', () => {
 				key: '0',
 				value: 0,
 			});
-		expect(linkedList.find((node) => node.key === '2').value.value).toBe(2);
-		expect(linkedList.find((node) => node.key === '1').value.value).toBe(1);
-		expect(linkedList.find((node) => node.key === '0').value.value).toBe(0);
+		expect(linkedList.find((nodeValue) => nodeValue.key === '2').value).toBe(2);
+		expect(linkedList.find((nodeValue) => nodeValue.key === '1').value).toBe(1);
+		expect(linkedList.find((nodeValue) => nodeValue.key === '0').value).toBe(0);
 	});
 
 	test('Should return undefined when node not found', () => {

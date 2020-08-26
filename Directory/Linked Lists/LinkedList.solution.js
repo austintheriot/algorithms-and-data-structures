@@ -39,7 +39,7 @@ module.exports = class LinkedList {
 			let callback = search;
 			while (currentNode) {
 				if (callback(currentNode.value)) {
-					return currentNode;
+					return currentNode.value;
 				}
 				currentNode = currentNode.next;
 			}

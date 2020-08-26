@@ -24,12 +24,11 @@ module.exports = class HashTable {
 
 	get(key) {
 		const address = this._hash(key);
-		const currentBucket = this.array[address];
-		if (currentBucket) {
-			for (let i = 0; i < currentBucket.length; i++) {
-				if (currentBucket[i][0] === key) {
-					return currentBucket[i][1];
-				}
+		const linkedList = this.array[address];
+		if (linkedList) {
+			let nodeValue = linkedList.find((nodeValue) => nodeValue.key === key);
+			if (nodeValue) {
+				return nodeValue.value;
 			}
 		}
 		return undefined;

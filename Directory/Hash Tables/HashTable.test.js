@@ -1,15 +1,6 @@
 const HashTable = require('./HashTable.solution');
 
 let hashTable;
-
-//dumb search for value (different implementation than .get())
-let doesArrayIncludeValue = (hashTable, value) => {
-	return !!hashTable.array.find((linkedList) => {
-		//assumes a linked list implementation
-		return linkedList.find(value);
-	});
-};
-
 beforeAll(() => {
 	hashTable = new HashTable(2);
 	hashTable.set('hello', 'world');
@@ -17,6 +8,16 @@ beforeAll(() => {
 	hashTable.set('true', true);
 	hashTable.set('false', false);
 });
+
+//dumb search for value (different implementation than .get())
+let doesArrayIncludeKey = (hashTable, key) => {
+	return !!hashTable.array.find((linkedList) => {
+		//assumes a linked list implementation
+		return linkedList.find((nodeValue) => {
+			return nodeValue.key === key;
+		});
+	});
+};
 
 describe(`Hash Tables:`, () => {
 	test('Should create an empty array when not given an array length', () => {
@@ -53,10 +54,10 @@ describe(`Hash Tables:`, () => {
 		newHashTable.set('five', 5);
 
 		//SHOULD exist
-		expect(doesArrayIncludeValue(newHashTable, 'two')).toBe(true);
-		expect(doesArrayIncludeValue(newHashTable, 'three')).toBe(true);
-		expect(doesArrayIncludeValue(newHashTable, 'four')).toBe(true);
-		expect(doesArrayIncludeValue(newHashTable, 'five')).toBe(true);
+		expect(doesArrayIncludeKey(newHashTable, 'two')).toBe(true);
+		expect(doesArrayIncludeKey(newHashTable, 'three')).toBe(true);
+		expect(doesArrayIncludeKey(newHashTable, 'four')).toBe(true);
+		expect(doesArrayIncludeKey(newHashTable, 'five')).toBe(true);
 	});
 
 	test('HashTable.get() should retrieve values from the array.', () => {
