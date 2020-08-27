@@ -1,20 +1,22 @@
+//increment with one string and then decrement with the other
+
 const istItAPermutation = (string1, string2) => {
 	if (string1.length !== string2.length) return false;
-	const hashTable = {
-		string1: {},
-		string2: {},
-	};
+
+	const hashTable = {};
+
 	for (let i = 0; i < string1.length; i++) {
-		if (!hashTable.string1[string1[i]]) hashTable.string1[string1[i]] = 0;
-		if (!hashTable.string2[string2[i]]) hashTable.string2[string2[i]] = 0;
-		hashTable.string1[string1[i]]++;
-		hashTable.string2[string2[i]]++;
-	}
-	console.log('hashTable: ', hashTable);
-	for (let ch in hashTable.string1) {
-		if (hashTable.string1[ch] !== hashTable.string2[ch]) return false;
+		const ch = string1[i];
+		if (!hashTable[ch]) hashTable[ch] = 0;
+		hashTable[ch]++;
 	}
 
+	for (let i = 0; i < string2.length; i++) {
+		const ch = string2[i];
+		if (!hashTable[ch]) return false; //if character not defined
+		hashTable[ch]--;
+		if (hashTable[ch] < 0) return false; //if character count less than 0;
+	}
 	return true;
 };
 
