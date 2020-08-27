@@ -1,26 +1,23 @@
-//singly linked list implementation
+//doubly linked list implementation (with hash table)
 
-const LinkedList = require('../SinglyLinkedList.solution');
+const LinkedList = require('../DoublyLinkedList.solution');
 function removeDuplicates(linkedList) {
 	//what kind of data can we assume from the linked list? is it always a string?
 
 	const hashTable = {};
 	let currentNode = linkedList.head;
-	hashTable[currentNode.data] = true;
 
 	while (currentNode) {
-		//if the next node is in the hash table, delete it & stay on current node
-		if (currentNode.next && hashTable[currentNode.next.data]) {
-			currentNode.next = currentNode.next.next;
+		//if the current node is in the hash table, delete it
+		if (hashTable[currentNode.data]) {
+			if (currentNode.prev) currentNode.prev.next = currentNode.next;
+			if (currentNode.next) currentNode.next.prev = currentNode.prev;
 			linkedList.length--;
 		}
-		//else add the next node to the hash table & move to next node
-		else if (currentNode.next) {
-			hashTable[currentNode.next.data] = true;
-			currentNode = currentNode.next;
-		}
+		//else add the current node to the hash table
+		else hashTable[currentNode.data] = true;
 		//if next node is not defined end the loop
-		else break;
+		currentNode = currentNode.next;
 	}
 	return linkedList;
 }
@@ -67,14 +64,6 @@ test('Should remove all duplicate 0s', () => {
 	expect(linkedList.find(0).data).toBe(0);
 
 	const filteredLinkedList = removeDuplicates(linkedList);
-	let currentNode = filteredLinkedList.head;
-	let array = [];
-	while (currentNode) {
-		array.push(currentNode.data);
-		currentNode = currentNode.next;
-	}
-	console.log(array);
-
 	expect(filteredLinkedList.length).toBe(1);
 	expect(filteredLinkedList.find(0).data).toBe(0);
 });
