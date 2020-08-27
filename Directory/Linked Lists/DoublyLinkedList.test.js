@@ -240,4 +240,32 @@ describe('LinkedList', () => {
 			.prepend(0);
 		expect(linkedList.get(2).data).toBe(2);
 	});
+
+	test('Should return an array', () => {
+		const linkedList = new LinkedList();
+		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
+		const array = linkedList.toArray();
+		expect(Array.isArray(array)).toBe(true);
+	});
+
+	test('Should return an array of correct length', () => {
+		const linkedList = new LinkedList();
+		let array = linkedList.toArray();
+		expect(array.length).toBe(0);
+
+		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
+		array = linkedList.toArray();
+		expect(array.length).toBe(6);
+	});
+
+	test('Should return an array in which the values match the original linked list', () => {
+		const linkedList = new LinkedList();
+		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
+		array = linkedList.toArray();
+		expect(array[0]).toBe(linkedList.get(0).data);
+		expect(array[1]).toBe(linkedList.get(1).data);
+		expect(array[2]).toBe(linkedList.get(2).data);
+		expect(array[3]).toBe(linkedList.get(3).data);
+		expect(array[4]).toBe(linkedList.get(4).data);
+	});
 });

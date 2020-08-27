@@ -103,4 +103,13 @@ module.exports = class LinkedList {
 		this.length--;
 		return this;
 	}
+	toArray() {
+		const array = [];
+		let currentNode = this.head;
+		while (currentNode) {
+			array.push(currentNode.data);
+			currentNode = currentNode.next;
+		}
+		return array;
+	}
 };
