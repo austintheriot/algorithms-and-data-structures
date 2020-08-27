@@ -1,4 +1,4 @@
-//singly linked list implementation (with hash table)
+//singly linked list implementation
 
 const LinkedList = require('../SinglyLinkedList.solution');
 function removeDuplicates(linkedList) {
