@@ -1,3 +1,5 @@
+//3 mistakes: forgot "this" on this.length, and others
+
 //implement a singly linked list with the following functionalities:
 
 //prepend(data)
