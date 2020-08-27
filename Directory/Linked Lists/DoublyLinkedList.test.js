@@ -1,4 +1,4 @@
-const LinkedList = require('./DoublyLinkedList.solution');
+const LinkedList = require('./DoublyLinkedList');
 
 describe('LinkedList', () => {
 	test('Should prepend data to the head', () => {
