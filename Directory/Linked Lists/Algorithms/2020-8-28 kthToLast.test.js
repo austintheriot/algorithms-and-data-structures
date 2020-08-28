@@ -1,3 +1,6 @@
+//Returns the kth to last element of a singly linked list
+//runtime O(n)
+
 const LinkedList = require('../SinglyLinkedList.solution');
 
 function kthToLast(ll, k) {
