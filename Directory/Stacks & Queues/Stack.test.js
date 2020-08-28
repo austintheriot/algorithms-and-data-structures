@@ -1,4 +1,4 @@
-const Stack = require('./Stack.solution');
+const Stack = require('./Stack');
 
 describe('Stack', () => {
 	test('Should push item to the top of the stack', () => {
