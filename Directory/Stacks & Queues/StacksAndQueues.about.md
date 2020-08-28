@@ -17,14 +17,15 @@
 
 - Stack = LIFO, last-in first-out
 - Like a stack of dinner plates
-- Basic operations:
+- Fundamental operations:
   - pop(), remove topmost element
   - push(), add data item to the top of the stack
+- Other operations:
   - peek(), return the top of the stack
   - isEmpty(), returns true if the stack is empty
 
 Benefits: O(1) time for adding/removing from the top of the stack. O(n) time for
-retrieving the nth item.
+retrieving the nth item. Flexible size/length.
 
 Can be implemented as its own data structure, or can use a linked list if the
 linked list adds and removes from the same side.
