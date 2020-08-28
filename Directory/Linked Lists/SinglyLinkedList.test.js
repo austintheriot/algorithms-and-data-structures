@@ -1,4 +1,4 @@
-const LinkedList = require('./SinglyLinkedList');
+const LinkedList = require('./SinglyLinkedList.solution');
 
 describe('LinkedList', () => {
 	test('Should add data to the head', () => {
@@ -129,6 +129,49 @@ describe('LinkedList', () => {
 			.prepend('This');
 		expect(linkedList.delete(-1)).toBeUndefined();
 		expect(linkedList.delete(7)).toBeUndefined();
+	});
+
+	test('Should still be traversable after deletion', () => {
+		const linkedList = new LinkedList();
+		linkedList
+			.prepend(6)
+			.prepend(5)
+			.prepend(4)
+			.prepend(3)
+			.prepend(2)
+			.prepend(1)
+			.prepend(0);
+		expect(linkedList.length).toBe(7);
+		expect(linkedList.head.data).toBe(0);
+		expect(linkedList.head.next.data).toBe(1);
+		expect(linkedList.head.next.next.data).toBe(2);
+		expect(linkedList.head.next.next.next.data).toBe(3);
+		expect(linkedList.head.next.next.next.next.data).toBe(4);
+		expect(linkedList.head.next.next.next.next.next.data).toBe(5);
+		expect(linkedList.head.next.next.next.next.next.next.data).toBe(6);
+		expect(linkedList.head.next.next.next.next.next.next.next).toBe(null);
+
+		linkedList.delete(3);
+		expect(linkedList.length).toBe(6);
+		expect(linkedList.head.data).toBe(0);
+		expect(linkedList.head.next.data).toBe(1);
+		expect(linkedList.head.next.next.data).toBe(2);
+		expect(linkedList.head.next.next.next.data).toBe(4);
+		expect(linkedList.head.next.next.next.next.data).toBe(5);
+		expect(linkedList.head.next.next.next.next.next.data).toBe(6);
+		expect(linkedList.head.next.next.next.next.next.next).toBe(null);
+	});
+
+	test('Should remove head when single node is deleted', () => {
+		const linkedList = new LinkedList();
+		linkedList.prepend(1);
+		expect(linkedList.length).toBe(1);
+		expect(linkedList.head.data).toBe(1);
+		expect(linkedList.head.next).toBe(null);
+
+		linkedList.delete(0);
+		expect(linkedList.length).toBe(0);
+		expect(linkedList.head).toBe(null);
 	});
 
 	test('Should allow chaining of methods', () => {
