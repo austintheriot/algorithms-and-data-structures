@@ -90,4 +90,28 @@ describe('Stack', () => {
 		stack.push(4).push(3).push(2).push(1).push(0);
 		expect(stack.isEmpty()).toBe(false);
 	});
+
+	test('Should work when methods follow one another', () => {
+		stack = new Stack();
+		expect(stack.peek()).toBe(null);
+		expect(stack.isEmpty()).toBe(true);
+		expect(stack.pop()).toBe(null);
+
+		stack.push(0);
+		expect(stack.peek()).toBe(0);
+		expect(stack.isEmpty()).toBe(false);
+
+		stack.push(1).pop();
+		expect(stack.peek()).toBe(0);
+		expect(stack.isEmpty()).toBe(false);
+
+		stack.push(2).pop();
+		expect(stack.peek()).toBe(0);
+		expect(stack.isEmpty()).toBe(false);
+
+		stack.pop();
+		expect(stack.isEmpty()).toBe(true);
+		expect(stack.pop()).toBe(null);
+		expect(stack.isEmpty()).toBe(true);
+	});
 });
