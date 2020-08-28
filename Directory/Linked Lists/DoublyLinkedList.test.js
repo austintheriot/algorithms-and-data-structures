@@ -197,6 +197,70 @@ describe('LinkedList', () => {
 		expect(linkedList.get(linkedList.length - 1).data).toBe('a');
 	});
 
+	test('Should not be able to access head or tail after deleting a single node Linked List', () => {
+		const linkedList = new LinkedList();
+		linkedList.prepend('data');
+		expect(linkedList.length).toBe(1);
+		expect(linkedList.head.data).toBe('data');
+		expect(linkedList.tail.data).toBe('data');
+
+		linkedList.delete(0);
+		expect(linkedList.length).toBe(0);
+		expect(linkedList.head).toBe(null);
+		expect(linkedList.tail).toBe(null);
+	});
+
+	test('Should change head after deletion', () => {
+		const linkedList = new LinkedList();
+		linkedList.append(0).append(1).append(2);
+		expect(linkedList.head.data).toBe(0);
+		expect(linkedList.head.prev).toBe(null);
+
+		linkedList.delete(0);
+		expect(linkedList.head.data).toBe(1);
+		expect(linkedList.head.prev).toBe(null);
+	});
+
+	test('Should change tail after deletion', () => {
+		const linkedList = new LinkedList();
+		linkedList.append(0).append(1).append(2);
+		expect(linkedList.tail.data).toBe(2);
+		expect(linkedList.tail.next).toBe(null);
+
+		//delete head
+		linkedList.delete(0);
+		expect(linkedList.tail.data).toBe(2);
+		expect(linkedList.tail.next).toBe(null);
+
+		//delete tail
+		linkedList.delete(1);
+		expect(linkedList.tail.data).toBe(1);
+		expect(linkedList.tail.next).toBe(null);
+		expect(linkedList.length).toBe(1);
+	});
+
+	test('Head and tail should be equivalent after deleting down to 1 node', () => {
+		const linkedList = new LinkedList();
+		linkedList.append(0).append(1);
+		expect(linkedList.head.prev).toBe(null);
+		expect(linkedList.head.data).toBe(0);
+		expect(linkedList.tail.data).toBe(1);
+		expect(linkedList.tail.next).toBe(null);
+
+		//delete head
+		linkedList.delete(0);
+		expect(linkedList.length).toBe(1);
+		expect(linkedList.head.prev).toBe(null);
+		expect(linkedList.head.data).toBe(1);
+		expect(linkedList.head.next).toBe(null);
+
+		expect(linkedList.tail.prev).toBe(null);
+		expect(linkedList.tail.data).toBe(1);
+		expect(linkedList.tail.next).toBe(null);
+
+		expect(linkedList.head.data).toBe(linkedList.tail.data);
+	});
+
 	test('Should be traversable forward and backward after a deletion', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);

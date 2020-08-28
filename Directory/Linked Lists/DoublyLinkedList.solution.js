@@ -74,12 +74,21 @@ module.exports = class LinkedList {
 
 	delete(index) {
 		if (index < 0 || index > this.length - 1) return undefined;
-
 		if (this.length === 0) return undefined;
 
+		//linked list is only one node
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+			this.length--;
+			return this;
+		}
+
+		//else if linked list is multiple nodes:
 		//delete head node
 		if (index === 0) {
 			this.head = this.head.next;
+			this.head.prev = null;
 			this.length--;
 			return this;
 		}
@@ -87,6 +96,7 @@ module.exports = class LinkedList {
 		//delete tail node
 		if (index === this.length - 1) {
 			this.tail = this.tail.prev;
+			this.tail.next = null;
 			this.length--;
 			return this;
 		}
