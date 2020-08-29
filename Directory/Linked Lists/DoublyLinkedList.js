@@ -1,10 +1,10 @@
 //implement a doubly linked list with the following functionalities:
 
-//prepend(data)
-//append(data)
-//get(index)
-//find(data | callback)
-//delete(index)
+//prepend
+//append
+//get
+//find(callback || value)
+//delete
 //toArray()
 
 class LinkedList {}
