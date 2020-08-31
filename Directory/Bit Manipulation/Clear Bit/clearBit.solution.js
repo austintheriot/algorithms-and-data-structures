@@ -1,3 +1,3 @@
-module.exports = clearBit = (number, i) => {
-	return number & ~(1 << i);
+module.exports = clearBit = (num, i) => {
+	return num & ~(1 << i);
 };

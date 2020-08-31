@@ -1,3 +1,3 @@
-module.exports = setBit = (number, i) => {
-	return number | (1 << i);
+module.exports = setBit = (num, i) => {
+	return num | (1 << i);
 };
