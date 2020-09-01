@@ -206,4 +206,24 @@ describe('Trie', () => {
 			expect(currentNode.isCompleteWord).toBe(true);
 		});
 	});
+
+	describe('getNode()', () => {
+		test('Should return node corresponding to last character', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			let currentNode = trie.root;
+			currentNode = currentNode.children['h'];
+			currentNode = currentNode.children['e'];
+			currentNode = currentNode.children['l'];
+			expect(trie.getNode('hel')).toBe(currentNode);
+		});
+		test('Should return undefined for nonexistent nodes', () => {
+			const trie = new Trie();
+			trie.add('hello');
+
+			expect(trie.getNode('goodbye')).toBe(undefined);
+		});
+	});
 });
