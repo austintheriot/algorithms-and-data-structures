@@ -40,7 +40,7 @@ describe('Min Heap', () => {
 
 			expect(minHeap.array[0]).toBe(0);
 			expect(minHeap.array[1]).toBe(7);
-			expect(minHeap.array[0]).toBe(5);
+			expect(minHeap.array[2]).toBe(5);
 
 			minHeap.insert(1);
 			minHeap.insert(15);
