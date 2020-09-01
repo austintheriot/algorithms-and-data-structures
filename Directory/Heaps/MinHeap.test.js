@@ -1,4 +1,4 @@
-const MinHeap = require('./MinHeap.solution');
+const MinHeap = require('./MinHeap');
 //insert(), insert data, rearrange tree
 //extractMin(), return min and remove it from the heap
 //getMin(), return min

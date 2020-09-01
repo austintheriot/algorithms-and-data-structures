@@ -2,7 +2,7 @@
 
 ## About
 
-- A heap is, in essence, the maximally efficient implementation of a priority queue, where each element is added to the heap with an assigned priority (its number), and then retrieved again in order of its priority. 
+- A heap is, in essence, the an efficient implementation of a priority queue, where each element is added to the heap with an assigned priority (its number), and then retrieved again in order of its priority. 
 
 - A heap is a good solution for problems requiring the smallest of something or the largest of something.
 

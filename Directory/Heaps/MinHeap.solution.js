@@ -57,37 +57,6 @@ module.exports = class MinHeap {
 		this.array[indexOne] = tmp;
 	}
 
-	getMin() {
-		if (this.array.length === 0) {
-			return null;
-		}
-		return this.array[0];
-	}
-
-	extractMin() {
-		if (this.array.length === 0) {
-			return null;
-		}
-
-		if (this.array.length === 1) {
-			return this.array.pop();
-		}
-
-		const item = this.array[0];
-
-		// Move the last element from the end to the head.
-		this.array[0] = this.array.pop();
-		this.heapifyDown();
-
-		return item;
-	}
-
-	insert(item) {
-		this.array.push(item);
-		this.heapifyUp();
-		return this;
-	}
-
 	heapifyUp() {
 		// Take the last element (last in array or the bottom left in a tree)
 		// in the heap container and lift it up until it is in the correct
@@ -135,8 +104,34 @@ module.exports = class MinHeap {
 		}
 	}
 
-	//BONUS:
-	isEmpty() {
-		return !this.array.length;
+	insert(item) {
+		this.array.push(item);
+		this.heapifyUp();
+		return this;
+	}
+
+	getMin() {
+		if (this.array.length === 0) {
+			return null;
+		}
+		return this.array[0];
+	}
+
+	extractMin() {
+		if (this.array.length === 0) {
+			return null;
+		}
+
+		if (this.array.length === 1) {
+			return this.array.pop();
+		}
+
+		const item = this.array[0];
+
+		// Move the last element from the end to the head.
+		this.array[0] = this.array.pop();
+		this.heapifyDown();
+
+		return item;
 	}
 };
