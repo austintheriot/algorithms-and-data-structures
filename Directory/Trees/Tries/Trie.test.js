@@ -219,6 +219,7 @@ describe('Trie', () => {
 			currentNode = currentNode.children['l'];
 			expect(trie.getNode('hel')).toBe(currentNode);
 		});
+
 		test('Should return undefined for nonexistent nodes', () => {
 			const trie = new Trie();
 			trie.add('hello');

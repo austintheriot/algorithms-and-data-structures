@@ -34,6 +34,14 @@ module.exports = class Trie {
 
 	getNode(string) {
 		let currentNode = this.root;
-		for (let i = 0; i < string.length; i++) {}
+		for (let i = 0; i < string.length; i++) {
+			const ch = string[i];
+			if (ch in currentNode.children) {
+				currentNode = currentNode.children[ch];
+			} else {
+				return undefined;
+			}
+		}
+		return currentNode;
 	}
 };
