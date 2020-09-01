@@ -17,6 +17,10 @@ module.exports = class Trie {
 	}
 
 	add(string) {
+		//do not duplicate words
+		//if node exists, and is already marked as a complete word, end function
+		if (this.getNode(string) && this.getNode(string).isCompleteWord)
+			return this;
 		let currentNode = this.root;
 		for (let i = 0; i < string.length; i++) {
 			let ch = string[i];

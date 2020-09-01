@@ -141,6 +141,18 @@ describe('Trie', () => {
 			expect(currentNode.isCompleteWord).toBe(true);
 		});
 
+		test('Should not increment word counts on duplicate words', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('hello');
+			trie.add('hello');
+			trie.add('hello');
+			trie.add('hello');
+
+			let currentNode = trie.root;
+			expect(currentNode.numberOfChildWords).toBe(1);
+		});
+
 		test('Should handle multiple words', () => {
 			const trie = new Trie();
 			trie.add('hello');
