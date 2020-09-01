@@ -1,4 +1,4 @@
-const LinkedList = require('./SinglyLinkedList.solution');
+const LinkedList = require('./SinglyLinkedList');
 
 describe('LinkedList', () => {
 	test('Should add data to the head', () => {
