@@ -8,9 +8,7 @@
   - [Types:](#types)
   - [Binary Tree](#binary-tree)
   - [Binary Search](#binary-search)
-  - [Steps](#steps)
-  - [Runtime](#runtime)
-  - [More Info](#more-info)
+  - [Trie Tree](#trie-tree)
 
 # About:
 
@@ -54,8 +52,10 @@
   - All nodes are full and all leaf nodes occur at the same level. This only
     occurs rarely.
 
-## Steps
+## Trie Tree
 
-## Runtime
-
-## More Info
+- Also called a prefix tree.
+- Useful for questions involving word validations.
+- It's common to store previous calls for words so that new calls pick up where the previous search left off. 
+  - Keep state within trie
+  - Return Node reference
