@@ -25,7 +25,7 @@ Fundamental operations:
   - Insert element in the lowest, rightmost free node (the end of the array)
   - Compare with parent node and swap if smaller than parent
   - Repeat until the node is less than children but greater than parent (in a min-heap)
-- Extra Min:
+- Extract Min:
   - Return the topmost element (first element in the array).
   - Replace the top element with the lowest, rightmost free node (the end of the array)
   - Compare the current node with both children. If parent is larger than either (in a min-heap), swap with the smallest child 
