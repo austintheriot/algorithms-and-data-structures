@@ -1,4 +1,4 @@
-//Implement a MinHeap with the following functionalities:
+//Implement a MinHeap using an array. Include with the following functionalities:
 
 // getLeftChildIndex()
 // getRightChildIndex()
