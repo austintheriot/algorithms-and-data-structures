@@ -48,4 +48,10 @@ module.exports = class Trie {
 		}
 		return currentNode;
 	}
+
+	isWord(string) {
+		let node = this.getNode(string);
+		return node ? node.isCompleteWord : false;
+	}
+	//isPrefix
 };

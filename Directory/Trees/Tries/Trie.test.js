@@ -239,4 +239,18 @@ describe('Trie', () => {
 			expect(trie.getNode('goodbye')).toBe(undefined);
 		});
 	});
+
+	describe('isWord()', () => {
+		test('Should return node corresponding to last character', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			expect(trie.isWord('hello')).toBe(true);
+			expect(trie.isWord('help')).toBe(true);
+			expect(trie.isWord('hel')).toBe(false);
+			expect(trie.isWord('he')).toBe(false);
+			expect(trie.isWord('goodbye')).toBe(false);
+		});
+	});
 });
