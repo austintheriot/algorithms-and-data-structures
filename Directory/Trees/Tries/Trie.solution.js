@@ -19,8 +19,8 @@ module.exports = class Trie {
 	add(string) {
 		let currentNode = this.root;
 		for (let i = 0; i < string.length; i++) {
-			currentNode.numberOfChildWords++;
 			let ch = string[i];
+			currentNode.numberOfChildWords++;
 			if (currentNode.children[ch]) {
 				currentNode = currentNode.children[ch];
 			} else {
@@ -29,5 +29,6 @@ module.exports = class Trie {
 			}
 		}
 		currentNode.isCompleteWord = true;
+		currentNode.numberOfChildWords++;
 	}
 };
