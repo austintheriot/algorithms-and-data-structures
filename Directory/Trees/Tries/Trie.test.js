@@ -240,14 +240,47 @@ describe('Trie', () => {
 		});
 	});
 
+	describe('isPrefix()', () => {
+		test('Should return true if string is a valid prefix in the trie', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			expect(trie.isPrefix('h')).toBe(true);
+			expect(trie.isPrefix('he')).toBe(true);
+			expect(trie.isPrefix('hel')).toBe(true);
+			expect(trie.isPrefix('help')).toBe(true);
+			expect(trie.isPrefix('hell')).toBe(true);
+			expect(trie.isPrefix('hello')).toBe(true);
+		});
+
+		test('Should return false if string is not a valid prefix in the trie', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			expect(trie.isPrefix('hl')).toBe(false);
+			expect(trie.isPrefix('hep')).toBe(false);
+			expect(trie.isPrefix('hepl')).toBe(false);
+			expect(trie.isPrefix('heoll')).toBe(false);
+		});
+	});
+
 	describe('isWord()', () => {
-		test('Should return node corresponding to last character', () => {
+		test('Should return true if string is a valid word in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
 
 			expect(trie.isWord('hello')).toBe(true);
 			expect(trie.isWord('help')).toBe(true);
+		});
+
+		test('Should return false if string is not a valid word in the trie', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
 			expect(trie.isWord('hel')).toBe(false);
 			expect(trie.isWord('he')).toBe(false);
 			expect(trie.isWord('goodbye')).toBe(false);

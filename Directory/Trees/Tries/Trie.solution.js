@@ -49,9 +49,13 @@ module.exports = class Trie {
 		return currentNode;
 	}
 
+	isPrefix(string) {
+		let node = this.getNode(string);
+		return node ? true : false;
+	}
+
 	isWord(string) {
 		let node = this.getNode(string);
 		return node ? node.isCompleteWord : false;
 	}
-	//isPrefix
 };
