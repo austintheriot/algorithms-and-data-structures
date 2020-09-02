@@ -55,6 +55,7 @@ module.exports = class MinHeap {
 		const tmp = this.array[indexTwo];
 		this.array[indexTwo] = this.array[indexOne];
 		this.array[indexOne] = tmp;
+		return this;
 	}
 
 	heapifyUp() {
@@ -71,6 +72,7 @@ module.exports = class MinHeap {
 			this.swap(currentIndex, this.getParentIndex(currentIndex));
 			currentIndex = this.getParentIndex(currentIndex);
 		}
+		return this;
 	}
 
 	heapifyDown() {
@@ -102,6 +104,7 @@ module.exports = class MinHeap {
 			this.swap(currentIndex, nextIndex);
 			currentIndex = nextIndex;
 		}
+		return this;
 	}
 
 	insert(item) {

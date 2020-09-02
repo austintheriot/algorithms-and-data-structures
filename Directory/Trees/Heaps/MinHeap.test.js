@@ -45,51 +45,186 @@ describe('Min Heap', () => {
 	describe('hasParent()', () => {
 		const minHeap = new MinHeap();
 		minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
-		test(`Should return the true if node has a parent`, () => {});
+		test(`Should return the true if node has a parent`, () => {
+			expect(minHeap.hasParent(1)).toBe(true);
+			expect(minHeap.hasParent(5)).toBe(true);
+			expect(minHeap.hasParent(10)).toBe(true);
+			expect(minHeap.hasParent(14)).toBe(true);
+		});
 	});
 
 	describe('hasParent()', () => {
-		test(`Should return the false if node doesn't have a parent`, () => {});
+		test(`Should return the false if node doesn't have a parent`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0];
+			expect(minHeap.hasParent(0)).toBe(false);
+		});
 	});
 
 	describe('hasLeftChild()', () => {
-		test(`Should return the true if node has a left child`, () => {});
-	});
+		test(`Should return the true if node has a left child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.hasLeftChild(0)).toBe(true);
+			expect(minHeap.hasLeftChild(1)).toBe(true);
+			expect(minHeap.hasLeftChild(2)).toBe(true);
+			expect(minHeap.hasLeftChild(3)).toBe(true);
+			expect(minHeap.hasLeftChild(4)).toBe(true);
+			expect(minHeap.hasLeftChild(5)).toBe(true);
+			expect(minHeap.hasLeftChild(6)).toBe(true);
+		});
 
-	describe('hasLeftChild()', () => {
-		test(`Should return the false if node doesn't have a left child`, () => {});
+		test(`Should return the false if node doesn't have a left child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.hasLeftChild(7)).toBe(false);
+			expect(minHeap.hasLeftChild(8)).toBe(false);
+			expect(minHeap.hasLeftChild(9)).toBe(false);
+			expect(minHeap.hasLeftChild(10)).toBe(false);
+			expect(minHeap.hasLeftChild(11)).toBe(false);
+			expect(minHeap.hasLeftChild(12)).toBe(false);
+			expect(minHeap.hasLeftChild(13)).toBe(false);
+			expect(minHeap.hasLeftChild(14)).toBe(false);
+		});
 	});
 
 	describe('hasRightChild()', () => {
-		test(`Should return the true if node has a right child`, () => {});
-	});
+		test(`Should return the true if node has a right child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.hasRightChild(0)).toBe(true);
+			expect(minHeap.hasRightChild(1)).toBe(true);
+			expect(minHeap.hasRightChild(2)).toBe(true);
+			expect(minHeap.hasRightChild(3)).toBe(true);
+			expect(minHeap.hasRightChild(4)).toBe(true);
+			expect(minHeap.hasRightChild(5)).toBe(true);
+			expect(minHeap.hasRightChild(6)).toBe(true);
+		});
 
-	describe('hasRightChild()', () => {
-		test(`Should return the false if node doesn't have a right child`, () => {});
+		test(`Should return the false if node doesn't have a right child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.hasRightChild(7)).toBe(false);
+			expect(minHeap.hasRightChild(8)).toBe(false);
+			expect(minHeap.hasRightChild(9)).toBe(false);
+			expect(minHeap.hasRightChild(10)).toBe(false);
+			expect(minHeap.hasRightChild(11)).toBe(false);
+			expect(minHeap.hasRightChild(12)).toBe(false);
+			expect(minHeap.hasRightChild(13)).toBe(false);
+			expect(minHeap.hasRightChild(14)).toBe(false);
+		});
 	});
 
 	describe('leftChild()', () => {
-		test(`Should return the node's left child`, () => {});
+		test(`Should return the node's left child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.leftChild(0)).toBe(1);
+			expect(minHeap.leftChild(1)).toBe(4);
+			expect(minHeap.leftChild(2)).toBe(5);
+			expect(minHeap.leftChild(3)).toBe(12);
+			expect(minHeap.leftChild(4)).toBe(9);
+			expect(minHeap.leftChild(5)).toBe(8);
+			expect(minHeap.leftChild(6)).toBe(9);
+		});
 	});
 
 	describe('rightChild()', () => {
-		test(`Should return the node's right child`, () => {});
+		test(`Should return the node's right child`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.rightChild(0)).toBe(3);
+			expect(minHeap.rightChild(1)).toBe(7);
+			expect(minHeap.rightChild(2)).toBe(8);
+			expect(minHeap.rightChild(3)).toBe(8);
+			expect(minHeap.rightChild(4)).toBe(11);
+			expect(minHeap.rightChild(5)).toBe(7);
+			expect(minHeap.rightChild(6)).toBe(12);
+		});
 	});
 
 	describe('parent()', () => {
-		test(`Should return the node's parent`, () => {});
+		test(`Should return the node's parent`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+			expect(minHeap.parent(14)).toBe(8);
+			expect(minHeap.parent(13)).toBe(8);
+			expect(minHeap.parent(12)).toBe(5);
+			expect(minHeap.parent(11)).toBe(5);
+			expect(minHeap.parent(10)).toBe(7);
+			expect(minHeap.parent(9)).toBe(7);
+			expect(minHeap.parent(8)).toBe(4);
+			expect(minHeap.parent(7)).toBe(4);
+		});
 	});
 
 	describe('swap()', () => {
-		test(`Should swap the two nodes`, () => {});
+		test(`Should swap the two nodes`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+
+			expect(minHeap.array[0]).toBe(0);
+			expect(minHeap.array[7]).toBe(12);
+			minHeap.swap(0, 7);
+			expect(minHeap.array[0]).toBe(12);
+			expect(minHeap.array[7]).toBe(0);
+
+			expect(minHeap.array[3]).toBe(4);
+			expect(minHeap.array[14]).toBe(12);
+			minHeap.swap(3, 14);
+			expect(minHeap.array[3]).toBe(12);
+			expect(minHeap.array[14]).toBe(4);
+		});
 	});
 
 	describe('heapifyUp()', () => {
-		test(`Should reorder the heap correctly`, () => {});
+		test(`Should reorder the heap correctly`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12, 2];
+			minHeap.heapifyUp();
+			expect(minHeap.array).toEqual([
+				0,
+				1,
+				3,
+				2,
+				7,
+				5,
+				8,
+				4,
+				8,
+				9,
+				11,
+				8,
+				7,
+				9,
+				12,
+				12,
+			]);
+		});
 	});
 
 	describe('heapifyDown()', () => {
-		test(`Should reorder the heap correctly`, () => {});
+		test(`Should reorder the heap correctly`, () => {
+			const minHeap = new MinHeap();
+			minHeap.array = [12, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9];
+			minHeap.heapifyDown();
+			expect(minHeap.array).toEqual([
+				1,
+				4,
+				3,
+				8,
+				7,
+				5,
+				8,
+				12,
+				12,
+				9,
+				11,
+				8,
+				7,
+				9,
+			]);
+		});
 	});
 
 	describe('insert()', () => {
