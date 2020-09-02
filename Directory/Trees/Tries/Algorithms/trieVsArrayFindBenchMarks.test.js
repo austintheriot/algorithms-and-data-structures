@@ -8,7 +8,7 @@ const getEnglishTrie = () => {
 	console.log('Loading english tree');
 	return new Promise((resolve, reject) => {
 		fs.readFile(
-			'C:/Users/austi/Documents/Code/____Algorithms & Data Structures/directory/Trees/Tries/everyEnglishWord.txt',
+			'C:/Users/austi/Documents/Code/____Algorithms & Data Structures/directory/Trees/Tries/Algorithms/everyEnglishWord.txt',
 			'utf8',
 			(err, data) => {
 				if (err) throw err;
