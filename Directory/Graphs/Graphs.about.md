@@ -10,10 +10,12 @@
 
 Terminology: 
 - Node === vertex
-- Edge === arc
+- Edge === arc 
+- Path === a collection of nodes and edges
 - Directed edge === one-way street
 - Undirected edge === two-way street
 - Connected graph === there is a path to every node on the graph
+- Cycle === a path that starts and ends at the same vertex/node
 
 Two common representations: 
 - Adjacency List 
