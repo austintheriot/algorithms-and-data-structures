@@ -286,4 +286,35 @@ describe('Trie', () => {
 			expect(trie.isWord('goodbye')).toBe(false);
 		});
 	});
+
+	describe('howManyWordsStartWith()', () => {
+		test('Should return the number of words that start with that prefix', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+			trie.add('heliotrope');
+			trie.add('pizza');
+
+			expect(trie.howManyWordsStartWith('p')).toBe(1);
+			expect(trie.howManyWordsStartWith('h')).toBe(3);
+			expect(trie.howManyWordsStartWith('he')).toBe(3);
+			expect(trie.howManyWordsStartWith('hel')).toBe(3);
+			expect(trie.howManyWordsStartWith('heli')).toBe(1);
+			expect(trie.howManyWordsStartWith('help')).toBe(1);
+			expect(trie.howManyWordsStartWith('hell')).toBe(1);
+			expect(trie.howManyWordsStartWith('q')).toBe(0);
+			expect(trie.howManyWordsStartWith('r')).toBe(0);
+			expect(trie.howManyWordsStartWith('z')).toBe(0);
+		});
+
+		test('Should return false if string is not a valid word in the trie', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			expect(trie.isWord('hel')).toBe(false);
+			expect(trie.isWord('he')).toBe(false);
+			expect(trie.isWord('goodbye')).toBe(false);
+		});
+	});
 });

@@ -58,4 +58,9 @@ module.exports = class Trie {
 		let node = this.getNode(string);
 		return node ? node.isCompleteWord : false;
 	}
+
+	howManyWordsStartWith(string) {
+		let node = this.getNode(string);
+		return node ? node.numberOfChildWords : 0;
+	}
 };
