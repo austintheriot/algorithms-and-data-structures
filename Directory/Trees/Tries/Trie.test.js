@@ -1,4 +1,4 @@
-const Trie = require('./Trie.solution');
+const Trie = require('./Trie');
 
 describe('Trie', () => {
 	test('Should create an empty root node', () => {
