@@ -26,7 +26,7 @@ module.exports = class MinHeap {
 		return 2 * currentIndex + 1;
 	}
 
-	getRightChildIndex() {
+	getRightChildIndex(currentIndex) {
 		return 2 * currentIndex + 2;
 	}
 
@@ -49,9 +49,11 @@ module.exports = class MinHeap {
 	leftChild(currentIndex) {
 		return this.array[this.getLeftChildIndex(currentIndex)];
 	}
+
 	rightChild(currentIndex) {
 		return this.array[this.getRightChildIndex(currentIndex)];
 	}
+
 	parent(currentIndex) {
 		return this.array[this.getParentIndex(currentIndex)];
 	}
@@ -63,55 +65,30 @@ module.exports = class MinHeap {
 	}
 
 	heapifyUp() {
-		let currentIndex = this.array.length - 1;
-		let currentNode = this.array[currentIndex];
-		while (currentNode && this.hasParent(currentIndex)) {
+		let currentIndex = this.array.length - 1; //take final node
+		while (this.hasParent(currentIndex)) {
 			const parentIndex = this.getParentIndex(currentIndex);
-			const parentNode = this.parent(currentIndex);
-
-			if (parentNode < currentNode) {
-				this.swap(parentIndex, currentIndex);
-			} else {
-				break;
-			}
-
+			if (this.array[parentIndex] < this.array[currentIndex]) break;
+			this.swap(parentIndex, currentIndex);
 			currentIndex = parentIndex;
-			currentNode = parentNode;
 		}
-		return this;
 	}
 
 	heapifyDown() {
+		if (this.array.length === 0 || this.array.length === 1) return;
 		let currentIndex = 0;
-		let currentNode = this.array[currentIndex];
-
-		while (currentNode && this.hasLeftChild(currentIndex)) {
-			const leftChildIndex = this.getLeftChildIndex(currentIndex);
-			const leftChild = this.leftChild(leftChildIndex);
-			const hasRightChild = this.hasRightChild(currentIndex);
-			let rightChildIndex;
-			let rightChild = Infinity;
-			if (hasRightChild) {
-				rightChildIndex = this.getRightChildIndex(currentIndex);
-				rightChild = this.rightChild(currentIndex);
+		while (this.hasLeftChild(currentIndex)) {
+			let smallerNodeIndex = this.getLeftChildIndex(currentIndex);
+			if (this.hasRightChild(currentIndex)) {
+				smallerNodeIndex =
+					this.rightChild(currentIndex) < this.leftChild(currentIndex)
+						? this.getRightChildIndex(currentIndex)
+						: this.getLeftChildIndex(currentIndex);
 			}
-			if (leftChild < currentNode || rightChild < currentNode) {
-				//one child is smaller, node should move
-				if (leftChild < rightChild) {
-					this.swap(currentIndex, leftChildIndex);
-					currentIndex = leftChildIndex;
-					currentNode = leftChild;
-				} else {
-					this.swap(currentIndex, rightChildIndex);
-					currentIndex = rightChildIndex;
-					currentNode = rightChild;
-				}
-			} else {
-				//neither children are smaller, and the node should stay put
-				break;
-			}
+			if (this.array[currentIndex] < this.array[smallerNodeIndex]) break;
+			this.swap(currentIndex, smallerNodeIndex);
+			currentIndex = smallerNodeIndex;
 		}
-		return this;
 	}
 
 	insert(num) {
@@ -126,7 +103,7 @@ module.exports = class MinHeap {
 
 	extractMin() {
 		const rootData = this.array[0];
-		this.array.unshift(this.array.pop());
+		this.array[0] = this.array.pop();
 		this.heapifyDown();
 		return rootData;
 	}
