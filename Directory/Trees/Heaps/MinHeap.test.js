@@ -1,4 +1,4 @@
-const MinHeap = require('./MinHeap');
+const MinHeap = require('./MinHeap.solution');
 //insert(), insert data, rearrange tree
 //extractMin(), return min and remove it from the heap
 //getMin(), return min
@@ -7,6 +7,89 @@ describe('Min Heap', () => {
 	test('Should instantiate an empty array when called', () => {
 		const minHeap = new MinHeap();
 		expect(minHeap.array.length).toBe(0);
+	});
+
+	describe('getLeftChildIndex()', () => {
+		test(`Should return the index of a node's left child`, () => {
+			const minHeap = new MinHeap();
+			expect(minHeap.getLeftChildIndex(0)).toBe(1);
+			expect(minHeap.getLeftChildIndex(1)).toBe(3);
+			expect(minHeap.getLeftChildIndex(2)).toBe(5);
+			expect(minHeap.getLeftChildIndex(3)).toBe(7);
+			expect(minHeap.getLeftChildIndex(4)).toBe(9);
+		});
+	});
+
+	describe('getRightChildIndex()', () => {
+		test(`Should return the index of a node's right child`, () => {
+			const minHeap = new MinHeap();
+			expect(minHeap.getRightChildIndex(0)).toBe(2);
+			expect(minHeap.getRightChildIndex(1)).toBe(4);
+			expect(minHeap.getRightChildIndex(2)).toBe(6);
+			expect(minHeap.getRightChildIndex(3)).toBe(8);
+			expect(minHeap.getRightChildIndex(4)).toBe(10);
+		});
+	});
+
+	describe('getParentIndex()', () => {
+		test(`Should return the index of a node's parent`, () => {
+			const minHeap = new MinHeap();
+			expect(minHeap.getParentIndex(10)).toBe(4);
+			expect(minHeap.getParentIndex(7)).toBe(3);
+			expect(minHeap.getParentIndex(4)).toBe(1);
+			expect(minHeap.getParentIndex(1)).toBe(0);
+			expect(minHeap.getParentIndex(0)).toBe(-1);
+		});
+	});
+
+	describe('hasParent()', () => {
+		const minHeap = new MinHeap();
+		minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
+		test(`Should return the true if node has a parent`, () => {});
+	});
+
+	describe('hasParent()', () => {
+		test(`Should return the false if node doesn't have a parent`, () => {});
+	});
+
+	describe('hasLeftChild()', () => {
+		test(`Should return the true if node has a left child`, () => {});
+	});
+
+	describe('hasLeftChild()', () => {
+		test(`Should return the false if node doesn't have a left child`, () => {});
+	});
+
+	describe('hasRightChild()', () => {
+		test(`Should return the true if node has a right child`, () => {});
+	});
+
+	describe('hasRightChild()', () => {
+		test(`Should return the false if node doesn't have a right child`, () => {});
+	});
+
+	describe('leftChild()', () => {
+		test(`Should return the node's left child`, () => {});
+	});
+
+	describe('rightChild()', () => {
+		test(`Should return the node's right child`, () => {});
+	});
+
+	describe('parent()', () => {
+		test(`Should return the node's parent`, () => {});
+	});
+
+	describe('swap()', () => {
+		test(`Should swap the two nodes`, () => {});
+	});
+
+	describe('heapifyUp()', () => {
+		test(`Should reorder the heap correctly`, () => {});
+	});
+
+	describe('heapifyDown()', () => {
+		test(`Should reorder the heap correctly`, () => {});
 	});
 
 	describe('insert()', () => {
