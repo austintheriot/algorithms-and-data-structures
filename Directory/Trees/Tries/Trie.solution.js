@@ -4,6 +4,7 @@ class Node {
 		this.numberOfChildWords = 0;
 		this.children = {}; //{'a': Node}
 		this.isCompleteWord = false; //false
+		this.maxDepth = 0;
 	}
 }
 
@@ -24,7 +25,10 @@ module.exports = class Trie {
 		let currentNode = this.root;
 		for (let i = 0; i < string.length; i++) {
 			let ch = string[i];
+			//track the number of child words in each node
 			currentNode.numberOfChildWords++;
+			//track the maximum depth below each node
+			currentNode.maxDepth = Math.max(currentNode.maxDepth, string.length - i);
 			if (currentNode.children[ch]) {
 				currentNode = currentNode.children[ch];
 			} else {
@@ -62,5 +66,9 @@ module.exports = class Trie {
 	howManyWordsStartWith(string) {
 		let node = this.getNode(string);
 		return node ? node.numberOfChildWords : 0;
+	}
+
+	longestString() {
+		return this.root.maxDepth;
 	}
 };
