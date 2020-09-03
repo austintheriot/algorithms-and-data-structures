@@ -1,4 +1,4 @@
-const BinaryTreeNode = require('../Binary Tree/BinaryTreeNode.solution');
+const BinaryTreeNode = require('../BinaryTreeNode.solution');
 const node0 = new BinaryTreeNode(10);
 const node1 = new BinaryTreeNode(5);
 const node2 = new BinaryTreeNode(15);
