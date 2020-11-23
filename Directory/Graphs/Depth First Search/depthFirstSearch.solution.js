@@ -1,5 +1,3 @@
-const rootNode = require('../graphExample');
-
 module.exports = makeSearchFunction = (visitCallback) => {
 	return (search = (node) => {
 		if (node === null) return;
