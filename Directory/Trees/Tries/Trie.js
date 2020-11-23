@@ -1,10 +1,10 @@
 // Implement a tree with the following functionalities:
 
-// add()
-// getNode()
-// isPrefix()
-// isWord()
-// howManyWordsStartWith()
-// longestString()
+// add(string){}
+// getNode(string){}
+// isPrefix(string){}
+// isWord(){string}
+// howManyWordsStartWith(string){}
+// longestString(){}
 
 module.exports = class Trie {};
