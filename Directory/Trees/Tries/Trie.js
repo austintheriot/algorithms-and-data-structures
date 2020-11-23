@@ -13,7 +13,7 @@
 // add(string){}
 // getNode(string){}
 // isPrefix(string){}
-// isWord(){string}
+// isWord(string){}
 // howManyWordsStartWith(string){}
 // longestString(){}
 
