@@ -1,20 +1,20 @@
-//Implement a MinHeap using an array. Include with the following functionalities:
+//Implement a MinHeap using an array. Include the following functionalities:
 
-// getLeftChildIndex()
-// getRightChildIndex()
-// getParentIndex()
-// hasParent()
-// hasLeftChild()
-// hasRightChild()
-// leftChild()
-// rightChild()
-// parent()
-// swap()
-// heapifyUp()
-// heapifyDown()
+// getLeftChildIndex(){}
+// getRightChildIndex(){}
+// getParentIndex(){}
+// hasParent(){}
+// hasLeftChild(){}
+// hasRightChild(){}
+// leftChild(){}
+// rightChild(){}
+// parent(){}
+// swap(){} //index1, index2
+// heapifyUp(){} //no parameters
+// heapifyDown(){} //no parameters
 
-// insert()
-// getMin()
-// extractMin()
+// insert(){} //value
+// getMin(){}
+// extractMin(){}
 
 module.exports = class MinHeap {};
