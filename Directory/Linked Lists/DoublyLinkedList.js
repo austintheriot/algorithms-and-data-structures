@@ -1,13 +1,17 @@
 //implement a doubly linked list with the following functionalities:
 //return undefined for nonexistent indexes, etc.
 
-//prepend
-//append
-//get
-//find(callback || value)
-//delete
-//toArray()
+//prepend(){}
+//append(){}
+//get(index){}
+//find(callback || value){}
+//delete(index){}
+//toArray(){} //create array filled with node data
 
-class LinkedList {}
+class LinkedList {
+	//tail
+	//head
+	//length
+}
 
 module.exports = LinkedList;
