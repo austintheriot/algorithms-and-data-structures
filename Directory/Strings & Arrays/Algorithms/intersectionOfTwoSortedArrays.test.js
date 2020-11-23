@@ -21,7 +21,7 @@ const searchArrays = (first, second) => {
 	return newArray;
 };
 
-test('Intersection of 2 sorted arrays', () => {
+it('Intersection of 2 sorted arrays', () => {
 	let first = [0, 1, 1, 3, 5, 7, 7, 8];
 	let second = [7, 8];
 	expect(searchArrays(first, second)).toEqual([7, 8]);

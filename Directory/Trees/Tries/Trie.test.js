@@ -1,7 +1,7 @@
 const Trie = require('./Trie');
 
 describe('Trie', () => {
-	test('Should create an empty root node', () => {
+	it('Should create an empty root node', () => {
 		const trie = new Trie();
 		expect(trie.root.value).toBe(null);
 		expect(trie.root.numberOfChildWords).toBe(0);
@@ -10,7 +10,7 @@ describe('Trie', () => {
 	});
 
 	describe('add()', () => {
-		test('Should add node to children {} for each character node in Trie', () => {
+		it('Should add node to children {} for each character node in Trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -39,7 +39,7 @@ describe('Trie', () => {
 			expect(currentNode.children).toEqual({});
 		});
 
-		test('Should add set value as character for each character node in Trie', () => {
+		it('Should add set value as character for each character node in Trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -68,7 +68,7 @@ describe('Trie', () => {
 			expect(currentNode.value).toBe('o');
 		});
 
-		test('Should add increment the word count of each character node touched', () => {
+		it('Should add increment the word count of each character node touched', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -97,7 +97,7 @@ describe('Trie', () => {
 			expect(currentNode.numberOfChildWords).toBe(1);
 		});
 
-		test('Should not set isCompleteWord to true for non-final letters', () => {
+		it('Should not set isCompleteWord to true for non-final letters', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -122,7 +122,7 @@ describe('Trie', () => {
 			expect(currentNode.isCompleteWord).toBe(false);
 		});
 
-		test('Should add set isCompleteWord to true for the final letter', () => {
+		it('Should add set isCompleteWord to true for the final letter', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -141,7 +141,7 @@ describe('Trie', () => {
 			expect(currentNode.isCompleteWord).toBe(true);
 		});
 
-		test('Should handle multiple words', () => {
+		it('Should handle multiple words', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -206,7 +206,7 @@ describe('Trie', () => {
 			expect(currentNode.isCompleteWord).toBe(true);
 		});
 
-		test('Should not increment word counts on duplicate words', () => {
+		it('Should not increment word counts on duplicate words', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('hello');
@@ -220,7 +220,7 @@ describe('Trie', () => {
 	});
 
 	describe('getNode()', () => {
-		test('Should return node corresponding to last character', () => {
+		it('Should return node corresponding to last character', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -232,7 +232,7 @@ describe('Trie', () => {
 			expect(trie.getNode('hel')).toBe(currentNode);
 		});
 
-		test('Should return undefined for nonexistent nodes', () => {
+		it('Should return undefined for nonexistent nodes', () => {
 			const trie = new Trie();
 			trie.add('hello');
 
@@ -241,7 +241,7 @@ describe('Trie', () => {
 	});
 
 	describe('isPrefix()', () => {
-		test('Should return true if string is a valid prefix in the trie', () => {
+		it('Should return true if string is a valid prefix in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -254,7 +254,7 @@ describe('Trie', () => {
 			expect(trie.isPrefix('hello')).toBe(true);
 		});
 
-		test('Should return false if string is not a valid prefix in the trie', () => {
+		it('Should return false if string is not a valid prefix in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -267,7 +267,7 @@ describe('Trie', () => {
 	});
 
 	describe('isWord()', () => {
-		test('Should return true if string is a valid word in the trie', () => {
+		it('Should return true if string is a valid word in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -276,7 +276,7 @@ describe('Trie', () => {
 			expect(trie.isWord('help')).toBe(true);
 		});
 
-		test('Should return false if string is not a valid word in the trie', () => {
+		it('Should return false if string is not a valid word in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -288,7 +288,7 @@ describe('Trie', () => {
 	});
 
 	describe('howManyWordsStartWith()', () => {
-		test('Should return the number of words that start with that prefix', () => {
+		it('Should return the number of words that start with that prefix', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -307,7 +307,7 @@ describe('Trie', () => {
 			expect(trie.howManyWordsStartWith('z')).toBe(0);
 		});
 
-		test('Should return false if string is not a valid word in the trie', () => {
+		it('Should return false if string is not a valid word in the trie', () => {
 			const trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
@@ -319,7 +319,7 @@ describe('Trie', () => {
 	});
 
 	describe('longestString()', () => {
-		test('Should return the max depth of nodes in the trie', () => {
+		it('Should return the max depth of nodes in the trie', () => {
 			let trie = new Trie();
 			trie.add('hello');
 			trie.add('help');

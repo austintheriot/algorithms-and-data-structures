@@ -20,7 +20,7 @@ const istItAPermutation = (string1, string2) => {
 	return true;
 };
 
-test('Should check if 2 strings are permutations of each other', () => {
+it('Should check if 2 strings are permutations of each other', () => {
 	expect(istItAPermutation('abcd', 'dcba')).toBe(true);
 	expect(istItAPermutation('AAA', 'AAz')).toBe(false);
 	expect(istItAPermutation('a1b2', '2ba1')).toBe(true);

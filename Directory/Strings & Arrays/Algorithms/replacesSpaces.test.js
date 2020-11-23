@@ -31,7 +31,7 @@ let replacesSpaces = (string) => {
 	return arr.join('');
 };
 
-test(`Replaces spaces with '%20'`, () => {
+it(`Replaces spaces with '%20'`, () => {
 	expect(replacesSpaces('hello there')).toBe('hello%20there');
 	expect(replacesSpaces('    Mr John Smith      ')).toBe(
 		'%20Mr%20John%20Smith%20'
@@ -62,7 +62,7 @@ replacesSpaces = (string) => {
 	}
 	return newString;
 };
-test(`Replaces spaces with '%20'`, () => {
+it(`Replaces spaces with '%20'`, () => {
 	expect(replacesSpaces('hello there')).toBe('hello%20there');
 	expect(replacesSpaces('    Mr John Smith      ')).toBe(
 		'%20Mr%20John%20Smith%20'
@@ -89,7 +89,7 @@ replacesSpaces = (string) => {
 		.join('');
 };
 
-test(`Replaces spaces with '%20'`, () => {
+it(`Replaces spaces with '%20'`, () => {
 	expect(replacesSpaces('hello there')).toBe('hello%20there');
 	expect(replacesSpaces('    Mr John Smith      ')).toBe(
 		'%20Mr%20John%20Smith%20'

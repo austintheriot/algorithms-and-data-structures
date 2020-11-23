@@ -4,13 +4,13 @@ const MinHeap = require('./MinHeap');
 //getMin(), return min
 
 describe('Min Heap', () => {
-	test('Should instantiate an empty array when called', () => {
+	it('Should instantiate an empty array when called', () => {
 		const minHeap = new MinHeap();
 		expect(minHeap.array.length).toBe(0);
 	});
 
 	describe('getLeftChildIndex()', () => {
-		test(`Should return the index of a node's left child`, () => {
+		it(`Should return the index of a node's left child`, () => {
 			const minHeap = new MinHeap();
 			expect(minHeap.getLeftChildIndex(0)).toBe(1);
 			expect(minHeap.getLeftChildIndex(1)).toBe(3);
@@ -21,7 +21,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('getRightChildIndex()', () => {
-		test(`Should return the index of a node's right child`, () => {
+		it(`Should return the index of a node's right child`, () => {
 			const minHeap = new MinHeap();
 			expect(minHeap.getRightChildIndex(0)).toBe(2);
 			expect(minHeap.getRightChildIndex(1)).toBe(4);
@@ -32,7 +32,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('getParentIndex()', () => {
-		test(`Should return the index of a node's parent`, () => {
+		it(`Should return the index of a node's parent`, () => {
 			const minHeap = new MinHeap();
 			expect(minHeap.getParentIndex(10)).toBe(4);
 			expect(minHeap.getParentIndex(7)).toBe(3);
@@ -45,7 +45,7 @@ describe('Min Heap', () => {
 	describe('hasParent()', () => {
 		const minHeap = new MinHeap();
 		minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
-		test(`Should return the true if node has a parent`, () => {
+		it(`Should return the true if node has a parent`, () => {
 			expect(minHeap.hasParent(1)).toBe(true);
 			expect(minHeap.hasParent(5)).toBe(true);
 			expect(minHeap.hasParent(10)).toBe(true);
@@ -54,7 +54,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('hasParent()', () => {
-		test(`Should return the false if node doesn't have a parent`, () => {
+		it(`Should return the false if node doesn't have a parent`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0];
 			expect(minHeap.hasParent(0)).toBe(false);
@@ -62,7 +62,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('hasLeftChild()', () => {
-		test(`Should return the true if node has a left child`, () => {
+		it(`Should return the true if node has a left child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.hasLeftChild(0)).toBe(true);
@@ -74,7 +74,7 @@ describe('Min Heap', () => {
 			expect(minHeap.hasLeftChild(6)).toBe(true);
 		});
 
-		test(`Should return the false if node doesn't have a left child`, () => {
+		it(`Should return the false if node doesn't have a left child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.hasLeftChild(7)).toBe(false);
@@ -89,7 +89,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('hasRightChild()', () => {
-		test(`Should return the true if node has a right child`, () => {
+		it(`Should return the true if node has a right child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.hasRightChild(0)).toBe(true);
@@ -101,7 +101,7 @@ describe('Min Heap', () => {
 			expect(minHeap.hasRightChild(6)).toBe(true);
 		});
 
-		test(`Should return the false if node doesn't have a right child`, () => {
+		it(`Should return the false if node doesn't have a right child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.hasRightChild(7)).toBe(false);
@@ -116,7 +116,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('leftChild()', () => {
-		test(`Should return the node's left child`, () => {
+		it(`Should return the node's left child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.leftChild(0)).toBe(1);
@@ -130,7 +130,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('rightChild()', () => {
-		test(`Should return the node's right child`, () => {
+		it(`Should return the node's right child`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.rightChild(0)).toBe(3);
@@ -144,7 +144,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('parent()', () => {
-		test(`Should return the node's parent`, () => {
+		it(`Should return the node's parent`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 			expect(minHeap.parent(14)).toBe(8);
@@ -159,7 +159,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('swap()', () => {
-		test(`Should swap the two nodes`, () => {
+		it(`Should swap the two nodes`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12];
 
@@ -178,7 +178,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('heapifyUp()', () => {
-		test(`Should reorder the heap correctly`, () => {
+		it(`Should reorder the heap correctly`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [0, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9, 12, 2];
 			minHeap.heapifyUp();
@@ -204,7 +204,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('heapifyDown()', () => {
-		test(`Should reorder the heap correctly`, () => {
+		it(`Should reorder the heap correctly`, () => {
 			const minHeap = new MinHeap();
 			minHeap.array = [12, 1, 3, 4, 7, 5, 8, 12, 8, 9, 11, 8, 7, 9];
 			minHeap.heapifyDown();
@@ -228,7 +228,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('insert()', () => {
-		test('Should insert elements into the array', () => {
+		it('Should insert elements into the array', () => {
 			const minHeap = new MinHeap();
 			minHeap.insert(0);
 
@@ -250,7 +250,7 @@ describe('Min Heap', () => {
 			expect(minHeap.array.includes(7)).toBe(true);
 		});
 
-		test('Should insert elements in the correct order', () => {
+		it('Should insert elements in the correct order', () => {
 			const minHeap = new MinHeap();
 			minHeap.insert(7);
 			minHeap.insert(0);
@@ -271,7 +271,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('getMin()', () => {
-		test('Should return the min element', () => {
+		it('Should return the min element', () => {
 			let minHeap = new MinHeap();
 			minHeap.insert(0);
 			minHeap.insert(7);
@@ -288,7 +288,7 @@ describe('Min Heap', () => {
 	});
 
 	describe('extractMin()', () => {
-		test('Should return the min element', () => {
+		it('Should return the min element', () => {
 			let minHeap = new MinHeap();
 			minHeap.insert(23);
 			minHeap.insert(17);
@@ -299,7 +299,7 @@ describe('Min Heap', () => {
 			expect(minHeap.extractMin()).toBe(13);
 		});
 
-		test('Should delete the min element from the array', () => {
+		it('Should delete the min element from the array', () => {
 			let minHeap = new MinHeap();
 			minHeap.insert(23);
 			minHeap.insert(17);
@@ -314,7 +314,7 @@ describe('Min Heap', () => {
 			expect(minHeap.array.includes(13)).toBe(false);
 		});
 
-		test('Should rearrange tree correctly', () => {
+		it('Should rearrange tree correctly', () => {
 			let minHeap = new MinHeap();
 			minHeap.insert(23);
 			minHeap.insert(17);

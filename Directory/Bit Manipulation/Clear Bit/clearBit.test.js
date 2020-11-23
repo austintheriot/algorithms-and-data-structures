@@ -18,7 +18,7 @@ const $1101 = 13;
 const $1110 = 14;
 const $1111 = 15;
 
-test('Clear bit,', () => {
+it('Clear bit,', () => {
 	//1 === 0001
 	let number = 1;
 	expect(clearBit(number, 0)).toBe($0000);

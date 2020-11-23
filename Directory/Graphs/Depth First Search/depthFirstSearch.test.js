@@ -14,7 +14,7 @@ describe('Depth-First Search (DFS)', () => {
 		search = makeSearchFunction(visit);
 	});
 
-	test('Should search by depth first', () => {
+	it('Should search by depth first', () => {
 		search(exampleRootNode);
 		expect(array).toEqual([0, 1, 3, 2, 4, 5]);
 	});

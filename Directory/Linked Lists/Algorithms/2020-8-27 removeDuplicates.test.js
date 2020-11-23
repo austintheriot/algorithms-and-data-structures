@@ -25,7 +25,7 @@ function removeDuplicates(linkedList) {
 	return linkedList;
 }
 
-test('Should remove all duplicate strings from the Linked List', () => {
+it('Should remove all duplicate strings from the Linked List', () => {
 	const linkedList = new LinkedList();
 	linkedList
 		.prepend('0')
@@ -52,7 +52,7 @@ test('Should remove all duplicate strings from the Linked List', () => {
 	expect(filteredLinkedList.find('100').data).toBe('100');
 });
 
-test('Should remove all duplicate 0s', () => {
+it('Should remove all duplicate 0s', () => {
 	const linkedList = new LinkedList();
 	linkedList
 		.prepend(0)

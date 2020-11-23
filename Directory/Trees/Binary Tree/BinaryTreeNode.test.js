@@ -1,7 +1,7 @@
 const BinaryTreeNode = require('./BinaryTreeNode.solution');
 
 describe('BinaryTreeNode', () => {
-	test('Should create node', () => {
+	it('Should create node', () => {
 		let node = new BinaryTreeNode();
 
 		expect(node.parent).toBeNull();
@@ -18,7 +18,7 @@ describe('BinaryTreeNode', () => {
 	});
 
 	// setLeft
-	test('Should set the left node', () => {
+	it('Should set the left node', () => {
 		let node0 = new BinaryTreeNode(0);
 		let node1 = new BinaryTreeNode(5);
 		node0.setLeft(node1);
@@ -30,7 +30,7 @@ describe('BinaryTreeNode', () => {
 	});
 
 	// setRight
-	test('Should set the right node', () => {
+	it('Should set the right node', () => {
 		let node0 = new BinaryTreeNode(0);
 		let node2 = new BinaryTreeNode(5);
 		node0.setRight(node2);

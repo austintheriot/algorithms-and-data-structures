@@ -1,7 +1,7 @@
 const Queue = require('./Queue');
 
 describe('Queue', () => {
-	test('Should add item to the end of the queue', () => {
+	it('Should add item to the end of the queue', () => {
 		const queue = new Queue();
 		queue.add(0);
 		expect(queue.linkedList.tail.data).toBe(0);
@@ -13,12 +13,12 @@ describe('Queue', () => {
 		expect(queue.linkedList.tail.data).toBe(null);
 	});
 
-	test('Should return the queue when add() is called', () => {
+	it('Should return the queue when add() is called', () => {
 		const queue = new Queue();
 		expect(queue.add(0)).toBe(queue);
 	});
 
-	test('Should remove items from the front of the queue', () => {
+	it('Should remove items from the front of the queue', () => {
 		const queue = new Queue();
 		queue.add(0).add(1).add(2).add(3).add(4);
 		expect(queue.linkedList.head.data).toBe(0);
@@ -46,7 +46,7 @@ describe('Queue', () => {
 		expect(queue.linkedList.tail).toBe(null);
 	});
 
-	test('Should return the removed item when remove() is called', () => {
+	it('Should return the removed item when remove() is called', () => {
 		const queue = new Queue();
 		queue.add(0).add(1).add(2).add(3).add(4);
 		expect(queue.linkedList.head.data).toBe(0);
@@ -60,7 +60,7 @@ describe('Queue', () => {
 		expect(queue.remove()).toBe(null);
 	});
 
-	test('Should return the front item when peek() is called', () => {
+	it('Should return the front item when peek() is called', () => {
 		let queue = new Queue();
 		queue.add(0).add(1).add(2).add(3).add(4);
 		expect(queue.peek()).toBe(0);
@@ -74,12 +74,12 @@ describe('Queue', () => {
 		expect(queue.peek()).toBe(null);
 	});
 
-	test('Should return true when queue is empty', () => {
+	it('Should return true when queue is empty', () => {
 		let queue = new Queue();
 		expect(queue.isEmpty()).toBe(true);
 	});
 
-	test('Should return false when queue is not empty', () => {
+	it('Should return false when queue is not empty', () => {
 		queue = new Queue();
 		queue.add(1);
 		expect(queue.isEmpty()).toBe(false);
@@ -89,7 +89,7 @@ describe('Queue', () => {
 		expect(queue.isEmpty()).toBe(false);
 	});
 
-	test('Should work when methods follow one another', () => {
+	it('Should work when methods follow one another', () => {
 		queue = new Queue();
 		expect(queue.peek()).toBe(null);
 		expect(queue.isEmpty()).toBe(true);

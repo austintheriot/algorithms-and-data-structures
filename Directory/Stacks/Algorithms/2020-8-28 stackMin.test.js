@@ -166,7 +166,7 @@ class Stack {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 describe('Stack', () => {
-	test('Should push item to the top of the stack', () => {
+	it('Should push item to the top of the stack', () => {
 		const stack = new Stack();
 		stack.push(0);
 		expect(stack.linkedList.length).toBe(1);
@@ -181,12 +181,12 @@ describe('Stack', () => {
 		expect(stack.linkedList.head.data).toBe(null);
 	});
 
-	test('Should return the stack when push() is called', () => {
+	it('Should return the stack when push() is called', () => {
 		const stack = new Stack();
 		expect(stack.push(0)).toBe(stack);
 	});
 
-	test('Should pop items off the top of the stack', () => {
+	it('Should pop items off the top of the stack', () => {
 		const stack = new Stack();
 		stack.push(0).push(1).push(2).push(3).push(4);
 		expect(stack.linkedList.length).toBe(5);
@@ -213,7 +213,7 @@ describe('Stack', () => {
 		expect(stack.linkedList.head).toBe(null);
 	});
 
-	test('Should return the popped item when pop() is called', () => {
+	it('Should return the popped item when pop() is called', () => {
 		const stack = new Stack();
 		stack.push(0).push(1).push(2).push(3).push(4);
 		expect(stack.linkedList.length).toBe(5);
@@ -227,7 +227,7 @@ describe('Stack', () => {
 		expect(stack.pop()).toBe(null);
 	});
 
-	test('Should return the minimum of the stack', () => {
+	it('Should return the minimum of the stack', () => {
 		stack = new Stack();
 		stack.push(5).push(15).push(0).push(-20).push(75).push(-100);
 		expect(stack.min()).toBe(-100); //top === -100

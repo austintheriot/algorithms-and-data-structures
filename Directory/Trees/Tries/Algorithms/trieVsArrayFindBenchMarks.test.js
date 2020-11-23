@@ -29,7 +29,7 @@ beforeAll(() => {
 });
 
 describe('English dictionary', () => {
-	test('Array find benchmarks', () => {
+	it('Array find benchmarks', () => {
 		//about 0.43-0.33 milliseconds / lookup
 		const time = process.hrtime();
 		englishArray.includes('abbreviate');
@@ -51,7 +51,7 @@ describe('English dictionary', () => {
 		);
 	});
 
-	test('Trie benchmarks', () => {
+	it('Trie benchmarks', () => {
 		//about 0.00802-0.0045 milliseconds / lookup
 		const time = process.hrtime();
 		englishTrie.isWord('abbreviate');
@@ -73,7 +73,7 @@ describe('English dictionary', () => {
 		);
 	});
 
-	test('Should return true for valid words and false for invalid words', () => {
+	it('Should return true for valid words and false for invalid words', () => {
 		expect(englishTrie.isWord('abbreviate')).toBe(true);
 		expect(englishTrie.isWord('expend')).toBe(true);
 		expect(englishTrie.isWord('wreck')).toBe(true);
@@ -82,7 +82,7 @@ describe('English dictionary', () => {
 		expect(englishTrie.isWord('zimbabwe')).toBe(true);
 	});
 
-	test('Should return false for invalid', () => {
+	it('Should return false for invalid', () => {
 		expect(englishTrie.isWord('experimen')).toBe(false);
 		expect(englishTrie.isWord('perinatale')).toBe(false);
 		expect(englishTrie.isWord('perthe')).toBe(false);
@@ -91,7 +91,7 @@ describe('English dictionary', () => {
 		expect(englishTrie.isWord('zooom')).toBe(false);
 	});
 
-	test('Should return true for valid prefixes', () => {
+	it('Should return true for valid prefixes', () => {
 		expect(englishTrie.isPrefix('abbreviate')).toBe(true);
 		expect(englishTrie.isPrefix('expend')).toBe(true);
 		expect(englishTrie.isPrefix('wreck')).toBe(true);
@@ -100,7 +100,7 @@ describe('English dictionary', () => {
 		expect(englishTrie.isPrefix('zimbabwe')).toBe(true);
 	});
 
-	test('Should return false for invalid prefixes', () => {
+	it('Should return false for invalid prefixes', () => {
 		expect(englishTrie.isPrefix('abbreviate')).toBe(true);
 		expect(englishTrie.isPrefix('expend')).toBe(true);
 		expect(englishTrie.isPrefix('wreck')).toBe(true);

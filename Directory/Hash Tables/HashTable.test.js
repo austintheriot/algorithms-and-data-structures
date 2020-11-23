@@ -20,21 +20,21 @@ let doesArrayIncludeKey = (hashTable, key) => {
 };
 
 describe(`Hash Tables:`, () => {
-	test('Should create an empty array when not given an array length', () => {
+	it('Should create an empty array when not given an array length', () => {
 		const emptyHashTable = new HashTable();
 		expect(emptyHashTable.array.length).toBe(0);
 	});
 
-	test('HashTable._hash() should return an index within the length of the array', () => {
+	it('HashTable._hash() should return an index within the length of the array', () => {
 		expect(hashTable._hash('example')).toBeGreaterThanOrEqual(0);
 		expect(hashTable._hash('example')).toBeLessThan(hashTable.array.length);
 	});
 
-	test('HashTable._hash() should return an even distribution', () => {
+	it('HashTable._hash() should return an even distribution', () => {
 		//Create logic for testing uniform distribution of values at indexes
 	});
 
-	test('Should create an array of specified length.', () => {
+	it('Should create an array of specified length.', () => {
 		const hashTable1 = new HashTable(1);
 		const hashTable5 = new HashTable(5);
 		const hashTable100 = new HashTable(100);
@@ -46,7 +46,7 @@ describe(`Hash Tables:`, () => {
 		expect(hashTable1000.array.length).toBe(1000);
 	});
 
-	test('HashTable.set() should add values to the array.', () => {
+	it('HashTable.set() should add values to the array.', () => {
 		const newHashTable = new HashTable(1);
 		newHashTable.set('two', 2);
 		newHashTable.set('three', 3);
@@ -60,7 +60,7 @@ describe(`Hash Tables:`, () => {
 		expect(doesArrayIncludeKey(newHashTable, 'five')).toBe(true);
 	});
 
-	test('HashTable.get() should retrieve values from the array.', () => {
+	it('HashTable.get() should retrieve values from the array.', () => {
 		//SHOULD exist
 		expect(hashTable.get('hello')).toMatch(/world/);
 		expect(hashTable.get('one')).toBe(1);
@@ -68,7 +68,7 @@ describe(`Hash Tables:`, () => {
 		expect(hashTable.get('false')).toBe(false);
 	});
 
-	test('HashTable.get() should return undefined for nonexistent keys', () => {
+	it('HashTable.get() should return undefined for nonexistent keys', () => {
 		expect(hashTable.get(1)).toBeUndefined();
 		expect(hashTable.get('newLookup')).toBeUndefined();
 		expect(hashTable.get(() => ({}))).toBeUndefined();

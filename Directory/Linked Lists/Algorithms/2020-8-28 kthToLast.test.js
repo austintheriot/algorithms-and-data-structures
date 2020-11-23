@@ -21,7 +21,7 @@ function kthToLast(ll, k) {
 	}
 }
 
-test('Should return the kth to last element of a singly linked list', () => {
+it('Should return the kth to last element of a singly linked list', () => {
 	let linkedList = new LinkedList();
 	linkedList
 		.prepend(10)

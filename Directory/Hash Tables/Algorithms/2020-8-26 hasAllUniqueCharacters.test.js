@@ -11,7 +11,7 @@ let hasAllUniqueCharacters = (string) => {
 	return true;
 };
 
-test('If string has all unique characters', () => {
+it('If string has all unique characters', () => {
 	expect(hasAllUniqueCharacters('abcdef')).toBe(true);
 	expect(hasAllUniqueCharacters('a')).toBe(true);
 	expect(hasAllUniqueCharacters('22')).toBe(false);
@@ -30,7 +30,7 @@ hasAllUniqueCharacters = (string) => {
 	return true;
 };
 
-test('If string has all unique characters', () => {
+it('If string has all unique characters', () => {
 	expect(hasAllUniqueCharacters('abcdef')).toBe(true);
 	expect(hasAllUniqueCharacters('a')).toBe(true);
 	expect(hasAllUniqueCharacters('22')).toBe(false);

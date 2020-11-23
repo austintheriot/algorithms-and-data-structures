@@ -1,7 +1,7 @@
 const LinkedList = require('./SinglyLinkedList');
 
 describe('LinkedList', () => {
-	test('Should add data to the head', () => {
+	it('Should add data to the head', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.head.data).toBe(1);
@@ -9,7 +9,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.next.next.data).toBe(3);
 	});
 
-	test('Should update length when given new data', () => {
+	it('Should update length when given new data', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -22,7 +22,7 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(5);
 	});
 
-	test('Should find and return a node, given a value', () => {
+	it('Should find and return a node, given a value', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.find(1).data).toBe(1);
@@ -30,7 +30,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find(3).data).toBe(3);
 	});
 
-	test('Should find and return a node, given a callback', () => {
+	it('Should find and return a node, given a callback', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend({
@@ -50,7 +50,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find((node) => node.data.key === '0').data.value).toBe(0);
 	});
 
-	test('Should return undefined when node not found', () => {
+	it('Should return undefined when node not found', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.find(4)).toBeUndefined();
@@ -58,7 +58,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find(6)).toBeUndefined();
 	});
 
-	test('Should retrieve values by index', () => {
+	it('Should retrieve values by index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -73,7 +73,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(6).data).toBe('sentence.');
 	});
 
-	test('Should return undefined for indexes outside of range', () => {
+	it('Should return undefined for indexes outside of range', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -87,7 +87,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(7)).toBeUndefined();
 	});
 
-	test('Should delete a node, given an index', () => {
+	it('Should delete a node, given an index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -117,7 +117,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(linkedList.length - 1).data).toBe('a');
 	});
 
-	test('Should return undefined for deletions outside of index', () => {
+	it('Should return undefined for deletions outside of index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -131,7 +131,7 @@ describe('LinkedList', () => {
 		expect(linkedList.delete(7)).toBeUndefined();
 	});
 
-	test('Should still be traversable after deletion', () => {
+	it('Should still be traversable after deletion', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend(6)
@@ -162,7 +162,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.next.next.next.next.next.next).toBe(null);
 	});
 
-	test('Should remove head when single node is deleted', () => {
+	it('Should remove head when single node is deleted', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(1);
 		expect(linkedList.length).toBe(1);
@@ -174,7 +174,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head).toBe(null);
 	});
 
-	test('Should allow chaining of methods', () => {
+	it('Should allow chaining of methods', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend(0)

@@ -1,7 +1,7 @@
 const LinkedList = require('./DoublyLinkedList');
 
 describe('LinkedList', () => {
-	test('Should prepend data to the head', () => {
+	it('Should prepend data to the head', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.head.data).toBe(1);
@@ -9,7 +9,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.next.next.data).toBe(3);
 	});
 
-	test('Should append data to the tail', () => {
+	it('Should append data to the tail', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -23,7 +23,7 @@ describe('LinkedList', () => {
 		expect(linkedList.tail.data).toBe('example.');
 	});
 
-	test('Should return the head value', () => {
+	it('Should return the head value', () => {
 		let linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.head.data).toBe(1);
@@ -33,7 +33,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.data).toBe('What');
 	});
 
-	test('Should return the tail value', () => {
+	it('Should return the tail value', () => {
 		let linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.tail.data).toBe(3);
@@ -43,7 +43,7 @@ describe('LinkedList', () => {
 		expect(linkedList.tail.data).toBe('example.');
 	});
 
-	test('Should allow node.prev movement', () => {
+	it('Should allow node.prev movement', () => {
 		let linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.tail.data).toBe(3);
@@ -53,7 +53,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.next.next.prev.prev.data).toBe(1);
 	});
 
-	test('Should update length on prepend', () => {
+	it('Should update length on prepend', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -66,7 +66,7 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(5);
 	});
 
-	test('Should update length on append', () => {
+	it('Should update length on append', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -79,7 +79,7 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(5);
 	});
 
-	test('Should update length on delete', () => {
+	it('Should update length on delete', () => {
 		let linkedList = new LinkedList();
 		expect(linkedList.length).toBe(0);
 
@@ -102,7 +102,7 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(4);
 	});
 
-	test('Should find and return a node, given a value', () => {
+	it('Should find and return a node, given a value', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.find(1).data).toBe(1);
@@ -110,7 +110,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find(3).data).toBe(3);
 	});
 
-	test('Should find and return a node, given a callback', () => {
+	it('Should find and return a node, given a callback', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend({
@@ -130,7 +130,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find((node) => node.data.key === '0').data.value).toBe(0);
 	});
 
-	test('Should return undefined when node not found', () => {
+	it('Should return undefined when node not found', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend(3).prepend(2).prepend(1);
 		expect(linkedList.find(4)).toBeUndefined();
@@ -138,7 +138,7 @@ describe('LinkedList', () => {
 		expect(linkedList.find(6)).toBeUndefined();
 	});
 
-	test('Should retrieve values by index', () => {
+	it('Should retrieve values by index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -153,7 +153,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(6).data).toBe('sentence.');
 	});
 
-	test('Should return undefined for indexes outside of range', () => {
+	it('Should return undefined for indexes outside of range', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -167,7 +167,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(7)).toBeUndefined();
 	});
 
-	test('Should delete a node, given an index', () => {
+	it('Should delete a node, given an index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -197,7 +197,7 @@ describe('LinkedList', () => {
 		expect(linkedList.get(linkedList.length - 1).data).toBe('a');
 	});
 
-	test('Should not be able to access head or tail after deleting a single node Linked List', () => {
+	it('Should not be able to access head or tail after deleting a single node Linked List', () => {
 		const linkedList = new LinkedList();
 		linkedList.prepend('data');
 		expect(linkedList.length).toBe(1);
@@ -210,7 +210,7 @@ describe('LinkedList', () => {
 		expect(linkedList.tail).toBe(null);
 	});
 
-	test('Should change head after deletion', () => {
+	it('Should change head after deletion', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2);
 		expect(linkedList.head.data).toBe(0);
@@ -221,7 +221,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.prev).toBe(null);
 	});
 
-	test('Should change tail after deletion', () => {
+	it('Should change tail after deletion', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2);
 		expect(linkedList.tail.data).toBe(2);
@@ -239,7 +239,7 @@ describe('LinkedList', () => {
 		expect(linkedList.length).toBe(1);
 	});
 
-	test('Head and tail should be equivalent after deleting down to 1 node', () => {
+	it('Head and tail should be equivalent after deleting down to 1 node', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1);
 		expect(linkedList.head.prev).toBe(null);
@@ -261,7 +261,7 @@ describe('LinkedList', () => {
 		expect(linkedList.head.data).toBe(linkedList.tail.data);
 	});
 
-	test('Should be traversable forward and backward after a deletion', () => {
+	it('Should be traversable forward and backward after a deletion', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
 		linkedList.delete(3);
@@ -278,7 +278,7 @@ describe('LinkedList', () => {
 		expect(linkedList.tail.prev.prev.prev.prev.data).toBe(0);
 	});
 
-	test('Should return undefined for deletions outside of index', () => {
+	it('Should return undefined for deletions outside of index', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend('sentence.')
@@ -292,7 +292,7 @@ describe('LinkedList', () => {
 		expect(linkedList.delete(7)).toBeUndefined();
 	});
 
-	test('Should allow chaining of methods', () => {
+	it('Should allow chaining of methods', () => {
 		const linkedList = new LinkedList();
 		linkedList
 			.prepend(0)
@@ -305,14 +305,14 @@ describe('LinkedList', () => {
 		expect(linkedList.get(2).data).toBe(2);
 	});
 
-	test('Should return an array', () => {
+	it('Should return an array', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
 		const array = linkedList.toArray();
 		expect(Array.isArray(array)).toBe(true);
 	});
 
-	test('Should return an array of correct length', () => {
+	it('Should return an array of correct length', () => {
 		const linkedList = new LinkedList();
 		let array = linkedList.toArray();
 		expect(array.length).toBe(0);
@@ -322,7 +322,7 @@ describe('LinkedList', () => {
 		expect(array.length).toBe(6);
 	});
 
-	test('Should return an array in which the values match the original linked list', () => {
+	it('Should return an array in which the values match the original linked list', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
 		array = linkedList.toArray();

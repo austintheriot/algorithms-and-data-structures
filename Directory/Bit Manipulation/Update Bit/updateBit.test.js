@@ -18,7 +18,7 @@ const $1101 = 13;
 const $1110 = 14;
 const $1111 = 15;
 
-test('Clear bit,', () => {
+it('Clear bit,', () => {
 	//7 === 0111
 	number = 7;
 	expect(updateBit(number, 0, 0)).toBe($0110);

@@ -1,6 +1,6 @@
 const setBit = require('./setBit.solution');
 
-test('Set bit,', () => {
+it('Set bit,', () => {
 	//1 === 0001
 	let number = 1;
 	expect(setBit(number, 0)).toBe(1); //0001

@@ -1,6 +1,6 @@
 const getBit = require('./getBit.solution');
 
-test('Get bit (zero based),', () => {
+it('Get bit (zero based),', () => {
 	//1 === 0001
 	let number = 1;
 	expect(getBit(number, 0)).toBeTruthy(); //1s place
