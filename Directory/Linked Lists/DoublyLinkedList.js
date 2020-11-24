@@ -9,8 +9,8 @@
 //toArray(){} //create array filled with node data
 
 class LinkedList {
-	//tail
 	//head
+	//tail
 	//length
 }
 
