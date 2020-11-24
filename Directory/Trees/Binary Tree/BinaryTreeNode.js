@@ -1,4 +1,4 @@
-module.exports = class BinaryTreeNode {
-	//setLeftNode(){}
-	//setRightNode(){}
-};
+// setLeft(node){}
+// setRight(node){}
+
+module.exports = class BinaryTreeNode {};
