@@ -5,4 +5,4 @@
 //peek()
 //isEmpty()
 
-class LinkedList {}
+module.exports = class Queue {};
