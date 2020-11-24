@@ -19,50 +19,48 @@ const $1110 = 14;
 const $1111 = 15;
 
 it('Clear bit,', () => {
-	//1 === 0001
-	let number = 1;
+	let number = $0001;
 	expect(clearBit(number, 0)).toBe($0000);
 	expect(clearBit(number, 1)).toBe($0001);
 	expect(clearBit(number, 2)).toBe($0001);
 	expect(clearBit(number, 3)).toBe($0001);
 
-	//2 === 0010
-	number = 2;
+	number = $0010;
 	expect(clearBit(number, 0)).toBe($0010);
 	expect(clearBit(number, 1)).toBe($0000);
 	expect(clearBit(number, 2)).toBe($0010);
 	expect(clearBit(number, 3)).toBe($0010);
 
 	//3 === 0011
-	number = 3;
+	number = $0011;
 	expect(clearBit(number, 0)).toBe($0010);
 	expect(clearBit(number, 1)).toBe($0001);
 	expect(clearBit(number, 2)).toBe($0011);
 	expect(clearBit(number, 3)).toBe($0011);
 
 	//4 === 0100
-	number = 4;
+	number = $0100;
 	expect(clearBit(number, 0)).toBe($0100);
 	expect(clearBit(number, 1)).toBe($0100);
 	expect(clearBit(number, 2)).toBe($0000);
 	expect(clearBit(number, 3)).toBe($0100);
 
 	//5 === 0101
-	number = 5;
+	number = $0101;
 	expect(clearBit(number, 0)).toBe($0100);
 	expect(clearBit(number, 1)).toBe($0101);
 	expect(clearBit(number, 2)).toBe($0001);
 	expect(clearBit(number, 3)).toBe($0101);
 
 	//6 === 0110
-	number = 6;
+	number = $0110;
 	expect(clearBit(number, 0)).toBe($0110);
 	expect(clearBit(number, 1)).toBe($0100);
 	expect(clearBit(number, 2)).toBe($0010);
 	expect(clearBit(number, 3)).toBe($0110);
 
 	//7 === 0111
-	number = 7;
+	number = $0111;
 	expect(clearBit(number, 0)).toBe($0110);
 	expect(clearBit(number, 1)).toBe($0101);
 	expect(clearBit(number, 2)).toBe($0011);

@@ -20,7 +20,7 @@ const $1111 = 15;
 
 it('Clear bit,', () => {
 	//7 === 0111
-	number = 7;
+	number = $0111;
 	expect(updateBit(number, 0, 0)).toBe($0110);
 	expect(updateBit(number, 1, 0)).toBe($0101);
 	expect(updateBit(number, 2, 0)).toBe($0011);
