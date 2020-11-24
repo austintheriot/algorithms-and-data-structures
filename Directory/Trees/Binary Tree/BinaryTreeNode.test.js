@@ -1,4 +1,4 @@
-const BinaryTreeNode = require('./BinaryTreeNode.solution');
+const BinaryTreeNode = require('./BinaryTreeNode');
 
 describe('BinaryTreeNode', () => {
 	it('Should create node', () => {
