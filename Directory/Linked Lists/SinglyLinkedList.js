@@ -1,9 +1,11 @@
-//implement a singly linked list with the following functionalities:
+//implement a singly linked list with the following functionalities:'
+//head
+//length
 
 //prepend
-//get
-//find
-//delete
+//get(index)
+//find(callbackOrValue)
+//delete(index)
 
 //return UNDEFINED for nonexistent values or indexes
 
