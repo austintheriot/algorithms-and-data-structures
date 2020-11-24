@@ -1,19 +1,19 @@
 //Implement a MinHeap using an array. Include the following functionalities:
 
-// getLeftChildIndex(){}
-// getRightChildIndex(){}
-// getParentIndex(){}
-// hasParent(){}
-// hasLeftChild(){}
-// hasRightChild(){}
-// leftChild(){}
-// rightChild(){}
-// parent(){}
-// swap(){} //index1, index2
+// getLeftChildIndex(index){}
+// getRightChildIndex(index){}
+// getParentIndex(index){}
+// hasParent(index){}
+// hasLeftChild(index){}
+// hasRightChild(index){}
+// leftChild(index){}
+// rightChild(index){}
+// parent(index){}
+// swap(index1, index2){} //index1, index2
 // heapifyUp(){} //no parameters
 // heapifyDown(){} //no parameters
 
-// insert(){} //value
+// insert(data){} //value
 // getMin(){}
 // extractMin(){}
 
