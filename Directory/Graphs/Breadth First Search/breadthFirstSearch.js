@@ -5,9 +5,8 @@ interface Node {
 } 
 */
 
+const Queue = require('../../Queues/Queue.solution');
+
 module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
-	return (search = (node) => {
-		//implement a breadth-first function here that
-		//calls the visitCallback() function for each node
-	});
+	return (search = (root) => {});
 };
