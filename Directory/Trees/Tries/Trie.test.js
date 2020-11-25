@@ -318,21 +318,21 @@ describe('Trie', () => {
 		});
 	});
 
-	describe('longestString()', () => {
+	describe('longestStringLength()', () => {
 		it('Should return the max depth of nodes in the trie', () => {
 			let trie = new Trie();
 			trie.add('hello');
 			trie.add('help');
 			trie.add('heliotrope'); //10
 			trie.add('pizza');
-			expect(trie.longestString()).toBe(10);
+			expect(trie.longestStringLength()).toBe(10);
 
 			trie = new Trie();
 			trie.add('hello');
 			trie.add('goodbye');
 			trie.add('zyxwvutsrqponmlkjihgfedcba'); //26
 			trie.add('abcdefg');
-			expect(trie.longestString()).toBe(26);
+			expect(trie.longestStringLength()).toBe(26);
 		});
 	});
 });

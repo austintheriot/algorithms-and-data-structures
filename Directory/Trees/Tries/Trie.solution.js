@@ -8,13 +8,29 @@ class Node {
 	}
 }
 
-//add(string), add word to Trie
-//findWordCount(string), find the number of complete words with that string
-//getNode(string), get node of last string value
+// add(string){}
+// getNode(string){}
+// isPrefix(string){}
+// isWord(string){}
+// howManyWordsStartWith(string){}
+// longestString(){}
 
 module.exports = class Trie {
 	constructor() {
 		this.root = new Node(); //null root
+	}
+
+	getNode(string) {
+		let currentNode = this.root;
+		for (let i = 0; i < string.length; i++) {
+			const ch = string[i];
+			if (ch in currentNode.children) {
+				currentNode = currentNode.children[ch];
+			} else {
+				return undefined;
+			}
+		}
+		return currentNode;
 	}
 
 	add(string) {
@@ -40,19 +56,6 @@ module.exports = class Trie {
 		currentNode.numberOfChildWords++;
 	}
 
-	getNode(string) {
-		let currentNode = this.root;
-		for (let i = 0; i < string.length; i++) {
-			const ch = string[i];
-			if (ch in currentNode.children) {
-				currentNode = currentNode.children[ch];
-			} else {
-				return undefined;
-			}
-		}
-		return currentNode;
-	}
-
 	isPrefix(string) {
 		let node = this.getNode(string);
 		return node ? true : false;
@@ -68,7 +71,7 @@ module.exports = class Trie {
 		return node ? node.numberOfChildWords : 0;
 	}
 
-	longestString() {
+	longestStringLength() {
 		return this.root.maxDepth;
 	}
 };
