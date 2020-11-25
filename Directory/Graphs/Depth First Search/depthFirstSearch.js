@@ -1,3 +1,10 @@
+/* 
+interface Node {
+	visited: boolean;
+	children: Node[];
+} 
+*/
+
 module.exports = makeSearchFunction = (visitCallback) => {
 	return (search = (node) => {
 		//implement a depth-first function here that
