@@ -1,4 +1,4 @@
-const isEven = require('./isEven.solution.js');
+const isEven = require('./isEven.js');
 
 for (let callback in isEven) {
 	describe(callback, () => {
