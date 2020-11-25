@@ -50,7 +50,10 @@ node24
 	.createUndirectedEdge(node30)
 	.createUndirectedEdge(node31);
 
-// //node 4 and 5 have no children
+const graph = {};
 
-// let rootNode = node0;
-// module.exports = rootNode;
+for (let i = 0; i < 34; i++) {
+	graph[`node${i}`] = global[`node${i}`];
+}
+
+module.exports = graph;
