@@ -8,5 +8,7 @@ interface Node {
 const Queue = require('../../Queues/Queue.solution');
 
 module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
-	return (search = (root) => {});
+	return (search = (root) => {
+		//implement search function here
+	});
 };
