@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 501.227 500.613" height="1892.082" width="1894.401">
+  <defs>
+    <marker id="prefix__m" refX="0" refY="0" orient="auto" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker orient="auto" refY="0" refX="0" id="prefix__l" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker id="prefix__g" refX="0" refY="0" orient="auto" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker orient="auto" refY="0" refX="0" id="prefix__h" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker id="prefix__i" refX="0" refY="0" orient="auto" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker orient="auto" refY="0" refX="0" id="prefix__j" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker id="prefix__k" refX="0" refY="0" orient="auto" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <marker id="prefix__n" refX="0" refY="0" orient="auto" overflow="visible">
+      <path d="M4 0l2-2-7 2 7 2z" fill-rule="evenodd" stroke="#000" stroke-width=".4pt" />
+    </marker>
+    <path id="prefix__a" d="M66.524 99.03h25.702v30.994H66.524z" />
+    <path id="prefix__b" d="M66.524 99.03h25.702v30.994H66.524z" />
+    <path id="prefix__c" d="M66.524 99.03h25.702v30.994H66.524z" />
+    <path id="prefix__d" d="M66.524 99.03h25.702v30.994H66.524z" />
+    <path id="prefix__e" d="M66.524 99.03h25.702v30.994H66.524z" />
+    <path id="prefix__f" d="M66.524 99.03h25.702v30.994H66.524z" />
+  </defs>
+  <g transform="translate(.613 .613)">
+    <path fill="#fff" d="M-.613-.613h501.227V500H-.613z" />
+    <circle r="26.08" cy="137.205" cx="67.658" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 -107.27 -125.458)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>0</tspan>
+      </tspan>
+    </text>
+    <circle cx="246.926" cy="136.444" r="26.08" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 71.997 -126.22)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>1</tspan>
+      </tspan>
+    </text>
+    <circle cx="420.635" cy="135.909" r="26.08" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 245.707 -126.754)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>2</tspan>
+      </tspan>
+    </text>
+    <circle cx="65.856" cy="366.977" r="26.08" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 -109.072 104.314)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>5</tspan>
+      </tspan>
+    </text>
+    <circle cx="245.857" cy="370.718" r="26.08" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 70.928 108.055)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>4</tspan>
+      </tspan>
+    </text>
+    <circle cx="428.119" cy="372.322" r="26.08" fill="none" stroke="#000" stroke-width="3.969" stroke-linecap="round"
+      stroke-linejoin="round" /><text transform="matrix(2.51103 0 0 2.51103 253.19 109.66)" font-weight="400"
+      font-size="10.583" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width=".398">
+      <tspan x="66.523" y="108.393">
+        <tspan>3</tspan>
+      </tspan>
+    </text>
+    <circle r=".397" cy="174.625" cx="68.036" />
+    <path d="M69.03 321.764l-1.4-149.846" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__g)" />
+    <path d="M216.149 340.009L90.822 168.689" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__h)" />
+    <path d="M206.897 140.116l-103.24 1.074" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__i)" />
+    <path d="M246.21 324.671l-1.4-149.846" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__j)" />
+    <path d="M285.474 134.487l99.827-.153" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__k)" />
+    <path d="M287.315 371.297l99.826-.153" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__l)" />
+    <path d="M424.124 176.818l2.895 161.197" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__m)" />
+    <path d="M399.536 338.89L274.209 167.57" fill="none" stroke="#000" stroke-width="3.065"
+      marker-start="url(#prefix__n)" />
+  </g>
+</svg>

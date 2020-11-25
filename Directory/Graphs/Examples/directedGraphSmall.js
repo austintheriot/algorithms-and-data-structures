@@ -1,4 +1,4 @@
-const Node = require('./Graph');
+const Node = require('../Graph');
 
 const node0 = new Node(0);
 const node1 = new Node(1);
