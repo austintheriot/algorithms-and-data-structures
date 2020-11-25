@@ -7,6 +7,6 @@ module.exports = function addition(num1, num2) {
 	//then left shift by 1 to add in
 	const carry = (num1 & num2) << 1;
 	//if there is nothing to carry, good to go
-	//else, add the new "sum" and the new "carry"
+	//else, add the new "sum" and the new "carry" together
 	return !carry ? sum : addition(sum, carry);
 };
