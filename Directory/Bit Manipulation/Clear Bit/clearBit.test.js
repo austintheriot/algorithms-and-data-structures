@@ -1,4 +1,4 @@
-const clearBit = require('./clearBit.solution');
+const clearBit = require('./clearBit');
 
 //test comparisons
 const $0000 = 0;
