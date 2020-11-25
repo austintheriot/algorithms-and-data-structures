@@ -1,4 +1,4 @@
-const setBit = require('./setBit.solution');
+const setBit = require('./setBit');
 
 it('Set bit,', () => {
 	//1 === 0001

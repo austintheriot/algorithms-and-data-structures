@@ -1,4 +1,4 @@
-const getBit = require('./getBit.solution');
+const getBit = require('./getBit');
 
 it('Get bit (zero based),', () => {
 	//1 === 0001

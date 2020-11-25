@@ -1,4 +1,4 @@
-const updateBit = require('./updateBit.solution');
+const updateBit = require('./updateBit');
 
 //test comparisons
 const $0000 = 0;
