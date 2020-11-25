@@ -1,4 +1,4 @@
-const makeSearchFunction = require('./depthFirstSearch.solution');
+const makeSearchFunction = require('./depthFirstSearch');
 const exampleRootNode = require('../graphExample');
 
 let array;
