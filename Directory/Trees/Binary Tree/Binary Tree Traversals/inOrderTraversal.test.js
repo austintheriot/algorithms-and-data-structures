@@ -1,0 +1,13 @@
+const makeInOrderTraversalFunction = require('./inOrderTraversal');
+const perfectBinarySearchTreeRoot = require('./perfectBinarySearchTree');
+
+describe('In-Order Traversal', () => {
+	it('Should visit all nodes in the correct order', () => {
+		const arr = [];
+		const inOrderTraversal = makeInOrderTraversalFunction((data) =>
+			arr.push(data)
+		);
+		inOrderTraversal(perfectBinarySearchTreeRoot);
+		expect(arr).toEqual([1, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18]);
+	});
+});
