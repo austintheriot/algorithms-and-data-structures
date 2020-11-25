@@ -1,11 +1,5 @@
-const perfectBinarySearchTree = require('./perfectBinarySearchTree');
-
-const postOrderTraversal = (node) => {
-	if (node !== null) {
-		postOrderTraversal(node.left);
-		postOrderTraversal(node.right);
-		console.log(node.data);
-	}
+module.exports = makePostOrderTraversalFunction = (visitCallback) => {
+	return (postOrderTraversal = (node) => {
+		//Implement Post-Order Traversal Function here
+	});
 };
-
-postOrderTraversal(perfectBinarySearchTree);
