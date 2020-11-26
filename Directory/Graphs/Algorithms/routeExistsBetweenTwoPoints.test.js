@@ -5,8 +5,8 @@ const Node = require('../Graph');
 const resetGraph = (graph) => {
 	for (let node in graph) {
 		graph[node].visited = false;
-		graph[node].visitedI = false;
-		graph[node].visitedG = false;
+		graph[node].visited1 = false;
+		graph[node].visited2 = false;
 	}
 };
 
@@ -216,6 +216,27 @@ describe('Bidirectional Search', () => {
 			resetGraph(undirGL);
 			undirGL.node35 = new Node(35);
 			expect(bidirectionalSearch(undirGL.node0, undirGL.node35)).toBe(false);
+		});
+	});
+
+	describe('Directed Graph', () => {
+		it('Should return true if a path exists between two nodes', () => {
+			resetGraph(dirGL);
+			expect(bidirectionalSearch(dirGL.node0, dirGL.node17)).toBe(true);
+
+			resetGraph(dirGL);
+			expect(bidirectionalSearch(dirGL.node17, dirGL.node0)).toBe(true);
+
+			resetGraph(dirGL);
+			expect(bidirectionalSearch(dirGL.node16, dirGL.node21)).toBe(true);
+		});
+
+		it('Should return false if a path does not exist between two nodes', () => {
+			resetGraph(dirGL);
+			expect(bidirectionalSearch(dirGL.node20, dirGL.node1)).toBe(false);
+
+			resetGraph(dirGL);
+			expect(bidirectionalSearch(dirGL.node4, dirGL.node9)).toBe(false);
 		});
 	});
 });
