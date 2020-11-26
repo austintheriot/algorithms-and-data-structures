@@ -30,14 +30,14 @@ const BFS = (xI, xG) => {
 };
 
 //Depth First Search (using a stack)
-const DFS = (xI, xG) => {
+const DFS = (startNode, endNode) => {
 	const stack = [];
-	xI.visited = true;
-	stack.push(xI);
+	startNode.visited = true;
+	stack.push(startNode);
 
 	while (stack.length !== 0) {
 		const poppedNode = stack.pop();
-		if (poppedNode === xG) return true;
+		if (poppedNode === endNode) return true;
 		for (let child of poppedNode.children) {
 			if (child.visited === false) {
 				child.visited = true;
