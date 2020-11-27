@@ -16,4 +16,10 @@ describe('Merge Sort', () => {
 		arr = [1];
 		expect(mergeSort(arr)).toEqual([1]);
 	});
+
+	it('Should not modify the original array,', () => {
+		let arr = [5, 4, 3, 2, 1, 0];
+		let sortedArr = mergeSort(arr);
+		expect(sortedArr).not.toBe(arr);
+	});
 });
