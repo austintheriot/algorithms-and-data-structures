@@ -9,6 +9,27 @@ describe('Trie', () => {
 		expect(trie.root.isCompleteWord).toBe(false);
 	});
 
+	describe('getNode()', () => {
+		it('Should return node corresponding to last character', () => {
+			const trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+
+			let currentNode = trie.root;
+			currentNode = currentNode.children['h'];
+			currentNode = currentNode.children['e'];
+			currentNode = currentNode.children['l'];
+			expect(trie.getNode('hel')).toBe(currentNode);
+		});
+
+		it('Should return undefined for nonexistent nodes', () => {
+			const trie = new Trie();
+			trie.add('hello');
+
+			expect(trie.getNode('goodbye')).toBe(undefined);
+		});
+	});
+
 	describe('add()', () => {
 		it('Should add node to children {} for each character node in Trie', () => {
 			const trie = new Trie();
@@ -216,27 +237,6 @@ describe('Trie', () => {
 
 			let currentNode = trie.root;
 			expect(currentNode.numberOfChildWords).toBe(1);
-		});
-	});
-
-	describe('getNode()', () => {
-		it('Should return node corresponding to last character', () => {
-			const trie = new Trie();
-			trie.add('hello');
-			trie.add('help');
-
-			let currentNode = trie.root;
-			currentNode = currentNode.children['h'];
-			currentNode = currentNode.children['e'];
-			currentNode = currentNode.children['l'];
-			expect(trie.getNode('hel')).toBe(currentNode);
-		});
-
-		it('Should return undefined for nonexistent nodes', () => {
-			const trie = new Trie();
-			trie.add('hello');
-
-			expect(trie.getNode('goodbye')).toBe(undefined);
 		});
 	});
 
