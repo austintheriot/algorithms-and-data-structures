@@ -1,4 +1,4 @@
-const mergeSort = require('./mergeSort.solution');
+const mergeSort = require('./mergeSort');
 
 describe('Merge Sort', () => {
 	it('Should sort a given array from lowest highest', () => {
