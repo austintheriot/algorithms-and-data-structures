@@ -1,1 +1,1 @@
-module.exports = (originalArray) => {};
+module.exports = function mergeSort(originalArray) {};
