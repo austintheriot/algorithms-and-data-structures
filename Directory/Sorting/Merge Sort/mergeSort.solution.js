@@ -1,36 +1,46 @@
-const mergeSort = (originalArray) => {
+const merge = (leftArray, rightArray) => {
 	let sortedArray = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
+	//start with leftmost element on both arrays
+	//find the minimum element between the two arrays,
+	//move from array into sortedArray
+	//shift the index pointer to the right
+	while (leftIndex < leftArray.length && rightIndex < rightArray.length) {
+		if (leftArray[leftIndex] < rightArray[rightIndex]) {
+			sortedArray.push(leftArray[leftIndex]);
+			leftIndex++; //move left cursor over
+		} else {
+			sortedArray.push(rightArray[rightIndex]);
+			rightIndex++; //move right cursor over
+		}
+	}
+
+	//there will be one element remaining from either the left OR the right
+	return sortedArray
+		.concat(leftArray.slice(leftIndex))
+		.concat(rightArray.slice(rightIndex));
+};
+
+const mergeSort = (unsortedArray) => {
 	//recursive escape case:
 	//array of size 0 or 1 are already sorted
-	if (originalArray.length <= 1) return originalArray;
+	if (unsortedArray.length <= 1) return unsortedArray;
 
 	//split array in half
-	const middleIndex = Math.floor(originalArray.length / 2);
-	const leftArrayUnsorted = originalArray.slice(0, middleIndex);
-	const rightArrayUnsorted = originalArray.slice(middleIndex);
+	const middleIndex = Math.floor(unsortedArray.length / 2);
+	const unsortedLeftArray = unsortedArray.slice(0, middleIndex);
+	const unsortedRightArray = unsortedArray.slice(middleIndex);
 
 	//if length is greater than 1
 	//split array into subarrays and merge together in sorted order
-	const leftArray = mergeSort(leftArrayUnsorted);
-	const rightArray = mergeSort(rightArrayUnsorted);
-
+	const sortedLeftArray = mergeSort(unsortedLeftArray);
+	const sortedRightArray = mergeSort(unsortedRightArray);
 	//recursively returned array halves are now sorted
 
-	//should not try to sort arrays of length 0
-	//find the minimum element between the two arrays,
-	//move from array into sortedArray
-	while (leftArray.length && rightArray.length) {
-		let minimumElement =
-			leftArray[0] < rightArray[0] ? leftArray.shift() : rightArray.shift();
-		sortedArray.push(minimumElement);
-	}
-
-	//one of the two arrays may still have elements remaining
-	//add them into the sorted array
-	if (leftArray.length) sortedArray = sortedArray.concat(leftArray);
-	if (rightArray.length) sortedArray = sortedArray.concat(rightArray);
-	return sortedArray;
+	//merge them together in correct sorted order
+	return merge(sortedLeftArray, sortedRightArray);
 };
 
 module.exports = mergeSort;
