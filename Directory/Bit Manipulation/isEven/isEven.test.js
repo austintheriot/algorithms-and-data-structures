@@ -2,7 +2,7 @@ const isEven = require('./isEven.js');
 
 for (let callback in isEven) {
 	describe(callback, () => {
-		it(`Should return 1 if even`, () => {
+		it(`Should be truthy if even`, () => {
 			expect(isEven[callback](-14218)).toBeTruthy();
 			expect(isEven[callback](-254)).toBeTruthy();
 			expect(isEven[callback](-12)).toBeTruthy();
@@ -15,7 +15,7 @@ for (let callback in isEven) {
 			expect(isEven[callback](1054130)).toBeTruthy();
 		});
 
-		it(`Should return 0 if odd`, () => {
+		it(`Should be falsy if odd`, () => {
 			expect(isEven[callback](-14217)).toBeFalsy();
 			expect(isEven[callback](-253)).toBeFalsy();
 			expect(isEven[callback](-11)).toBeFalsy();
