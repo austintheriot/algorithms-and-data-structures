@@ -1,6 +1,6 @@
 const selectionSort = require('./selectionSort');
 
-describe('Merge Sort', () => {
+describe('Selection Sort', () => {
 	it('Should sort a given array from lowest highest', () => {
 		let arr = [10, 1, 4, 9, 7, 3];
 		expect(selectionSort(arr)).toEqual([1, 3, 4, 7, 9, 10]);
