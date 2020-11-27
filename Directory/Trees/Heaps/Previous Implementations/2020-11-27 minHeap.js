@@ -22,11 +22,17 @@ module.exports = class MinHeap {
 		this.array = [];
 	}
 
-	getLeftChildIndex(index) {}
+	getLeftChildIndex(index) {
+		return 2 * index + 1;
+	}
 
-	getRightChildIndex(index) {}
+	getRightChildIndex(index) {
+		return 2 * index + 2;
+	}
 
-	getParentIndex(index) {}
+	getParentIndex(index) {
+		return Math.floor((index - 1) / 2);
+	}
 
 	hasParent(index) {
 		const parentIndex = this.getParentIndex(index);
@@ -65,13 +71,56 @@ module.exports = class MinHeap {
 		return this;
 	}
 
-	heapifyUp() {}
+	heapifyUp() {
+		let currentIndex = this.array.length - 1;
+		while (this.hasParent(currentIndex)) {
+			let parentIndex = this.getParentIndex(currentIndex);
+			if (this.parent(currentIndex) > this.array[currentIndex]) {
+				this.swap(currentIndex, parentIndex);
+				currentIndex = parentIndex;
+			} else break;
+		}
+		return this;
+	}
 
-	heapifyDown() {}
+	heapifyDown() {
+		let currentIndex = 0;
 
-	insert(number) {}
+		while (this.hasLeftChild(currentIndex)) {
+			let smallestIndex = currentIndex;
+			smallestIndex =
+				this.leftChild(currentIndex) < this.array[currentIndex]
+					? this.getLeftChildIndex(currentIndex)
+					: currentIndex;
 
-	getMin() {}
+			if (this.hasRightChild(currentIndex)) {
+				smallestIndex =
+					this.rightChild(currentIndex) < this.array[smallestIndex]
+						? this.getRightChildIndex(currentIndex)
+						: smallestIndex;
+			}
 
-	extractMin() {}
+			if (smallestIndex === currentIndex) break;
+
+			this.swap(currentIndex, smallestIndex);
+			currentIndex = smallestIndex;
+		}
+	}
+
+	insert(number) {
+		this.array.push(number);
+		this.heapifyUp();
+		return this;
+	}
+
+	getMin() {
+		return this.array[0];
+	}
+
+	extractMin() {
+		const min = this.array[0];
+		this.array[0] = this.array.pop();
+		this.heapifyDown();
+		return min;
+	}
 };
