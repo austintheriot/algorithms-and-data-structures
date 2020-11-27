@@ -334,5 +334,14 @@ describe('Trie', () => {
 			trie.add('abcdefg');
 			expect(trie.longestStringLength()).toBe(26);
 		});
+
+		it('Should include the end node', () => {
+			let trie = new Trie();
+			trie.add('hello');
+			trie.add('help');
+			trie.add('heliotrope');
+			trie.add('pizza');
+			expect(trie.getNode('heliotrope').maxDepth).toBe(1);
+		});
 	});
 });
