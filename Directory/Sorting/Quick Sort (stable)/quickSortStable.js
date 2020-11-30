@@ -2,21 +2,25 @@
 //do the wrapping automatically (without wrapping each object beforehand)
 //track placement of each item (so that they do not need to be next to each other)
 
-function groupDuplicates(arr, callback) {
+function groupDuplicates(arr, callback = (el) => el) {
+	//create a temporary container to hold array values
 	let tempContainer = new Map();
-	let finalArr = [];
 
+	//wrap duplicate elements in an array
+	//store these wrapper arrays in a temporary Map
 	for (let i = 0; i < arr.length; i++) {
+		//create a Map address out of the array value
 		let address = callback(arr[i])?.toString();
+		//if the address doesn't yet exist in the container
+		//create an array at that address
 		if (!tempContainer.has(address)) tempContainer.set(address, []);
+		//add the array value to the selected array
 		let wrapperArray = tempContainer.get(address);
 		wrapperArray.push(arr[i]);
 	}
 
-	for (let keyValues of tempContainer) {
-		finalArr.push(keyValues[1]);
-	}
-	return finalArr;
+	//convert map into array
+	return Array.from(tempContainer.values());
 }
 
 function flattenArray(arr) {
