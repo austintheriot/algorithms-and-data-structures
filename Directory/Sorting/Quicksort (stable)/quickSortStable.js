@@ -1,6 +1,10 @@
-//for better performance overall:
-//do the wrapping automatically (without wrapping each object beforehand)
-//track placement of each item (so that they do not need to be next to each other)
+//Performance Improvement Idea:
+//Just store the comparison value and indices of the original array at each location in a Map
+//Afterward, to "unpack the list", iterate through the Map,
+//copying the elements of the original array into a new array in order
+//this prevents the needless copying of values TWICE (only requires it once)
+//OR, better yet, find a way to reorder array in place:
+//make swaps in the original array until everything is sorted
 
 function groupDuplicates(arr, callback = (el) => el) {
 	//create a temporary container to hold array values
