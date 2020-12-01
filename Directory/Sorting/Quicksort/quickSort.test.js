@@ -1,6 +1,6 @@
 const quickSort = require('./quickSort');
 
-describe('Merge Sort', () => {
+describe('Quick Sort', () => {
 	it('Should sort in place', () => {
 		let arr = [-10, 1, -4, 9, 7, 3];
 		expect(quickSort(arr, 0, arr.length - 1)).toBe(arr);
