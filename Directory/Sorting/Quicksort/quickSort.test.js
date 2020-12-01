@@ -6,7 +6,7 @@ describe('Quick Sort', () => {
 		expect(quickSort(arr, 0, arr.length - 1)).toBe(arr);
 	});
 
-	it('Should not throw error on edge cases,', () => {
+	it('Should successfully sort edge cases,', () => {
 		let arr = [];
 		expect(quickSort(arr, 0, arr.length - 1)).toEqual([]);
 

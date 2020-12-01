@@ -9,7 +9,7 @@ describe('Merge Sort', () => {
 		expect(radixSort(arr)).toEqual([4, 5, 6, 7, 8, 8, 9]);
 	});
 
-	it('Should not throw error on edge cases,', () => {
+	it('Should successfully sort edge cases,', () => {
 		let arr = [];
 		expect(radixSort(arr)).toEqual([]);
 
