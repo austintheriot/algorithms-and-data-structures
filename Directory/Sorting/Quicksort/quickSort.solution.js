@@ -179,7 +179,7 @@ function partition(arr, low, high) {
 	}
 }
 
-module.exports = function quickSort(arr, low, high) {
+function quickSort(arr, low, high) {
 	if (low < high) {
 		let partitionIndex = partition(arr, low, high);
 
@@ -189,4 +189,8 @@ module.exports = function quickSort(arr, low, high) {
 		quickSort(arr, partitionIndex + 1, high);
 	}
 	return arr;
+}
+
+module.exports = function runQuickSort(arr) {
+	quickSort(arr, 0, arr.length - 1);
 };
