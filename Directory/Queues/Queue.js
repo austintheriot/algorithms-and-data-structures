@@ -5,5 +5,6 @@
 //remove(){}
 //peek(){}
 //isEmpty(){}
+const LinkedList = require('../Linked Lists/DoublyLinkedList.solution');
 
 module.exports = class Queue {};
