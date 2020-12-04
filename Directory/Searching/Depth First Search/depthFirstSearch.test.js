@@ -1,5 +1,5 @@
 const makeSearchFunction = require('./depthFirstSearch');
-const exampleRootNode = require('../Examples/directedGraphSmall');
+const exampleRootNode = require('../../Graphs/Examples/directedGraphSmall');
 
 let array;
 let visit;

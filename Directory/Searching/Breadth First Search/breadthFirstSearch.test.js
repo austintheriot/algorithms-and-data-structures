@@ -1,4 +1,4 @@
-const exampleRootNode = require('../Examples/directedGraphSmall');
+const exampleRootNode = require('../../Graphs/Examples/directedGraphSmall');
 const makeBreadthFirstSearchFunction = require('./breadthFirstSearch');
 
 let array;
