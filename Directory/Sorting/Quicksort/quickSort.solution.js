@@ -87,8 +87,6 @@ partition = (A, lo, hi) => {
 	return i;
 };
 
-module.exports = quickSort;
-
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -127,7 +125,7 @@ partition = (array, lowIndex, hiIndex) => {
 
 //Hoare Partition Scheme (Original syntax)
 
-function partition(arr, low, high) {
+partition = (arr, low, high) => {
 	let pivot = arr[low];
 	let i = low - 1,
 		j = high + 1;
@@ -142,9 +140,9 @@ function partition(arr, low, high) {
 		if (i >= j) return j;
 		[arr[i], arr[j]] = [arr[j], arr[i]];
 	}
-}
+};
 
-module.exports = function quickSort(arr, low, high) {
+quickSort = (arr, low, high) => {
 	if (low < high) {
 		let pi = partition(arr, low, high);
 		quickSort(arr, low, pi);
@@ -162,8 +160,8 @@ module.exports = function quickSort(arr, low, high) {
 
 //Hoare Partition Scheme (Legible Syntax)
 
-function partition(arr, low, high) {
-	let pivot = arr[low];
+partition = (arr, low, high) => {
+	let pivot = arr[Math.floor((high + low) / 2)];
 	let i = low - 1;
 	j = high + 1;
 
@@ -177,9 +175,8 @@ function partition(arr, low, high) {
 		if (i >= j) return j;
 		[arr[i], arr[j]] = [arr[j], arr[i]];
 	}
-}
-
-function quickSort(arr, low, high) {
+};
+quickSort = (arr, low, high) => {
 	if (low < high) {
 		let partitionIndex = partition(arr, low, high);
 
@@ -189,8 +186,8 @@ function quickSort(arr, low, high) {
 		quickSort(arr, partitionIndex + 1, high);
 	}
 	return arr;
-}
+};
 
 module.exports = function runQuickSort(arr) {
-	quickSort(arr, 0, arr.length - 1);
+	return quickSort(arr, 0, arr.length - 1);
 };
