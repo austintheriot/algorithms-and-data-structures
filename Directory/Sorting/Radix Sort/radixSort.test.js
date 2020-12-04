@@ -1,7 +1,7 @@
 const radixSort = require('./radixSort');
 
-describe('Merge Sort', () => {
-	it('Should sort a given array from lowest highest', () => {
+describe('Radix Sort', () => {
+	it('Should sort an array of integers from lowest highest', () => {
 		let arr = [10, 1, 4, 9, 7, 3];
 		expect(radixSort(arr)).toEqual([1, 3, 4, 7, 9, 10]);
 
