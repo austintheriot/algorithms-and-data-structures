@@ -7,6 +7,11 @@ interface Node {
 
 module.exports = makeSearchFunction = (visitCallback) => {
 	return (search = (node) => {
-		//implement here
+		if (node == null) return;
+		node.visited = true;
+		visitCallback(node);
+		for (let child of node.children) {
+			if (!child.visited) search(child);
+		}
 	});
 };
