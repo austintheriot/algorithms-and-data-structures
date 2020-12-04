@@ -9,6 +9,6 @@ const Queue = require('../../Queues/Queue.solution');
 
 module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
 	return (search = (root) => {
-		//implement search function here
+		//implement here
 	});
 };
