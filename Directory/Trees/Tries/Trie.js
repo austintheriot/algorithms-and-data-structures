@@ -7,7 +7,7 @@
 // isPrefix(string){}
 // isWord(string){}
 // howManyWordsStartWith(string){}
-// longestString(){}
+// longestStringLength(){}
 
 class Node {
 	constructor(value) {
