@@ -8,8 +8,8 @@ let depthFirstSearch;
 describe('Depth-First Search (DFS)', () => {
 	beforeEach(() => {
 		array = [];
-		visit = (data) => {
-			array.push(data);
+		visit = (node) => {
+			array.push(node.data);
 		};
 		depthFirstSearch = makeSearchFunction(visit);
 	});

@@ -8,8 +8,8 @@ let breadthFirstSearch;
 describe('Breadth-First Search (BFS)', () => {
 	beforeEach(() => {
 		array = [];
-		visitCallback = (data) => {
-			array.push(data);
+		visitCallback = (node) => {
+			array.push(node.data);
 		};
 		breadthFirstSearch = makeBreadthFirstSearchFunction(visitCallback);
 	});

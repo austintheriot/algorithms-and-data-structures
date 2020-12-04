@@ -3,7 +3,7 @@ module.exports = makePostOrderTraversalFunction = (visitCallback) => {
 		if (node !== null) {
 			postOrderTraversal(node.left);
 			postOrderTraversal(node.right);
-			visitCallback(node.data);
+			visitCallback(node);
 		}
 	});
 };

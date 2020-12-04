@@ -3,7 +3,7 @@ module.exports = makeSearchFunction = (visitCallback) => {
 		//implement a depth-first function here that
 		//calls the visitCallback() function for each node
 		if (node === null) return;
-		visitCallback(node.data);
+		visitCallback(node);
 		node.visited = true;
 		for (const child of node.children) {
 			if (child.visited === false) {
