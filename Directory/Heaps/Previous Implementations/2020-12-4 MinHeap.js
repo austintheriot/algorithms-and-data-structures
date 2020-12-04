@@ -73,12 +73,11 @@ module.exports = class MinHeap {
 
 	heapifyUp() {
 		let currentIndex = this.array.length - 1;
+
 		while (this.hasParent(currentIndex)) {
-			let parentIndex = this.getParentIndex(currentIndex);
-			if (this.parent(currentIndex) > this.array[currentIndex]) {
-				this.swap(currentIndex, parentIndex);
-				currentIndex = parentIndex;
-			} else break;
+			if (this.parent(currentIndex) < this.array[currentIndex]) return this;
+			this.swap(currentIndex, this.getParentIndex(currentIndex));
+			currentIndex = this.getParentIndex(currentIndex);
 		}
 		return this;
 	}
@@ -119,7 +118,8 @@ module.exports = class MinHeap {
 
 	extractMin() {
 		const min = this.array[0];
-		this.array[0] = this.array.pop();
+		let lastEl = this.array.pop();
+		this.array[0] = lastEl;
 		this.heapifyDown();
 		return min;
 	}
