@@ -16,5 +16,6 @@ module.exports = function getDigit(num, i) {
 	//num / 10**1 -----> num / 10 ----> 432.1
 	//num % 10 ----> 2.1
 	//Math.floor(num) ---> 2
-	return Math.floor((Math.abs(num) / 10 ** i) % 10);
+	let sign = num < 0 ? -1 : 1; //makes it work for negative numbers too
+	return Math.floor((Math.abs(num) / 10 ** i) % 10) * sign;
 };
