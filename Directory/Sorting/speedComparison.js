@@ -1,12 +1,13 @@
+const { performance } = require('perf_hooks');
 const ARRAY_LENGTH = 7500;
 const quicksort = require('./Quicksort/quickSort');
 const quicksortStable = require('./Quicksort (stable)/quickSortStable');
 
 function getTimeDiff(sort, arr) {
 	arrCopy = [...arr];
-	let startTime1 = new Date();
+	let startTime1 = performance.now();
 	sort(arrCopy);
-	let endTime1 = new Date();
+	let endTime1 = performance.now();
 	return endTime1 - startTime1;
 }
 
