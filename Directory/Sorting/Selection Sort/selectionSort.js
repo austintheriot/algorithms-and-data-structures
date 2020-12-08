@@ -1,1 +1,1 @@
-module.exports = (array) => {};
+module.exports = () => {};
