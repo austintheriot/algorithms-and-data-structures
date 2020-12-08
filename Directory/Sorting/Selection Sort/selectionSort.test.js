@@ -17,9 +17,11 @@ describe('Selection Sort', () => {
 		expect(selectionSort(arr)).toEqual([1]);
 	});
 
-	it('Should not modify the original array,', () => {
+	it('Should modify the original array,', () => {
 		let arr = [5, 4, 3, 2, 1, 0];
+		let arrCopy = [...arr];
 		let sortedArr = selectionSort(arr);
-		expect(sortedArr).not.toBe(arr);
+		expect(sortedArr).toBe(arr);
+		expect(arr).not.toEqual(arrCopy);
 	});
 });
