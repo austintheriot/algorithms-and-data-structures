@@ -1,26 +1,25 @@
-const mergeSort = require('./mergeSort');
+const sort = require('./mergeSort');
+const testUtils = require('../../../utils/testUtils');
 
 describe('Merge Sort', () => {
 	it('Should sort a given array from lowest highest', () => {
-		let arr = [-10, 1, -4, 9, 7, 3];
-		expect(mergeSort(arr)).toEqual([-10, -4, 1, 3, 7, 9]);
-
-		arr = [-8.8, 0, 6, -1, 5, 8, 4, -5.4, 7, 9, 8];
-		expect(mergeSort(arr)).toEqual([-8.8, -5.4, -1, 0, 4, 5, 6, 7, 8, 8, 9]);
+		testUtils.testPositiveIntegerSorting(sort);
+		testUtils.testIntegerSorting(sort);
+		testUtils.testDecimalSorting(sort);
 	});
 
 	it('Should successfully sort edge cases,', () => {
 		let arr = [];
-		expect(mergeSort(arr)).toEqual([]);
+		expect(sort(arr)).toEqual([]);
 
 		arr = [1];
-		expect(mergeSort(arr)).toEqual([1]);
+		expect(sort(arr)).toEqual([1]);
 	});
 
 	it('Should not modify the original array,', () => {
 		let arr = [5, 4, 3, 2, 1, 0];
 		let originalArrCopy = [...arr];
-		let sortedArr = mergeSort(arr);
+		let sortedArr = sort(arr);
 		expect(sortedArr).not.toBe(arr);
 		expect(arr).toEqual(originalArrCopy);
 	});
