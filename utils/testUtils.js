@@ -18,15 +18,15 @@ function makeArray(type, arrayLength) {
 		case 'positiveInteger':
 			return new Array(arrayLength)
 				.fill(0)
-				.map(() => Math.floor(Math.random() * arrayLength));
+				.map(() => Math.floor(Math.random() * 10000));
 		case 'integer':
 			return new Array(arrayLength)
 				.fill(0)
-				.map(() => Math.floor(Math.random() * arrayLength) - arrayLength / 2);
+				.map(() => Math.floor(Math.random() * 10000) - 5000);
 		case 'decimal':
 			return new Array(arrayLength)
 				.fill(0)
-				.map(() => Math.random() * arrayLength - arrayLength / 2);
+				.map(() => Math.random() * 10000 - 5000);
 		default:
 			return new Array(arrayLength).fill(0).map(() => Math.random());
 	}
