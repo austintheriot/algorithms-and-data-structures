@@ -16,4 +16,12 @@ describe('Bubble Sort', () => {
 		arr = [1];
 		expect(bubbleSort(arr)).toEqual([1]);
 	});
+
+	it('Should modify the original array,', () => {
+		let arr = [5, 4, 3, 2, 1, 0];
+		let arrCopy = [...arr];
+		let sortedArr = bubbleSort(arr);
+		expect(sortedArr).toBe(arr);
+		expect(arr).not.toEqual(arrCopy);
+	});
 });
