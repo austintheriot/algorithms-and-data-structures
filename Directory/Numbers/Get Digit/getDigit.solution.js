@@ -2,8 +2,7 @@
 //return 0 for out of range indixes
 
 function countDigits(num) {
-	if (num === 0) return 1;
-	return Math.floor(Math.log10(Math.abs(num))) + 1;
+	return num === 0 ? 1 : Math.floor(Math.log10(Math.abs(num))) + 1;
 }
 
 module.exports = function getDigit(num, i) {
