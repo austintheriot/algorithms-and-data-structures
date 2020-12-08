@@ -1,3 +1,3 @@
-function quickSort(arr, low, high) {}
+function quickSort() {}
 
 module.exports = quickSort;
