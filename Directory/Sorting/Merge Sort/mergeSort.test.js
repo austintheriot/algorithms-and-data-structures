@@ -19,7 +19,9 @@ describe('Merge Sort', () => {
 
 	it('Should not modify the original array,', () => {
 		let arr = [5, 4, 3, 2, 1, 0];
+		let originalArrCopy = [...arr];
 		let sortedArr = mergeSort(arr);
 		expect(sortedArr).not.toBe(arr);
+		expect(arr).toEqual(originalArrCopy);
 	});
 });
