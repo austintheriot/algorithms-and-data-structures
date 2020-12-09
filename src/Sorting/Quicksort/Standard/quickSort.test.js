@@ -1,5 +1,5 @@
 const sort = require('./quickSort');
-const testUtils = require('../../../utils/testUtils');
+const testUtils = require('../../../../utils/testUtils');
 
 describe('Quick Sort', () => {
 	it('Should sort in place', () => {
