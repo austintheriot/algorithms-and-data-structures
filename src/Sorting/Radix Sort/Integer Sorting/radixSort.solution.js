@@ -1,3 +1,6 @@
+const countDigits = require('../../../Numbers/Count Digits/countDigits.solution');
+const getDigit = require('../../../Numbers/Get Digit/getDigit.solution');
+
 function radixSort(array) {
 	//assume all array elements are integers
 	//find the longest number or character in array:
@@ -36,20 +39,6 @@ function determineNumPasses(array) {
 		if (digitLength > maxDigitLength) maxDigitLength = digitLength;
 	}
 	return maxDigitLength;
-}
-
-//get a digit at the specified index
-function getDigit(num, i) {
-	let digitCount = countDigits(num);
-	if (i < 0 || i > digitCount - 1) return 0;
-	let sign = num < 0 ? -1 : 1;
-	return Math.floor((Math.abs(num) / 10 ** i) % 10) * sign;
-}
-
-//count the number of whole digits in a number
-function countDigits(num) {
-	if (num === 0) return 1;
-	return Math.floor(Math.log10(Math.abs(num))) + 1;
 }
 
 module.exports = radixSort;
