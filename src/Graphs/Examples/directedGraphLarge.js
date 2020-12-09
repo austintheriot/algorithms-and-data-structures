@@ -1,4 +1,4 @@
-const Node = require('../Graph');
+const Node = require('../GraphNode');
 
 //Instantiate nodes (using dynamic variable names)
 for (let i = 0; i < 34; i++) {

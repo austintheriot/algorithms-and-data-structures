@@ -1,6 +1,6 @@
 const dirGL = require('../Examples/directedGraphLarge');
 const undirGL = require('../Examples/undirectedGraphLarge');
-const Node = require('../Graph');
+const Node = require('../GraphNode');
 
 const resetGraph = (graph) => {
 	for (let node in graph) {
