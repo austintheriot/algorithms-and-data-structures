@@ -1,11 +1,25 @@
 const BinaryTreeNode = require('../BinaryTreeNode.solution');
+
+/* 
+              10
+            /    \
+           5       15
+         /  \    /    \
+        3     8  13     17
+       /|   / |  | \   |  \
+      1 4  6  9  11 14 16 18 
+*/
+
 const node0 = new BinaryTreeNode(10);
+
 const node1 = new BinaryTreeNode(5);
 const node2 = new BinaryTreeNode(15);
+
 const node3 = new BinaryTreeNode(3);
 const node4 = new BinaryTreeNode(8);
 const node5 = new BinaryTreeNode(13);
 const node6 = new BinaryTreeNode(17);
+
 const node7 = new BinaryTreeNode(1);
 const node8 = new BinaryTreeNode(4);
 const node9 = new BinaryTreeNode(6);
