@@ -2,13 +2,9 @@
 
 ## Table of Contents
 
-- [Queues](#queues)
+- [Sorting](#sorting)
   - [Table of Contents](#table-of-contents)
-  - [About](#about)
-    - [Queue](#queue)
-  - [Steps](#steps)
-  - [Runtime](#runtime)
-  - [More Info](#more-info)
+  - [More Sorting Algorithms to Study:](#more-sorting-algorithms-to-study)
 
 ## More Sorting Algorithms to Study:
 - Insertion sort
