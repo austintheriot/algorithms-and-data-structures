@@ -3,28 +3,18 @@
 //return negative integer for negative numbers
 
 function extractDecimal(num) {
-	//extract the stuff after the decimal
-	num = Number(num.toPrecision(16).toString().split('.').pop());
-	//trim off any extra zeroes
-	while (num % 10 === 0) {
-		num /= 10;
-	}
-	return num;
-}
-
-function countDecimals(num) {
-	//no need to check integer for decimals
+	//no need to convert integers
 	if (Number.isInteger(num)) return 0;
-	//get any numbers after the decimal point
-	const extractedDecimal = extractDecimal(Math.abs(num));
-	//count the number of digits
-	return Math.floor(Math.log10(extractedDecimal)) + 1;
+	return Number(num.toString().split('.').pop());
 }
 
 function getDecimal(num, i) {
-	if (i < 0 || i > countDecimals(num) - 1) return 0;
-	let sign = num < 0 ? -1 : 1;
-	return Math.floor((extractedDecimal / 10 ** i) % 10) * sign;
+	//take the only the digits that are to the right of number
+	const extractedDecimal = extractDecimal(num);
+	//return 0 for indexes out of range
+	if (i < 0 || i > extractedDecimal.toString().length - 1) return 0;
+	//get digit of decimal * multiply times the sign to return negative/positive integers
+	return Math.floor((extractedDecimal / 10 ** i) % 10) * (num < 0 ? -1 : 1);
 }
 
 module.exports = getDecimal;
