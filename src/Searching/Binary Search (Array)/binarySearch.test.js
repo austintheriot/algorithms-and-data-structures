@@ -1,7 +1,7 @@
 const search = require('./binarySearch');
 const testUtils = require('../../../utils/testUtils');
 
-describe('Binary Array Search', () => {
+describe('Binary Search (Array)', () => {
 	it('Should find the index of a number in an array', () => {
 		let arr = testUtils.makeArray('integerSorted', 100);
 		let i = testUtils.chooseRandomIndex(arr);
