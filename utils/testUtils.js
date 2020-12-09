@@ -12,6 +12,7 @@ function tryCatchWrap(sort, shuffledArray, sortedArray, functionName) {
 		throw error;
 	}
 }
+
 /**
  * Creates an array.
  * @param {string} type 'positiveInteger' | 'integer' | 'decimal' |'empty' | 'identical'
