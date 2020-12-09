@@ -1,4 +1,4 @@
-const search = require('./binarySearch');
+const search = require('./binarySearchArray');
 const testUtils = require('../../../utils/testUtils');
 
 describe('Binary Search (Array)', () => {
