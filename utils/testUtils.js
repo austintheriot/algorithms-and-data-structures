@@ -27,6 +27,10 @@ function makeArray(type, arrayLength) {
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.random() * 10000 - 5000);
+		case 'empty':
+			return [];
+		case 'identical':
+			return new Array(arrayLength).fill(100);
 		default:
 			return new Array(arrayLength).fill(0).map(() => Math.random());
 	}
@@ -56,6 +60,23 @@ const testIntegerSorting = createTestAssertion('integer', 'testIntegerSorting');
 
 const testDecimalSorting = createTestAssertion('decimal', 'testDecimalSorting');
 
+function testEdgeCases(sort) {
+	//empty array
+	let unsortedArray = [];
+	let sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testEdgeCases);
+
+	//one element array
+	unsortedArray = [];
+	sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testEdgeCases);
+
+	//identical integer array
+	unsortedArray = [100, 100, 100, 100, 100];
+	sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testEdgeCases);
+}
+
 /* EXPORTS /////////////////////////////////////////////////////////////////////////////// */
 
 module.exports = {
@@ -63,4 +84,5 @@ module.exports = {
 	testPositiveIntegerSorting,
 	testIntegerSorting,
 	testDecimalSorting,
+	testEdgeCases,
 };
