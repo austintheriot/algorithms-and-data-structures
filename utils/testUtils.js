@@ -15,7 +15,7 @@ function tryCatchWrap(sort, shuffledArray, sortedArray, functionName) {
 
 /**
  * Creates an array.
- * @param {string} type 'positiveInteger' | 'integer' | 'decimal' |'empty' | 'identical'
+ * @param {string} type 'positiveInteger' | 'integer' | 'integerSorted' | 'decimal' | 'decimalSorted' |'empty' | 'identical'
  * @param {number} arrayLength The length of the array.
  */
 function makeArray(type, arrayLength = 5) {
@@ -24,14 +24,25 @@ function makeArray(type, arrayLength = 5) {
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.floor(Math.random() * 10000));
+
 		case 'integer':
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.floor(Math.random() * 10000) - 5000);
+		case 'integerSorted':
+			return new Array(arrayLength)
+				.fill(0)
+				.map(() => Math.floor(Math.random() * 10000) - 5000)
+				.sort((a, b) => a - b);
 		case 'decimal':
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.random() * 10000 - 5000);
+		case 'decimalSorted':
+			return new Array(arrayLength)
+				.fill(0)
+				.map(() => Math.random() * 10000 - 5000)
+				.sort((a, b) => a - b);
 		case 'empty':
 			return [];
 		case 'identical':
@@ -39,6 +50,25 @@ function makeArray(type, arrayLength = 5) {
 		default:
 			return new Array(arrayLength).fill(0).map(() => Math.random());
 	}
+}
+
+/**
+ * Picks a random index from an array
+ * @param {array} arr
+ */
+
+function chooseRandomIndex(arr) {
+	return Math.floor(Math.random() * arr.length);
+}
+
+/**
+ * Picks a random array element from an array
+ * @param {array} arr
+ */
+
+function chooseRandomElement(arr) {
+	let i = chooseRandomIndex(arr);
+	return arr[i];
 }
 
 function createTestAssertion(arrayType, functionName) {
@@ -86,6 +116,8 @@ function testEdgeCases(sort) {
 
 module.exports = {
 	makeArray,
+	chooseRandomIndex,
+	chooseRandomElement,
 	assertSorted,
 	testPositiveIntegerSorting,
 	testIntegerSorting,
