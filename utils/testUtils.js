@@ -1,4 +1,4 @@
-const shuffle = require('../directory/Shuffling/fisherYatesShuffle.solution');
+const shuffle = require('../src/Shuffling/fisherYatesShuffle.solution');
 
 /* HELPER FUNCTIONS /////////////////////////////////////////////////////////////////////////////// */
 
