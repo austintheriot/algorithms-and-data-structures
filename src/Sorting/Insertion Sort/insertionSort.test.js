@@ -9,11 +9,7 @@ describe('Insertion Sort', () => {
 	});
 
 	it('Should successfully sort edge cases,', () => {
-		let arr = [];
-		expect(sort(arr)).toEqual([]);
-
-		arr = [1];
-		expect(sort(arr)).toEqual([1]);
+		testUtils.testEdgeCases(sort);
 	});
 
 	it('Should modify the original array,', () => {
