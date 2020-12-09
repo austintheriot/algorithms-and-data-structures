@@ -13,7 +13,7 @@ function tryCatchWrap(sort, shuffledArray, sortedArray, functionName) {
 	}
 }
 
-function makeArray(type, arrayLength) {
+function makeArray(type, arrayLength = 5) {
 	switch (type) {
 		case 'positiveInteger':
 			return new Array(arrayLength)
@@ -80,6 +80,7 @@ function testEdgeCases(sort) {
 /* EXPORTS /////////////////////////////////////////////////////////////////////////////// */
 
 module.exports = {
+	makeArray,
 	assertSorted,
 	testPositiveIntegerSorting,
 	testIntegerSorting,
