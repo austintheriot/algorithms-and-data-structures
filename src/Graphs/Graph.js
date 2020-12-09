@@ -27,9 +27,3 @@ module.exports = class Node {
 		return this;
 	}
 };
-
-// class Graph {
-// 	constructor() {
-// 		this.children = [];
-// 	}
-// }
