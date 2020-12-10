@@ -1,5 +1,8 @@
 //should modify the original array
 
+/* Diagnostics both of these implementations seem to be fairly reliable:
+Elements are shuffled with relatively equal probability of placement */
+
 //i going from 0 --> arr.length - 1
 function fisherYatesShuffleAscending(arr) {
 	for (let i = 0; i < arr.length; i++) {
@@ -23,9 +26,10 @@ function fisherYatesShuffleAscending(arr) {
 
 //i going from arr.length - 1 --> 1
 function fisherYatesShuffle(arr) {
-	for (let i = arr.length - 1; i > 0; i--) {
+	for (let i = arr.length - 1; i >= 0; i--) {
 		//in order to make all permuations equally likely:
 		//j must be a random integer such that 0 ≤ j ≤ i (INCLUSIVE OF I):
+		//i *must* reach 0
 
 		// ######## EXAMPLE: ########
 		// let max = arr.length - 1;
@@ -35,7 +39,7 @@ function fisherYatesShuffle(arr) {
 		// ######## This can be shortened to: ########
 		// let j = Math.floor(Math.random() * (arr.length - i) + i);
 
-		let j = Math.floor(Math.random() * (arr.length - i) + i);
+		let j = Math.floor(i + Math.random() * (arr.length - i));
 		[arr[i], arr[j]] = [arr[j], arr[i]]; //swap i with the random integer
 	}
 	return arr;
