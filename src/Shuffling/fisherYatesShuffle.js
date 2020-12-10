@@ -1,2 +1,3 @@
-//should modify the original array
-module.exports = function fisherYatesShuffle(arr) {};
+function fisherYatesShuffle(arr) {}
+
+module.exports = fisherYatesShuffle;
