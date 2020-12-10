@@ -1,11 +1,11 @@
 const sort = require('./mergeSort');
-const testUtils = require('../../../utils/testUtils');
+const sortingUtils = require('../../../utils/sortingUtils');
 
 describe('Merge Sort', () => {
 	it('Should sort a given array from lowest highest', () => {
-		testUtils.testPositiveIntegerSorting(sort);
-		testUtils.testIntegerSorting(sort);
-		testUtils.testDecimalSorting(sort);
+		sortingUtils.testPositiveIntegerSorting(sort);
+		sortingUtils.testIntegerSorting(sort);
+		sortingUtils.testDecimalSorting(sort);
 	});
 
 	it('Should successfully sort edge cases,', () => {

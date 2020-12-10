@@ -1,11 +1,11 @@
 const bubbleSort = require('./bubbleSort');
-const testUtils = require('../../../utils/testUtils');
+const sortingUtils = require('../../../utils/sortingUtils');
 
 describe('Bubble Sort', () => {
 	it('Should sort a given array from lowest to highest', () => {
-		testUtils.testPositiveIntegerSorting(bubbleSort);
-		testUtils.testIntegerSorting(bubbleSort);
-		testUtils.testDecimalSorting(bubbleSort);
+		sortingUtils.testPositiveIntegerSorting(bubbleSort);
+		sortingUtils.testIntegerSorting(bubbleSort);
+		sortingUtils.testDecimalSorting(bubbleSort);
 	});
 
 	it('Should successfully sort edge cases,', () => {

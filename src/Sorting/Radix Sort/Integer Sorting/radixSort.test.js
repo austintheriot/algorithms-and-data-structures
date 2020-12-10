@@ -1,21 +1,21 @@
 const sort = require('./radixSort');
-const testUtils = require('../../../../utils/testUtils');
+const sortingUtils = require('../../../../utils/sortingUtils');
 
 describe('Radix Sort', () => {
 	it('Should sort an array of positive integers from lowest highest', () => {
-		testUtils.testPositiveIntegerSorting(sort);
+		sortingUtils.testPositiveIntegerSorting(sort);
 	});
 
 	it('Should sort negative integers', () => {
-		testUtils.testIntegerSorting(sort);
+		sortingUtils.testIntegerSorting(sort);
 	});
 
 	it('Should successfully sort edge cases,', () => {
-		testUtils.testEdgeCases(sort);
+		sortingUtils.testEdgeCases(sort);
 	});
 
 	it('Should ignore decimal places', () => {
-		testUtils.assertSorted(sort, [0, 1.1, 3, 7.9, 9, 45.5, 199.8]);
+		sortingUtils.assertSorted(sort, [0, 1.1, 3, 7.9, 9, 45.5, 199.8]);
 	});
 
 	it('Should produce a stable sort (using ignored decimal places to check)', () => {

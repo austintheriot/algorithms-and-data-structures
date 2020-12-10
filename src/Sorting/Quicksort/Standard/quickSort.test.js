@@ -1,5 +1,5 @@
 const sort = require('./quickSort');
-const testUtils = require('../../../../utils/testUtils');
+const sortingUtils = require('../../../../utils/sortingUtils');
 
 describe('Quick Sort', () => {
 	it('Should sort in place', () => {
@@ -16,8 +16,8 @@ describe('Quick Sort', () => {
 	});
 
 	it('Should sort a given array from lowest highest', () => {
-		testUtils.testPositiveIntegerSorting(sort);
-		testUtils.testIntegerSorting(sort);
-		testUtils.testDecimalSorting(sort);
+		sortingUtils.testPositiveIntegerSorting(sort);
+		sortingUtils.testIntegerSorting(sort);
+		sortingUtils.testDecimalSorting(sort);
 	});
 });

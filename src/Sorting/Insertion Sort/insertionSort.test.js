@@ -1,15 +1,15 @@
 const sort = require('./insertionSort');
-const testUtils = require('../../../utils/testUtils');
+const sortingUtils = require('../../../utils/sortingUtils');
 
 describe('Insertion Sort', () => {
 	it('Should sort a given array from lowest to highest', () => {
-		testUtils.testPositiveIntegerSorting(sort);
-		testUtils.testIntegerSorting(sort);
-		testUtils.testDecimalSorting(sort);
+		sortingUtils.testPositiveIntegerSorting(sort);
+		sortingUtils.testIntegerSorting(sort);
+		sortingUtils.testDecimalSorting(sort);
 	});
 
 	it('Should successfully sort edge cases,', () => {
-		testUtils.testEdgeCases(sort);
+		sortingUtils.testEdgeCases(sort);
 	});
 
 	it('Should modify the original array,', () => {
