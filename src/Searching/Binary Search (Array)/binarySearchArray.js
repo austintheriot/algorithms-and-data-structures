@@ -1,6 +1,6 @@
 //return -1 for unfound elements and nullish search elements
 
-function binarySearch() {}
+function binarySearch(arr, el, low, high) {}
 
 //Export for Test Setup (if using a recursive solution) ////////////////////////////////////
 
