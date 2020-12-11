@@ -1,4 +1,4 @@
-const countDigits = require('./countDigits');
+import countDigits from './countDigits';
 
 it('Should return the number of whole digits in a number', () => {
 	expect(countDigits(-17984.25)).toBe(5);

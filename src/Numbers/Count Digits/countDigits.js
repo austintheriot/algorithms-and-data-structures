@@ -1,1 +1,1 @@
-module.exports = function countDigits(num) {};
+export default function countDigits(num) {}
