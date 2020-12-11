@@ -1,3 +1,1 @@
-function sieve(max) {}
-
-module.exports = sieve;
+export default function sieve(max) {}

@@ -1,4 +1,4 @@
-const sieve = require('./sieve');
+import sieve from './sieve';
 
 it('Should create an array of prime numbers up to a given max', () => {
 	expect(sieve(0)).toEqual([]);
