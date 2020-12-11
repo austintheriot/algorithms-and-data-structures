@@ -88,22 +88,40 @@ export const assertSorted = function assertSorted(
 	tryCatchWrap(sort, shuffledArray, sortedArray, assertSorted);
 };
 
-export function testPositiveIntegerSorting(sort: Sort, arrayLength = 5) {
-	const unsortedArray = makeArray('positiveInteger', arrayLength);
-	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
-	tryCatchWrap(sort, unsortedArray, sortedArray, testPositiveIntegerSorting);
+export function testPositiveIntegerSorting(
+	sort: Sort,
+	arrayLength = 10,
+	iterations = 10
+) {
+	for (let i = 0; i < iterations; i++) {
+		const unsortedArray = makeArray('positiveInteger', arrayLength);
+		const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+		tryCatchWrap(sort, unsortedArray, sortedArray, testPositiveIntegerSorting);
+	}
 }
 
-export function testIntegerSorting(sort: Sort, arrayLength = 5) {
-	const unsortedArray = makeArray('integer', arrayLength);
-	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
-	tryCatchWrap(sort, unsortedArray, sortedArray, testIntegerSorting);
+export function testIntegerSorting(
+	sort: Sort,
+	arrayLength = 10,
+	iterations = 10
+) {
+	for (let i = 0; i < iterations; i++) {
+		const unsortedArray = makeArray('integer', arrayLength);
+		const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+		tryCatchWrap(sort, unsortedArray, sortedArray, testIntegerSorting);
+	}
 }
 
-export function testDecimalSorting(sort: Sort, arrayLength = 5) {
-	const unsortedArray = makeArray('decimal', arrayLength);
-	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
-	tryCatchWrap(sort, unsortedArray, sortedArray, testDecimalSorting);
+export function testDecimalSorting(
+	sort: Sort,
+	arrayLength = 10,
+	iterations = 10
+) {
+	for (let i = 0; i < iterations; i++) {
+		const unsortedArray = makeArray('decimal', arrayLength);
+		const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+		tryCatchWrap(sort, unsortedArray, sortedArray, testDecimalSorting);
+	}
 }
 
 export function testEdgeCases(sort: Sort) {
