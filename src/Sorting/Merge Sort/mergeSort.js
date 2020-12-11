@@ -1,1 +1,2 @@
-module.exports = function mergeSort() {};
+'use strict';
+export default function mergeSort(array) {}
