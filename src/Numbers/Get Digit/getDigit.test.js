@@ -1,4 +1,4 @@
-const getDecimal = require('./getDigit');
+import getDecimal from './getDigit';
 
 it('Should return the digit at the indicated decimal index', () => {
 	expect(getDecimal(4321, 0)).toBe(1);
