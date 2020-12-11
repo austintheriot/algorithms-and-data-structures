@@ -1,3 +1,3 @@
-export default (array: any[]): any[] => {
-	return array;
+export default (arr: any[]): any[] => {
+	return arr;
 };
