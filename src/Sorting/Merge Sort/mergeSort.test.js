@@ -1,5 +1,5 @@
 const sort = require('./mergeSort');
-const sortingUtils = require('../../../utils/sortingUtils');
+const sortingUtils = require('../../utils/sortingUtils');
 
 describe('Merge Sort', () => {
 	it('Should sort a given array from lowest highest', () => {

@@ -1,12 +1,15 @@
-/* 
-actualFrequencies =  {
-	element: []
-					//index = placement in array
-					//element = number of occurences at that placement
+interface Frequencies {
+	[element: number]: number[];
 }
-*/
 
-function trackElementPlacements(actualFrequencies = {}, shuffledArr = []) {
+interface Shuffle {
+	(array: any[]): any[];
+}
+
+function trackElementPlacements(
+	actualFrequencies: Frequencies = {},
+	shuffledArr: number[] = []
+) {
 	//repeatedly shuffle array and count the number of items
 	//each element is placed into each index of the array
 	for (let i = 0; i < shuffledArr.length; i++) {
@@ -19,12 +22,12 @@ function trackElementPlacements(actualFrequencies = {}, shuffledArr = []) {
 }
 
 function iterateShuffles(
-	shuffleCallback,
+	shuffleCallback: Shuffle,
 	sortedArr = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
 	iterations = 100
 ) {
 	//init frequency counter
-	const actualFrequencies = {};
+	const actualFrequencies: Frequencies = {};
 
 	for (let i = 0; i < iterations; i++) {
 		//shuffle array, copy elements to prevent editing original array
@@ -34,8 +37,8 @@ function iterateShuffles(
 	return actualFrequencies;
 }
 
-function assertEvenDistribution(
-	shuffleCallback,
+export function assertEvenDistribution(
+	shuffleCallback: Shuffle,
 	options = {
 		sortedArr: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
 		iterations: 1_000_000,
@@ -69,5 +72,3 @@ function assertEvenDistribution(
 		}
 	}
 }
-
-module.exports.assertEvenDistribution = assertEvenDistribution;

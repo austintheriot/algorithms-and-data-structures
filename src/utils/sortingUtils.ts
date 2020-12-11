@@ -1,9 +1,18 @@
-const shuffle = require('../src/Shuffling/fisherYatesShuffle.solution');
+import shuffle from '../Shuffling/fisherYatesShuffle.solution';
 
 /* HELPER FUNCTIONS /////////////////////////////////////////////////////////////////////////////// */
 
+interface Sort {
+	(array: any[]): any[];
+}
+
 //Wrapping our assertions in a try...catch block gives us more helpful Stack Traces / errors when a test fails
-function tryCatchWrap(sort, shuffledArray, sortedArray, functionName) {
+function tryCatchWrap(
+	sort: Sort,
+	shuffledArray: any[],
+	sortedArray: any[],
+	functionName: Function
+) {
 	try {
 		expect(sort(shuffledArray)).toEqual(sortedArray);
 	} catch (error) {
@@ -13,12 +22,16 @@ function tryCatchWrap(sort, shuffledArray, sortedArray, functionName) {
 	}
 }
 
-/**
- * Creates an array.
- * @param {string} type 'positiveInteger' | 'integer' | 'integerSorted' | 'decimal' | 'decimalSorted' |'empty' | 'identical'
- * @param {number} arrayLength The length of the array.
- */
-function makeArray(type, arrayLength = 5) {
+type MakeArrayTypes =
+	| 'positiveInteger'
+	| 'integer'
+	| 'integerSorted'
+	| 'decimal'
+	| 'decimalSorted'
+	| 'empty'
+	| 'identical';
+
+export function makeArray(type: MakeArrayTypes, arrayLength: number = 5) {
 	switch (type) {
 		case 'positiveInteger':
 			return new Array(arrayLength)
@@ -52,52 +65,50 @@ function makeArray(type, arrayLength = 5) {
 	}
 }
 
-/**
- * Picks a random index from an array
- * @param {array} arr
- */
-
-function chooseRandomIndex(arr) {
+export function chooseRandomIndex(arr: any[]) {
 	return Math.floor(Math.random() * arr.length);
 }
 
-/**
- * Picks a random array element from an array
- * @param {array} arr
- */
-
-function chooseRandomElement(arr) {
+export function chooseRandomElement(arr: any[]) {
 	let i = chooseRandomIndex(arr);
 	return arr[i];
 }
 
-function createTestAssertion(arrayType, functionName) {
-	global[functionName] = function (sort, arrayLength = 5) {
-		const unsortedArray = makeArray(arrayType, arrayLength);
-		const sortedArray = [...unsortedArray].sort((a, b) => a - b);
-		tryCatchWrap(sort, unsortedArray, sortedArray, global[functionName]);
-	};
-	return global[functionName];
+interface TestAssertion {
+	(sort: Sort, arrayLength: number): void;
 }
 
 /* ASSERTION FUNCTIONS /////////////////////////////////////////////////////////////////////////////// */
 
-const assertSorted = function assertSorted(sort, sortedArray) {
+export const assertSorted = function assertSorted(
+	sort: Sort,
+	sortedArray: any[]
+) {
 	let shuffledArray = shuffle([...sortedArray]);
 	tryCatchWrap(sort, shuffledArray, sortedArray, assertSorted);
 };
 
-const testPositiveIntegerSorting = createTestAssertion(
-	'positiveInteger', //make array
-	'testPositiveIntegerSorting' //make function
-);
-const testIntegerSorting = createTestAssertion('integer', 'testIntegerSorting');
+export function testPositiveIntegerSorting(sort: Sort, arrayLength = 5) {
+	const unsortedArray = makeArray('positiveInteger', arrayLength);
+	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testPositiveIntegerSorting);
+}
 
-const testDecimalSorting = createTestAssertion('decimal', 'testDecimalSorting');
+export function testIntegerSorting(sort: Sort, arrayLength = 5) {
+	const unsortedArray = makeArray('integer', arrayLength);
+	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testIntegerSorting);
+}
 
-function testEdgeCases(sort) {
+export function testDecimalSorting(sort: Sort, arrayLength = 5) {
+	const unsortedArray = makeArray('decimal', arrayLength);
+	const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+	tryCatchWrap(sort, unsortedArray, sortedArray, testDecimalSorting);
+}
+
+export function testEdgeCases(sort: Sort) {
 	//empty array
-	let unsortedArray = [];
+	let unsortedArray: any[] = [];
 	let sortedArray = [...unsortedArray].sort((a, b) => a - b);
 	tryCatchWrap(sort, unsortedArray, sortedArray, testEdgeCases);
 
@@ -111,16 +122,3 @@ function testEdgeCases(sort) {
 	sortedArray = [...unsortedArray].sort((a, b) => a - b);
 	tryCatchWrap(sort, unsortedArray, sortedArray, testEdgeCases);
 }
-
-/* EXPORTS /////////////////////////////////////////////////////////////////////////////// */
-
-module.exports = {
-	makeArray,
-	chooseRandomIndex,
-	chooseRandomElement,
-	assertSorted,
-	testPositiveIntegerSorting,
-	testIntegerSorting,
-	testDecimalSorting,
-	testEdgeCases,
-};

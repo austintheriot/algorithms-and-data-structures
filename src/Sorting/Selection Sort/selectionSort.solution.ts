@@ -1,6 +1,4 @@
-module.exports = (originalArray) => {
-	const array = [...originalArray];
-
+export default (array: any[]): any[] => {
 	//Create a starting point that iterates through rray
 	for (let i = 0; i < array.length; i++) {
 		let minNumIndex = i;

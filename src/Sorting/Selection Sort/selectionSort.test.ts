@@ -1,5 +1,5 @@
-const sort = require('./selectionSort');
-const sortingUtils = require('../../../utils/sortingUtils');
+import sort from './selectionSort';
+import * as sortingUtils from 'utils/sortingUtils';
 
 describe('Selection Sort', () => {
 	it('Should sort a given array from lowest highest', () => {
@@ -9,7 +9,7 @@ describe('Selection Sort', () => {
 	});
 
 	it('Should successfully sort edge cases,', () => {
-		let arr = [];
+		let arr: any[] = [];
 		expect(sort(arr)).toEqual([]);
 
 		arr = [1];

@@ -1,5 +1,5 @@
 const search = require('./binarySearchArray');
-const sortingUtils = require('../../../utils/sortingUtils');
+const sortingUtils = require('../../utils/sortingUtils');
 
 describe('Binary Search (Array)', () => {
 	it('Should find the index of a number in an array', () => {

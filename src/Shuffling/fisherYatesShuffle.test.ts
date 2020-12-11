@@ -1,5 +1,5 @@
-const shuffle = require('./fisherYatesShuffle');
-const shufflingUtils = require('../../utils/shufflingUtils');
+import shuffle from './fisherYatesShuffle';
+import * as shuffleUtils from 'utils/shufflingUtils';
 
 describe('Fisher-Yates Shuffle', () => {
 	it('Should shuffle an array', () => {
@@ -15,6 +15,6 @@ describe('Fisher-Yates Shuffle', () => {
 	});
 
 	it('Should produce an even distribution of randomness', () => {
-		shufflingUtils.assertEvenDistribution(shuffle);
+		shuffleUtils.assertEvenDistribution(shuffle);
 	});
 });

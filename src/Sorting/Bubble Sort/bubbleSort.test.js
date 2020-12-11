@@ -1,5 +1,5 @@
 const bubbleSort = require('./bubbleSort');
-const sortingUtils = require('../../../utils/sortingUtils');
+const sortingUtils = require('../../utils/sortingUtils');
 
 describe('Bubble Sort', () => {
 	it('Should sort a given array from lowest to highest', () => {

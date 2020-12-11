@@ -1,5 +1,5 @@
 const sort = require('./radixSort');
-const sortingUtils = require('../../../../utils/sortingUtils');
+const sortingUtils = require('../../../utils/sortingUtils');
 
 describe('Radix Sort', () => {
 	it('Should sort an array of positive integers from lowest highest', () => {

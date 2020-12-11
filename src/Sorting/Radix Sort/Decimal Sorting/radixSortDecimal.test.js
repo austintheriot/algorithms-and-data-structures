@@ -1,5 +1,5 @@
 const sort = require('./radixSortDecimal.solution');
-const sortingUtils = require('../../../../utils/sortingUtils');
+const sortingUtils = require('../../../utils/sortingUtils');
 
 describe('Radix Sort', () => {
 	it('Should sort an array of numbers from lowest to highest', () => {
