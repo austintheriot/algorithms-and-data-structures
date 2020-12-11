@@ -42,7 +42,7 @@ export function assertEvenDistribution(
 	options = {
 		sortedArr: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90],
 		iterations: 1_000_000,
-		marginOfError: 0.01,
+		marginOfError: 0.03,
 	}
 ) {
 	//this is the "ideal" number of times each array element
