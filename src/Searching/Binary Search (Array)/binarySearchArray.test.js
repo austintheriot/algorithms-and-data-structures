@@ -1,5 +1,5 @@
-const search = require('./binarySearchArray');
-const sortingUtils = require('../../utils/sortingUtils');
+import search from './binarySearchArray';
+import * as sortingUtils from '../../utils/sortingUtils';
 
 describe('Binary Search (Array)', () => {
 	it('Should find the index of a number in an array', () => {
@@ -21,7 +21,7 @@ describe('Binary Search (Array)', () => {
 	});
 
 	it('Should return -1 when number is not found', () => {
-		arr = sortingUtils.makeArray('integerSorted', 100);
+		let arr = sortingUtils.makeArray('integerSorted', 100);
 		expect(search(arr, 0.123456789)).toBe(-1);
 
 		arr = sortingUtils.makeArray('decimalSorted', 100);
@@ -29,7 +29,7 @@ describe('Binary Search (Array)', () => {
 	});
 
 	it('Should return -1 when search element is nullish', () => {
-		arr = sortingUtils.makeArray('integerSorted', 100);
+		let arr = sortingUtils.makeArray('integerSorted', 100);
 		expect(search(arr, arr[100])).toBe(-1);
 		expect(search(arr, null)).toBe(-1);
 	});
