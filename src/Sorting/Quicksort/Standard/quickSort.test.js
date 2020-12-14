@@ -1,5 +1,5 @@
-const sort = require('./quickSort');
-const sortingUtils = require('../../../utils/sortingUtils');
+import sort from './quickSort';
+import * as sortingUtils from '../../../utils/sortingUtils';
 
 describe('Quick Sort', () => {
 	it('Should sort in place', () => {

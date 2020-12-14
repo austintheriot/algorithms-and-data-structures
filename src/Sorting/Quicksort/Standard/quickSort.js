@@ -1,5 +1,5 @@
-function quickSort() {}
+function quickSort(arr, low, high) {}
 
-module.exports = function runQuickSort(arr) {
+export default function runQuickSort(arr) {
 	return quickSort(arr, 0, arr.length - 1);
-};
+}
