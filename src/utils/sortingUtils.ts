@@ -42,20 +42,43 @@ export function makeArray(type: MakeArrayTypes, arrayLength: number = 5) {
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.floor(Math.random() * 10000) - 5000);
-		case 'integerSorted':
-			return new Array(arrayLength)
-				.fill(0)
-				.map(() => Math.floor(Math.random() * 10000) - 5000)
-				.sort((a, b) => a - b);
+		case 'integerSorted': {
+			if (arrayLength === 0) return [];
+			if (arrayLength === 2) {
+				return [
+					Math.floor(Math.random() * -1000),
+					Math.floor(Math.random() * 1000),
+				];
+			}
+			const arr = new Array(arrayLength);
+			const randomNegative = Math.floor(Math.random() * -1000);
+			arr[0] = randomNegative;
+			const range = Math.abs(randomNegative * 2);
+			const increments = Math.floor(range / Math.max(arrayLength, 1));
+			for (let i = 1; i < arrayLength; i++) {
+				arr[i] = Math.floor(arr[i - 1] + increments * (Math.random() + 0.5));
+			}
+			return arr;
+		}
 		case 'decimal':
 			return new Array(arrayLength)
 				.fill(0)
 				.map(() => Math.random() * 10000 - 5000);
-		case 'decimalSorted':
-			return new Array(arrayLength)
-				.fill(0)
-				.map(() => Math.random() * 10000 - 5000)
-				.sort((a, b) => a - b);
+		case 'decimalSorted': {
+			if (arrayLength === 0) return [];
+			if (arrayLength === 2) {
+				return [Math.random() * -1000, Math.random() * 1000];
+			}
+			const arr = new Array(arrayLength);
+			const randomNegative = Math.random() * -1000;
+			arr[0] = randomNegative;
+			const range = Math.abs(randomNegative * 2);
+			const increments = range / Math.max(arrayLength, 1);
+			for (let i = 1; i < arrayLength; i++) {
+				arr[i] = arr[i - 1] + increments * (Math.random() + 0.5);
+			}
+			return arr;
+		}
 		case 'empty':
 			return [];
 		case 'identical':
@@ -72,10 +95,6 @@ export function chooseRandomIndex(arr: any[]) {
 export function chooseRandomElement(arr: any[]) {
 	let i = chooseRandomIndex(arr);
 	return arr[i];
-}
-
-interface TestAssertion {
-	(sort: Sort, arrayLength: number): void;
 }
 
 /* ASSERTION FUNCTIONS /////////////////////////////////////////////////////////////////////////////// */
