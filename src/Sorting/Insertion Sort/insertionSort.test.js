@@ -1,5 +1,5 @@
-const sort = require('./insertionSort');
-const sortingUtils = require('../../utils/sortingUtils');
+import sort from './insertionSort';
+import * as sortingUtils from '../../utils/sortingUtils';
 
 describe('Insertion Sort', () => {
 	it('Should sort a given array from lowest to highest', () => {
