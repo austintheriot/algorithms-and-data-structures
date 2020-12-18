@@ -1,4 +1,4 @@
-module.exports = class BinaryTreeNode {
+export default class BinaryTreeNode {
 	constructor(data) {
 		this.parent = null;
 		this.data = data ?? null;
@@ -25,4 +25,4 @@ module.exports = class BinaryTreeNode {
 		this.right.parent = this;
 		return this;
 	}
-};
+}

@@ -1,4 +1,4 @@
-const BinaryTreeNode = require('./BinaryTreeNode');
+import BinaryTreeNode from './BinaryTreeNode';
 
 describe('BinaryTreeNode', () => {
 	it('Should create node', () => {
