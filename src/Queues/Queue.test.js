@@ -42,8 +42,8 @@ describe('Queue', () => {
 		expect(queue.linkedList.head).toBe(queue.linkedList.tail);
 
 		queue.remove();
-		expect(queue.linkedList.head).toBe(null);
-		expect(queue.linkedList.tail).toBe(null);
+		expect(queue.linkedList.head).toBe(undefined);
+		expect(queue.linkedList.tail).toBe(undefined);
 	});
 
 	it('Should return the removed item when remove() is called', () => {
@@ -57,7 +57,7 @@ describe('Queue', () => {
 		expect(queue.remove()).toBe(2);
 		expect(queue.remove()).toBe(3);
 		expect(queue.remove()).toBe(4);
-		expect(queue.remove()).toBe(null);
+		expect(queue.remove()).toBe(undefined);
 	});
 
 	it('Should return the front item when peek() is called', () => {
@@ -71,7 +71,7 @@ describe('Queue', () => {
 
 		queue = new Queue();
 		queue.peek();
-		expect(queue.peek()).toBe(null);
+		expect(queue.peek()).toBe(undefined);
 	});
 
 	it('Should return true when queue is empty', () => {
@@ -91,9 +91,9 @@ describe('Queue', () => {
 
 	it('Should work when methods follow one another', () => {
 		queue = new Queue();
-		expect(queue.peek()).toBe(null);
+		expect(queue.peek()).toBe(undefined);
 		expect(queue.isEmpty()).toBe(true);
-		expect(queue.remove()).toBe(null);
+		expect(queue.remove()).toBe(undefined);
 
 		queue.add(0);
 		expect(queue.peek()).toBe(0);
@@ -116,7 +116,7 @@ describe('Queue', () => {
 		queue.remove();
 		queue.remove();
 		expect(queue.isEmpty()).toBe(true);
-		expect(queue.remove()).toBe(null);
+		expect(queue.remove()).toBe(undefined);
 		expect(queue.isEmpty()).toBe(true);
 	});
 });
