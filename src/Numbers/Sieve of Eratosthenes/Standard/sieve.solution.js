@@ -1,10 +1,8 @@
 function sieve(max) {
-	if (max < 2) return [];
 	const primes = [];
 	const numbers = new Array(max + 1).fill(true);
 
-	numbers[0] = false;
-	numbers[1] = false;
+	numbers[0] = numbers[1] = false;
 
 	for (let i = 2; i <= max; i++) {
 		if (numbers[i] === true) {
