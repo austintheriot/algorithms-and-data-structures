@@ -1,1 +1,1 @@
-module.exports = (array) => {};
+export default (array) => {};
