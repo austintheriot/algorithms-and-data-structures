@@ -1,4 +1,5 @@
+//uninitialized data on nodes should be null
 // setLeft(node){}
 // setRight(node){}
 
-module.exports = class BinaryTreeNode {};
+export default class BinaryTreeNode {}
