@@ -1,8 +1,8 @@
 //Implement a MinHeap using an array. Include the following functionalities:
 
-// getLeftChildIndex(index){}
-// getRightChildIndex(index){}
-// getParentIndex(index){}
+// leftChildIndex(index){}
+// rightChildIndex(index){}
+// parentIndex(index){}
 // hasParent(index){}
 // hasLeftChild(index){}
 // hasRightChild(index){}
@@ -22,39 +22,39 @@ module.exports = class MinHeap {
 		this.array = [];
 	}
 
-	getLeftChildIndex(index) {}
+	leftChildIndex(i) {}
 
-	getRightChildIndex(index) {}
+	rightChildIndex(i) {}
 
-	getParentIndex(index) {}
+	parentIndex(i) {}
 
 	hasParent(index) {
-		const parentIndex = this.getParentIndex(index);
+		const parentIndex = this.parentIndex(index);
 		return this.array[parentIndex] === undefined ? false : true;
 	}
 
 	hasLeftChild(index) {
-		const leftChildIndex = this.getLeftChildIndex(index);
+		const leftChildIndex = this.leftChildIndex(index);
 		return this.array[leftChildIndex] === undefined ? false : true;
 	}
 
 	hasRightChild(index) {
-		const rightChildIndex = this.getRightChildIndex(index);
+		const rightChildIndex = this.rightChildIndex(index);
 		return this.array[rightChildIndex] === undefined ? false : true;
 	}
 
 	leftChild(index) {
-		const leftChildIndex = this.getLeftChildIndex(index);
+		const leftChildIndex = this.leftChildIndex(index);
 		return this.array[leftChildIndex];
 	}
 
 	rightChild(index) {
-		const rightChildIndex = this.getRightChildIndex(index);
+		const rightChildIndex = this.rightChildIndex(index);
 		return this.array[rightChildIndex];
 	}
 
 	parent(index) {
-		const parentIndex = this.getParentIndex(index);
+		const parentIndex = this.parentIndex(index);
 		return this.array[parentIndex];
 	}
 

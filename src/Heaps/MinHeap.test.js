@@ -9,36 +9,36 @@ describe('Min Heap', () => {
 		expect(minHeap.array.length).toBe(0);
 	});
 
-	describe('getLeftChildIndex()', () => {
+	describe('leftChildIndex()', () => {
 		it(`Should return the index of a node's left child`, () => {
 			const minHeap = new MinHeap();
-			expect(minHeap.getLeftChildIndex(0)).toBe(1);
-			expect(minHeap.getLeftChildIndex(1)).toBe(3);
-			expect(minHeap.getLeftChildIndex(2)).toBe(5);
-			expect(minHeap.getLeftChildIndex(3)).toBe(7);
-			expect(minHeap.getLeftChildIndex(4)).toBe(9);
+			expect(minHeap.leftChildIndex(0)).toBe(1);
+			expect(minHeap.leftChildIndex(1)).toBe(3);
+			expect(minHeap.leftChildIndex(2)).toBe(5);
+			expect(minHeap.leftChildIndex(3)).toBe(7);
+			expect(minHeap.leftChildIndex(4)).toBe(9);
 		});
 	});
 
-	describe('getRightChildIndex()', () => {
+	describe('rightChildIndex()', () => {
 		it(`Should return the index of a node's right child`, () => {
 			const minHeap = new MinHeap();
-			expect(minHeap.getRightChildIndex(0)).toBe(2);
-			expect(minHeap.getRightChildIndex(1)).toBe(4);
-			expect(minHeap.getRightChildIndex(2)).toBe(6);
-			expect(minHeap.getRightChildIndex(3)).toBe(8);
-			expect(minHeap.getRightChildIndex(4)).toBe(10);
+			expect(minHeap.rightChildIndex(0)).toBe(2);
+			expect(minHeap.rightChildIndex(1)).toBe(4);
+			expect(minHeap.rightChildIndex(2)).toBe(6);
+			expect(minHeap.rightChildIndex(3)).toBe(8);
+			expect(minHeap.rightChildIndex(4)).toBe(10);
 		});
 	});
 
-	describe('getParentIndex()', () => {
+	describe('parentIndex()', () => {
 		it(`Should return the index of a node's parent`, () => {
 			const minHeap = new MinHeap();
-			expect(minHeap.getParentIndex(10)).toBe(4);
-			expect(minHeap.getParentIndex(7)).toBe(3);
-			expect(minHeap.getParentIndex(4)).toBe(1);
-			expect(minHeap.getParentIndex(1)).toBe(0);
-			expect(minHeap.getParentIndex(0)).toBe(-1);
+			expect(minHeap.parentIndex(10)).toBe(4);
+			expect(minHeap.parentIndex(7)).toBe(3);
+			expect(minHeap.parentIndex(4)).toBe(1);
+			expect(minHeap.parentIndex(1)).toBe(0);
+			expect(minHeap.parentIndex(0)).toBe(-1);
 		});
 	});
 
