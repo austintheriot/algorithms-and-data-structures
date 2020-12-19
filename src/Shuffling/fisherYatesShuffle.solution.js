@@ -45,4 +45,4 @@ function fisherYatesShuffle(arr) {
 	return arr;
 }
 
-module.exports = fisherYatesShuffle;
+export default fisherYatesShuffle;
