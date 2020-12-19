@@ -8,7 +8,7 @@ class Node {
 	}
 }
 
-module.exports = class LinkedList {
+export default class LinkedList {
 	constructor() {
 		this.head = null;
 		this.tail = null;
@@ -122,4 +122,4 @@ module.exports = class LinkedList {
 		}
 		return array;
 	}
-};
+}
