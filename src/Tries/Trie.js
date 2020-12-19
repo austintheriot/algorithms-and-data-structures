@@ -19,4 +19,4 @@ class Node {
 	}
 }
 
-module.exports = class Trie {};
+export default class Trie {}

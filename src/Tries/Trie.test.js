@@ -1,4 +1,4 @@
-const Trie = require('./Trie');
+import Trie from './Trie';
 
 describe('Trie', () => {
 	it('Should create an empty root node', () => {
