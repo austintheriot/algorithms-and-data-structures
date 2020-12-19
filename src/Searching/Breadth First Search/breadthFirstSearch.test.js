@@ -1,5 +1,5 @@
-const exampleRootNode = require('../../Graphs/Examples/directedGraphSmall');
-const makeBreadthFirstSearchFunction = require('./breadthFirstSearch');
+import rootNode from '../../Graphs/Examples/directedGraphSmall';
+import makeSearch from './breadthFirstSearch';
 
 let array;
 let visitCallback;
@@ -11,11 +11,11 @@ describe('Breadth-First Search (BFS)', () => {
 		visitCallback = (node) => {
 			array.push(node.data);
 		};
-		breadthFirstSearch = makeBreadthFirstSearchFunction(visitCallback);
+		breadthFirstSearch = makeSearch(visitCallback);
 	});
 
 	it('Should search by depth first', () => {
-		breadthFirstSearch(exampleRootNode);
+		breadthFirstSearch(rootNode);
 		expect(array).toEqual([0, 1, 4, 5, 3, 2]);
 	});
 });

@@ -5,9 +5,9 @@ interface Node {
 } 
 */
 
-const Queue = require('../../Queues/Queue.solution');
+import Queue from '../../Queues/Queue.solution';
 
-module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
+export default (visitCallback) => {
 	return (search = (root) => {
 		//implement here
 	});

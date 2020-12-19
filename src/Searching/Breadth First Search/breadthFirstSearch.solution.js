@@ -7,7 +7,7 @@ interface Node {
 
 const Queue = require('../../Queues/Queue.solution');
 
-module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
+export default function makeBreadthFirstSearchFunction(visitCallback) {
 	return (search = (root) => {
 		//THIS DOES *NOT* REQUIRE A RECURSIVE SOLUTION
 		//"visit" a node and add to the queue
@@ -32,4 +32,4 @@ module.exports = makeBreadthFirstSearchFunction = (visitCallback) => {
 			}
 		}
 	});
-};
+}

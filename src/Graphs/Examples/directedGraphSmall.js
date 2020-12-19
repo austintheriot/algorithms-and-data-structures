@@ -13,5 +13,4 @@ node2.children = [node1];
 node3.children = [node2, node4];
 //node 4 and 5 have no children
 
-let rootNode = node0;
-module.exports = rootNode;
+export default node0;
