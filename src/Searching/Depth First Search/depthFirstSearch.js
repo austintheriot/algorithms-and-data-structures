@@ -5,8 +5,8 @@ interface Node {
 } 
 */
 
-module.exports = makeSearchFunction = (visitCallback) => {
-	return (search = (node) => {
-		//implement here
-	});
-};
+export default function makeSearchFunction(visitCallback) {
+	return function search(node) {
+		//implement search here
+	};
+}
