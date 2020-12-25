@@ -28,7 +28,7 @@ export default function sieve(N) {
 			j++
 		) {
 			//set the smallest prime factor of the multiple
-			spf[i * primes[j]] = primes[j];
+			spf[i * primes[j]] = primes[j]; //MUST assign primes[j], or else the spf[] value will not be the true lowest prime factor
 		}
 	}
 	return primes;
