@@ -1,1 +1,1 @@
-export default (arr) => {};
+export default function selectionSort(arr) {}
