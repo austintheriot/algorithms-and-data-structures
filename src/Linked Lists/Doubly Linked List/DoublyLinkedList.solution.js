@@ -73,8 +73,7 @@ export default class LinkedList {
 	}
 
 	delete(index) {
-		if (index < 0 || index > this.length - 1) return undefined;
-		if (this.length === 0) return undefined;
+		if (index < 0 || index > this.length - 1) return this;
 
 		//linked list is only one node
 		if (this.length === 1) {
