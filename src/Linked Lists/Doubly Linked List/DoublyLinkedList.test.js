@@ -1,4 +1,4 @@
-const LinkedList = require('./DoublyLinkedList');
+import LinkedList from './DoublyLinkedList.solution';
 
 describe('LinkedList', () => {
 	it('Should prepend data to the head', () => {
@@ -325,7 +325,7 @@ describe('LinkedList', () => {
 	it('Should return an array in which the values match the original linked list', () => {
 		const linkedList = new LinkedList();
 		linkedList.append(0).append(1).append(2).append(3).append(4).append(5);
-		array = linkedList.toArray();
+		const array = linkedList.toArray();
 		expect(array[0]).toBe(linkedList.get(0).data);
 		expect(array[1]).toBe(linkedList.get(1).data);
 		expect(array[2]).toBe(linkedList.get(2).data);
