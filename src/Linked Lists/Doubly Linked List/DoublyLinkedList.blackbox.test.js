@@ -55,5 +55,25 @@ describe('LinkedList (Black Box Test)', () => {
 		expect(linkedList.get(2)).toBeUndefined();
 		expect(linkedList.get(1)).toBeUndefined();
 		expect(linkedList.get(0)).toBeUndefined();
+
+		//append
+		linkedList.append(-100).append(-50).append(0);
+		expect(linkedList.get(0)?.data).toBe(-100);
+		expect(linkedList.get(1)?.data).toBe(-50);
+		expect(linkedList.get(2)?.data).toBe(0);
+
+		//deleting head on multi-node linked list
+		linkedList.delete(0);
+		expect(linkedList.get(0)?.data).toBe(-50);
+		expect(linkedList.get(1)?.data).toBe(0);
+		expect(linkedList.get(2)).toBeUndefined();
+		linkedList.delete(0);
+		expect(linkedList.get(0)?.data).toBe(0);
+		expect(linkedList.get(1)).toBeUndefined();
+		expect(linkedList.get(2)).toBeUndefined();
+		linkedList.delete(0);
+		expect(linkedList.get(0)).toBeUndefined();
+		expect(linkedList.get(1)).toBeUndefined();
+		expect(linkedList.get(2)).toBeUndefined();
 	});
 });
