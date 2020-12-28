@@ -1,4 +1,4 @@
-import LinkedList from './DoublyLinkedList.solution';
+import LinkedList from './DoublyLinkedList';
 
 describe('LinkedList', () => {
 	it('Should prepend data to the head', () => {

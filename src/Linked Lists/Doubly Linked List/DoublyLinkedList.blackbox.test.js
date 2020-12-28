@@ -1,4 +1,4 @@
-import LinkedList from './DoublyLinkedList.solution';
+import LinkedList from './DoublyLinkedList';
 
 //return undefined for out of range indexes
 
