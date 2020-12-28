@@ -8,8 +8,4 @@
 //delete(index){}
 //toArray(){} //create array filled with node data
 
-class LinkedList {
-	//length
-}
-
-module.exports = LinkedList;
+export default class LinkedList {}
