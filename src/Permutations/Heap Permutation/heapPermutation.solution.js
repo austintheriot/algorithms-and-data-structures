@@ -12,7 +12,7 @@ function generate(A, n, permutations) {
 		return permutations.push(A.slice());
 	}
 
-	for (var i = 0; i !== n; ++i) {
+	for (let i = 0; i < n; i++) {
 		//Generate permutations with nth unaltered
 		//Initially n == length(A)
 		generate(A, n - 1, permutations);
