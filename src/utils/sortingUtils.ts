@@ -31,7 +31,10 @@ type MakeArrayTypes =
 	| 'empty'
 	| 'identical';
 
-export function makeArray(type: MakeArrayTypes, arrayLength: number = 5) {
+export function makeArray(
+	type: MakeArrayTypes,
+	arrayLength: number = 5
+): number[] {
 	switch (type) {
 		case 'positiveInteger':
 			return new Array(arrayLength)
