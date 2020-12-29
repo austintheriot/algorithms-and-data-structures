@@ -6,7 +6,7 @@ function swap(arr, a, b) {
 
 export default function getPermutations(arr) {
 	//SHOULD manipulate original array
-	function generate(n, arr, answerArr) {}
+	function generate() {}
 
 	//run function
 	const answer = [];
