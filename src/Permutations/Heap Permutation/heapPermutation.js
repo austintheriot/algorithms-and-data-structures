@@ -4,10 +4,11 @@ function swap(a, b, arr) {
 	arr[b] = tmp;
 }
 
-function generate(arr, n, permutations) {}
+//SHOULD manipulate original array
+function permutation(arr, n, permutations) {}
 
 export default function permutationArr(arr) {
 	const permutations = [];
-	generate(arr, arr.length, permutations);
+	permutation(arr, arr.length, permutations);
 	return permutations;
 }
