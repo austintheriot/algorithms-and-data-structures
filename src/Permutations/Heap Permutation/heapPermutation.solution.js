@@ -4,11 +4,12 @@ function swap(a, b, arr) {
 	arr[b] = tmp;
 }
 
+//SHOULD manipulate original array
 function generate(A, n, permutations) {
 	//Escape case
 	if (n == 1) {
 		//Make a copy at each iteration, since the array is modified in place
-		return permutations.push(A);
+		return permutations.push(A.slice());
 	}
 
 	for (var i = 0; i !== n; ++i) {
