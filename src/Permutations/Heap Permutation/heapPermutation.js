@@ -1,14 +1,15 @@
-function swap(a, b, arr) {
+function swap(arr, a, b) {
 	var tmp = arr[a];
 	arr[a] = arr[b];
 	arr[b] = tmp;
 }
 
-//SHOULD manipulate original array
-function permutation(arr, n, permutations) {}
+export default function getPermutations(arr) {
+	//SHOULD manipulate original array
+	function generate(n, arr, answerArr) {}
 
-export default function permutationArr(arr) {
-	const permutations = [];
-	permutation(arr, arr.length, permutations);
-	return permutations;
+	//run function
+	const answer = [];
+	generate(arr.length, arr, answer);
+	return answer;
 }
