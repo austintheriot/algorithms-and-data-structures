@@ -1,4 +1,4 @@
-import permute from './heapPermutation.solution';
+import permute from './heapPermutation';
 
 const ANSWER_LENGTH_4 = [
 	[1, 2, 3, 4],
