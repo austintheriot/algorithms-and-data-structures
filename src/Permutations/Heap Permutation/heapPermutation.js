@@ -4,12 +4,4 @@ function swap(arr, a, b) {
 	arr[b] = tmp;
 }
 
-export default function getPermutations(arr) {
-	//SHOULD manipulate original array
-	function generate() {}
-
-	//run function
-	const answer = [];
-	generate(arr.length, arr, answer);
-	return answer;
-}
+export default function getPermutations(arr) {}
