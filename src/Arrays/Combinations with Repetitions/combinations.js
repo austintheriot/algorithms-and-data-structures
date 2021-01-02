@@ -8,4 +8,4 @@ Generate every possible combination of characters, given a string or string iter
 
 export const ERROR_TOO_LARGE = 'Desired output too large!';
 
-export default function generateEveryPossibleCombination(iterable, length) {}
+export default function combinationsWithRepetitions(iterable, length) {}
