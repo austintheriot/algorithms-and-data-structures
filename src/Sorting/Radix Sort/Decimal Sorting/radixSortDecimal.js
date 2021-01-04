@@ -1,7 +1,7 @@
-const getDigit = require('../../../Numbers/Get Digit/getDigit.solution');
-const countDigits = require('../../../Numbers/Count Digits/countDigits.solution');
-const getDecimal = require('../../../Numbers/Get Decimal/getDecimal.solution');
-const countDecimals = require('../../../Numbers/Count Decimals/countDecimals.solution');
+const getDigit = require('../../../Numbers & Math/Get Digit/getDigit.solution');
+const countDigits = require('../../../Numbers & Math/Count Digits/countDigits.solution');
+const getDecimal = require('../../../Numbers & Math/Get Decimal/getDecimal.solution');
+const countDecimals = require('../../../Numbers & Math/Count Decimals/countDecimals.solution');
 
 function radixSort(array) {
 	const numDecimalPasses = determineNumberOfPasses(array, countDecimals);
