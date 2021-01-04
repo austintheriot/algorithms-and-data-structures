@@ -6,6 +6,9 @@ Generate every possible combination of characters, given a string or string iter
   
 */
 
+//optional
+import Queue from '../../Queues/Queue.solution';
 export const ERROR_TOO_LARGE = 'Desired output too large!';
+export const MAX_ARRAY_LENGTH = 2 ** 32 - 1;
 
-export default function combinationsWithRepetitions(iterable, length) {}
+export default function combinations(iterable, length) {}
