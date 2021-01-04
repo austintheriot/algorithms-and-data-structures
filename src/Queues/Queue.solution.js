@@ -67,4 +67,14 @@ module.exports = class Queue {
 	isEmpty() {
 		return !this.linkedList.head;
 	}
+
+	toArray() {
+		let currentNode = this.linkedList.head;
+		const array = [];
+		while (currentNode) {
+			array.push(currentNode.data);
+			currentNode = currentNode.next;
+		}
+		return array;
+	}
 };
