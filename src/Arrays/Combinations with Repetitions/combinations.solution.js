@@ -7,11 +7,11 @@
   This algorithm can be acheived both iteratively and recursively (iterative solution below).
   This algorithm runs in O(1 - n ^ (k + 1)/(1 - n)) time, where n is the length of the iterable
   and k is the length of intended output iterable.
-      This requires a partial sum of a geometric series to solve. 
+      This requires a partial sum of a geometric progression to solve. 
 
       For a length of 4:
       = O(n ^ 1) + O(n ^ 2) + O(n ^ 3) + O(n ^ 4) //Writing runtime "by hand"
-      = O((1 - n ^ (k + 1)/(1 - n)) - 1) //Writing runtime as a partial sum of a geometric series
+      = O((1 - n ^ (k + 1)/(1 - n)) - 1) //Writing runtime as a partial sum of a geometric progression.
       
       This is a precise calculation, but the final - 1 is dropped in the end for complexity analysis.
     
