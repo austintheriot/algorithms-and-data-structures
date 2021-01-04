@@ -4,47 +4,38 @@
   For given iterable ['a', 'b'] and desired length 2, it should output an 'aa' element.
   Should throw on arrays too large.
 
-  This algorithm can be acheived both iteratively and recursively (iterative solution below).
-  This algorithm runs in O(1 - n ^ (k + 1)/(1 - n)) time, where n is the length of the iterable
-  and k is the length of intended output iterable.
-      This requires a partial sum of a geometric progression to solve. 
+  This algorithm can be acheived both iteratively and recursively.
+  The iterative solution runs in O(n - n ^ (k + 2)/(1 - n)) time complexity,
+  where n is the length of the iterable, and k is the length of intended output array.
+
+  The runtime complexity requires a partial sum of a geometric progression to solve. 
 
       For a length of 4:
-      = O(n ^ 1) + O(n ^ 2) + O(n ^ 3) + O(n ^ 4) //Writing runtime "by hand"
-      = O((1 - n ^ (k + 1)/(1 - n)) - 1) //Writing runtime as a partial sum of a geometric progression.
-      
-      This is a precise calculation, but the final - 1 is dropped in the end for complexity analysis.
+        (n ^ 1 + n ^ 2 + n ^ 3 + n ^ 4) * n
+      = (1 - n ^ (k + 1))/(1 - n)) - 1) * n 
+      = (n - n ^ (k + 2))/(1 - n) - n
+      = (n - n ^ (k + 2))/(1 - n) - (n(1 - n))/(1 - n)
+      = (n - n ^ (k + 2) - n(1 - n))/(1 - n)
+      = (n - n ^ (k + 2) - n + n ^ 2)/(1 - n)
+      = (n ^ 2 - n ^ (k + 2))/(1 - n) 
     
       Example: 
-          For string length 10 and output iterable length 4,
-          = O((1 - n ^ (k + 1)/(1 - n))) 
-          = O((1 - 10 ^ (4 + 1)/(1 - 10)))
-          = O((1 - 10 ^ 5)/-9))
-          = O((1 - 100,000)/-9))
-          = O((-99,999 / -9) - 1)
-          = O(11,111 - 1)
-          = O(11,110)
+          For string length n = 10 and output iterable length k = 4,
 
-          This is equivalent to:
-          = O(n ^ 1) + O(n ^ 2) + O(n ^ 3) + O(n ^ 4)
-          = 10 + 100 + 1000 + 10,000
-          = 11,110
+          Using a partial sum of a geometric progression:
+          = (n ^ 2 - n ^ (k + 2))/(1 - n) 
+          = (100 - 10 ^ 6)/(-9)
+          = 111,100
+
+          This is equivalent to (by hand):
+          = (n ^ 1 + n ^ 2 + n ^ 3 + n ^ 4) * n
+          = (10 + 100 + 1000 + 10,000) * 10
+          = 11,110 * 10
+          = 111,100
 
   Final output length = O(n ^ k)
-      For an iterable of the alphabet (length = 26), generating an output of length 2,
+      Example: For an iterable of the alphabet (length = 26), generating an output of length 2,
       the result will be a length of 26 ^ 2 = 676.
-
-  Steps: 
-      Fill a storage iterable with the elements to be combined.
-      Iterate through storage.
-      On each pass through the storage iterable, iterate through the original elements, 
-          concatenating the original iterable with the existing storage strings 
-          and adding them to a new storage iterable. 
-      Assign new storage iterable to existing storage variable.
-      Repeat until the desired length is achieved.
-
-
-
 
   If you were to take all the lowercase letters of the alphabet and get all possible combinations,
   the longest desired tring length you could use would be 6 characters:
@@ -53,9 +44,6 @@
   This would produce 308,915,776 combinations = 
       = 26 ** 6 = 308,915,776 combinations
 
-
-
-  
   For both lowercase and uppercase letters, longest possible string length is 5 characters:
       = log52(2 ** 32 - 1) = 5.614
 
@@ -66,13 +54,19 @@
 
 export const ERROR_TOO_LARGE = 'Desired output too large!';
 
-export default function combinationsWithRepetitions(iterable, length) {
+const MAX_ARRAY_LENGTH = 2 ** 32 - 1;
+
+//SOLUTION 1: Re-assigning multiple storage arrays
+export default function combinations1(iterable, length) {
 	//copy over array/convert iterable (string) to array
 	const storage = [...iterable];
 
-	//do not attempt if output would be too large for JavaScript's max array size
-	if (storage.length ** length > 2 ** 32 - 1) {
-		throw new Error(ERROR_TOO_LARGE);
+	//number of posssible combinations = sourceArrayLength ^ outputStringLength
+	const outputArraySize = iterable.length ** length;
+
+	//throw if the resulting output array will to be too large
+	if (outputArraySize > MAX_ARRAY_LENGTH) {
+		throw new Error('Desired output too large!');
 	}
 
 	while (length > 1) {
@@ -86,4 +80,37 @@ export default function combinationsWithRepetitions(iterable, length) {
 		storage = newStorage;
 	}
 	return storage;
+}
+
+//SOLUTION 2: Using a queue
+import Queue from '../../Queues/Queue.solution';
+
+export function combinations2(iterable, length) {
+	//number of posssible combinations = sourceArrayLength ^ outputStringLength
+	const outputArraySize = iterable.length ** length;
+
+	//throw if the resulting output array will to be too large
+	if (outputArraySize > MAX_ARRAY_LENGTH) {
+		throw new Error('Desired output too large!');
+	}
+
+	//convert iterable to array
+	const array = [...iterable];
+
+	//initialize and seed queue
+	const queue = new Queue();
+	array.forEach((el) => queue.add(el));
+
+	//this is the number of dequeus required to create the final result:
+	//n + (n ^ 2) + (n ^ 3) + ... + (n ^ length)
+	let iterations = (1 - array.length ** length + 1) / (1 - array.length);
+	//take element from queue, append each character, adding it back to the queue
+	while (iterations > 1) {
+		const dequeued = queue.remove();
+		array.forEach((ch) => queue.add(dequeued + ch));
+		iterations--;
+	}
+
+	//return result as an array
+	return queue.toArray();
 }
