@@ -1,5 +1,5 @@
-const makePreOrderTraversalFunction = require('./preOrderTraversal');
-const perfectBinarySearchTreeRoot = require('../Examples/perfectBinarySearchTree');
+import makePreOrderTraversalFunction from './preOrderTraversal';
+import perfectBinarySearchTreeRoot from '../Examples/perfectBinarySearchTree';
 
 describe('Pre-Order Traversal', () => {
 	it('Should visit all nodes in the correct order', () => {

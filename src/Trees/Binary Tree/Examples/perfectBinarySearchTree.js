@@ -1,4 +1,4 @@
-const BinaryTreeNode = require('../BinaryTreeNode.solution');
+import BinaryTreeNode from '../BinaryTreeNode.solution';
 
 /* 
               10
@@ -51,4 +51,4 @@ node5.setRight(node12);
 node6.setLeft(node13);
 node6.setRight(node14);
 
-module.exports = node0;
+export default node0;

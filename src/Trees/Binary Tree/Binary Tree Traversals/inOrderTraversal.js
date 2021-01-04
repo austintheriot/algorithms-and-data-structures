@@ -1,5 +1,5 @@
-module.exports = makeInOrderTraversalFunction = (visitCallback) => {
-	return (inOrderTraversal = (node) => {
+export default function makeInOrderTraversalFunction(visitCallback) {
+	return function inOrderTraversal(node) {
 		//Implement Post-Order Traversal Function here
-	});
-};
+	};
+}

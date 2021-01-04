@@ -1,3 +1,3 @@
-module.exports = makePreOrderTraversalFunction = (visitCallback) => {
-	return (preOrderTraversal = (node) => {});
-};
+export default function makePreOrderTraversalFunction(visitCallback) {
+	return function preOrderTraversal(node) {};
+}
