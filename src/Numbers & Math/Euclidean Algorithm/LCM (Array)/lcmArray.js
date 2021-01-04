@@ -1,1 +1,1 @@
-export default function lcmArray(array) {}
+export default (array) => {};
