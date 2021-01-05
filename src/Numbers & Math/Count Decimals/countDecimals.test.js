@@ -1,4 +1,4 @@
-const countDecimals = require('./countDecimals');
+import countDecimals from './countDecimals';
 
 it('Should return the number of decimal digits in a number', () => {
 	expect(countDecimals(0)).toBe(0);
