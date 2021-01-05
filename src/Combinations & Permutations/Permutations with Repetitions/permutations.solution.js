@@ -1,6 +1,8 @@
 /* 
 
-  Generate every possible combination of characters, given a string or string iterable, n, taken k at a time.
+	Generate every possible permutation of characters with character reptitions,
+	given a string or string iterable, n, taken k at a time.
+
   For given iterable ['a', 'b'] and desired length 2, it should output an 'aa' element.
   Should throw on arrays too large.
 
@@ -57,7 +59,7 @@ export const ERROR_TOO_LARGE = 'Desired output too large!';
 const MAX_ARRAY_LENGTH = 2 ** 32 - 1;
 
 //SOLUTION 1: Re-assigning multiple storage arrays
-export default function combinations1(iterable, length) {
+export default function permutations1(iterable, length) {
 	//copy over array/convert iterable (string) to array
 	const storage = [...iterable];
 
@@ -85,7 +87,7 @@ export default function combinations1(iterable, length) {
 //SOLUTION 2: Using a queue
 import Queue from '../../Queues/Queue.solution';
 
-export function combinations2(iterable, length) {
+export function permutations2(iterable, length) {
 	//number of posssible combinations = sourceArrayLength ^ outputStringLength
 	const outputArraySize = iterable.length ** length;
 
