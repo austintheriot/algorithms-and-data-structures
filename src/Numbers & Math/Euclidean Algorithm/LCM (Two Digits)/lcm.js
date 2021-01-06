@@ -1,1 +1,1 @@
-export default function lcm(a, b) {}
+export default (a, b) => {};
