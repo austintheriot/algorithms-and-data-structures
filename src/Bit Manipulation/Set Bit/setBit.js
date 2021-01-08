@@ -1,1 +1,1 @@
-module.exports = function setBit(num, i) {};
+export default (num, i) => {};
