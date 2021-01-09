@@ -1,6 +1,6 @@
-import permutations from './permutations';
-import { ERROR_TOO_LARGE } from './permutations';
-import * as answers from './permutations.test.answers';
+import permutations from './permutationsWithRepetitions';
+import { ERROR_TOO_LARGE } from './permutationsWithRepetitions';
+import * as answers from './permutationsWithRepetitions.test.answers';
 
 describe('Permutations with Repetitions', () => {
 	it('Should produce every possible string combination', () => {
