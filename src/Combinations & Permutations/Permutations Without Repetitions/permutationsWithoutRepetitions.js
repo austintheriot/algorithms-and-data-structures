@@ -4,4 +4,4 @@
 
 */
 
-function permurationsWithoutRepetitions(characterArray) {}
+export default function getPermutations(string) {}
