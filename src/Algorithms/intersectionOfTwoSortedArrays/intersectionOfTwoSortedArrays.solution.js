@@ -1,3 +1,11 @@
+/* 
+
+  Implement an algorithm to find the intersection of 2 sorted arrays.
+
+  It is possible to search the two arrays in O(a + b) time if both are sorted
+
+*/
+
 export default function searchArrays(first, second) {
 	const newArray = [];
 	let j = 0;
