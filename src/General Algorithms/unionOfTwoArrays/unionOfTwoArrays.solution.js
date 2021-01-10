@@ -15,9 +15,13 @@
 
 //unsorted
 export default function unionOfTwoArrays(r1, r2) {
-	//sort the arrays in nlog(n) time
-	r1 = [...r1].sort((a, b) => a - b);
-	r2 = [...r2].sort((a, b) => a - b);
+	//if unsorted, sort the arrays in nlog(n) time
+	if (r1.find((el, i, arr) => arr[i - 1] > arr[i])) {
+		r1 = [...r1].sort((a, b) => a - b);
+	}
+	if (r2.find((el, i, arr) => arr[i - 1] > arr[i])) {
+		r2 = [...r2].sort((a, b) => a - b);
+	}
 
 	//keep track of what elements have already been added
 	const hashTable = {};
