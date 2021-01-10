@@ -2,6 +2,7 @@
 
   Implement an algorithm that returns the union 
   of two arrays (eliminating duplicates in the process).
+  The arrays are not necessarily sorted.
 
 */
 
