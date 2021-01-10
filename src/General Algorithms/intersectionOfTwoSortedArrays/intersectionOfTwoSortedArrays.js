@@ -4,4 +4,4 @@
 
 */
 
-export default function intersectionOfTwoSortedArrays() {}
+export default function intersectionOfTwoSortedArrays(array1, array2) {}

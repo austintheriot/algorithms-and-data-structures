@@ -1,8 +1,6 @@
 /* 
 
-	Implement an algorithm to find the intersection of 2 sorted arrays.
-	
-	Runtime = O(a + b)
+  Implement an algorithm to find the intersection of 2 sorted arrays.
 
 */
 
