@@ -1,4 +1,4 @@
-const Node = require('./GraphNode');
+import Node from './GraphNode';
 
 describe('Node', () => {
 	it('Should instantiate a node', () => {

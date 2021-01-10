@@ -1,4 +1,4 @@
-const Node = require('../GraphNode');
+import Node from '../GraphNode';
 
 //Instantiate nodes (using dynamic variable names)
 for (let i = 0; i < 34; i++) {
@@ -50,11 +50,11 @@ node9.createDirectedEdge(node10);
 node10.createDirectedEdge(node8).createDirectedEdge(node11);
 node11.createDirectedEdge(node23);
 
+//assign nodes to graph
 const graph = {};
-
 for (let i = 0; i < 34; i++) {
 	graph[`node${i}`] = global[`node${i}`];
 }
 
 //node0 and node17 should be reacheable from a bi-directional search
-module.exports = graph;
+export default graph;

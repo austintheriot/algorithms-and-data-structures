@@ -1,4 +1,4 @@
-module.exports = class Node {
+export default class Node {
 	constructor(data = null) {
 		this.data = data;
 		this.children = [];
@@ -26,4 +26,4 @@ module.exports = class Node {
 		}
 		return this;
 	}
-};
+}

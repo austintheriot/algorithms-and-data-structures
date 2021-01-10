@@ -1,4 +1,4 @@
-const Node = require('../GraphNode');
+import Node from '../GraphNode';
 
 const node0 = new Node(0);
 const node1 = new Node(1);
