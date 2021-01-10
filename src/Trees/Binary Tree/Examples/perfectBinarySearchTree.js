@@ -1,4 +1,4 @@
-import BinaryTreeNode from '../BinaryTreeNode.solution';
+import BinaryTreeNode from '../Binary Tree Node/BinaryTreeNode.solution';
 
 /* 
               10

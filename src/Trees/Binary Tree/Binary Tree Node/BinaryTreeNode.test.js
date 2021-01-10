@@ -1,4 +1,5 @@
 import BinaryTreeNode from './BinaryTreeNode';
+import perfectBinarySearchTree from '../Examples/perfectBinarySearchTree';
 
 describe('BinaryTreeNode', () => {
 	it('Should create node', () => {

@@ -1,4 +1,4 @@
-import Node from '../../Trees/Binary Tree/BinaryTreeNode.solution';
+import Node from '../../Trees/Binary Tree/Binary Tree Node/BinaryTreeNode.solution';
 
 /* 
 
