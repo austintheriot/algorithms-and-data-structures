@@ -49,7 +49,7 @@ function iterativeFibonacci1(number) {
 
 */
 
-export default function iterativeFibonacci2(number) {
+function iterativeFibonacci2(number) {
 	let a = 0;
 	let b = 1;
 
@@ -146,4 +146,23 @@ function recursiveFibonacci3(n, memo = { 0: 0, 1: 1 }) {
 		(memo[n] =
 			recursiveFibonacci3(n - 1, memo) + recursiveFibonacci3(n - 2, memo))
 	);
+}
+
+/* 
+
+  Using Binet's formula, this can be accomplished in O(1) time and space complexity.
+
+*/
+
+//very accurate solution
+export default function fibonacci(n) {
+	const phi = (1 + Math.sqrt(5)) / 2;
+	const PHI = -1 / phi;
+	return Math.round((phi ** n - PHI ** n) / Math.sqrt(5));
+}
+
+//mildly accurate, but simpler solution (still passes test cases)
+export default function fibonacci(n) {
+	const phi = (1 + Math.sqrt(5)) / 2;
+	return Math.round(phi ** n / Math.sqrt(5));
 }

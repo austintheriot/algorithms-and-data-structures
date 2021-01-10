@@ -12,4 +12,4 @@
 
 */
 
-export function fibonacci(n) {}
+export default function fibonacci(n) {}
