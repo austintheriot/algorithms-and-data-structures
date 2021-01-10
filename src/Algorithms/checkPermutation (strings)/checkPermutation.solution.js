@@ -1,4 +1,8 @@
-//increment with one string and then decrement with the other
+/*  
+
+  Implement an algorithm to determine whether one string is a permutation of a second string.
+
+*/
 
 export default function checkPermutation(string1, string2) {
 	if (string1.length !== string2.length) return false;
