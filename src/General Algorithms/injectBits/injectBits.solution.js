@@ -7,7 +7,7 @@
   injectBits(0b1111111111, 0b001100, 4, 9) === 0b0011001111
 
 
-  SOLUTION 1: 
+  SOLUTION 1 (mine): 
     Iterate through m and n simultaneously. 
     get the bit from m and update n's bit to m's.
 
@@ -17,7 +17,7 @@
     Considering that m can never be more than 32 bits, 
       the runtime for this function could also be considered O(1).
 
-  SOLUTION 2: 
+  SOLUTION 2 (McDowell's): 
     Clear the bits of n from i to j.
     Shift m so that it lines up with i through j.
     Merge m and n with OR
@@ -58,15 +58,14 @@ export default function injectBits(n, m, i, j) {
   
   */
 
-	const ALL_ONES = ~0;
-
 	//Create a left mask
-	const left = ALL_ONES << (j + 1);
+	//~0 === 11111111111...
+	const left = ~0 << (j + 1);
 
 	//Create a right mask
 	//One way: ((1 << i) - 1)
-	//Second way: ~(ALL_ONES << i)
-	const right = ~(ALL_ONES << i);
+	//Second way: ~(~0 << i)
+	const right = ~(~0 << i);
 
 	//Combine the masks
 	const mask = left | right;
