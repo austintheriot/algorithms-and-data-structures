@@ -5,5 +5,4 @@
 //peek(){}
 //isEmpty(){}
 
-//less performant but simpler
 export default class Queue {}
