@@ -1,3 +1,5 @@
+//uninitialized data on nodes should be null
+
 export default class BinaryTreeNode {
 	constructor(data) {
 		this.parent = null;
@@ -24,5 +26,12 @@ export default class BinaryTreeNode {
 		//link right node to parent
 		this.right.parent = this;
 		return this;
+	}
+
+	find(data) {
+		if (data === this.data) return this;
+		else if (data < this.data) return this.left ? this.left.find(data) : null;
+		else if (data > this.data) return this.right ? this.right.find(data) : null;
+		return null;
 	}
 }
