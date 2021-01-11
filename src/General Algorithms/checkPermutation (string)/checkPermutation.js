@@ -4,4 +4,4 @@
 
 */
 
-export default function checkPermutation(string1, string2) {}
+export default function checkPermutation(s1, s2) {}
