@@ -1,3 +1,3 @@
-//should modify the original array
+//should modify the original arr
 
 export default function fisherYatesShuffle(arr) {}
