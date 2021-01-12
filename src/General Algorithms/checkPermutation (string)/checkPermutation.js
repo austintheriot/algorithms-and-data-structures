@@ -1,6 +1,7 @@
 /*  
 
-  Implement an algorithm to determine whether one string is a permutation of a second string.
+  Implement an algorithm to determine whether one string 
+  is a permutation of a second string.
 
 */
 
