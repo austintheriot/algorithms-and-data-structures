@@ -1,4 +1,4 @@
-import shuffle from '../Shuffling/fisherYatesShuffle.solution';
+import shuffle from '../Algorithms/Shuffling/fisherYatesShuffle.solution';
 
 /* HELPER FUNCTIONS /////////////////////////////////////////////////////////////////////////////// */
 
