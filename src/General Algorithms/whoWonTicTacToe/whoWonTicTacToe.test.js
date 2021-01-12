@@ -77,11 +77,11 @@ describe('Tic Tac Win', () => {
 		expect(whoWonTicTacToe(boardDraw)).toBe(draw);
 	});
 
-	it('Should work for larger size boards too', () => {
-		//should work for larger size boards too
-		expect(whoWonTicTacToe(boardLargeEmpty)).toBe(unfinished);
-		expect(whoWonTicTacToe(boardLargeUnfinished)).toBe(unfinished);
-		expect(whoWonTicTacToe(boardLargeO)).toBe(o);
-		expect(whoWonTicTacToe(boardLargeX)).toBe(x);
-	});
+	// it('(Optional) Should work for larger size boards too', () => {
+	// 	//should work for larger size boards too
+	// 	expect(whoWonTicTacToe(boardLargeEmpty)).toBe(unfinished);
+	// 	expect(whoWonTicTacToe(boardLargeUnfinished)).toBe(unfinished);
+	// 	expect(whoWonTicTacToe(boardLargeO)).toBe(o);
+	// 	expect(whoWonTicTacToe(boardLargeX)).toBe(x);
+	// });
 });
