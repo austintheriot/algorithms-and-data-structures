@@ -35,7 +35,7 @@ export default function replacesSpaces1(string) {
 	return arr.join('');
 }
 
-//This method can be done in one line:
+//This method can be done in one line without a regex:
 function replacesSpaces3(string) {
 	return string
 		.split('')
@@ -47,6 +47,16 @@ function replacesSpaces3(string) {
 				: ch
 		)
 		.join('');
+}
+
+//one line with regex
+function replaceSpaces(string) {
+	return string.split(/[ ]+/).join('%20');
+}
+
+//even better one liner regex:
+function replaceSpaces(string) {
+	return string.replace(/ +/g, '%20');
 }
 
 //Could also be done in a single pass without converting types:
