@@ -1,6 +1,6 @@
 //uninitialized data on nodes should be null
 // setLeft(node){}
 // setRight(node){}
-// find
+// find(data)
 
 export default class BinaryTreeNode {}
