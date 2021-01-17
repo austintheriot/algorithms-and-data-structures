@@ -1,5 +1,5 @@
 import makePreOrderTraversalFunction from './preOrderTraversal';
-import perfectBinarySearchTreeRoot from '../../../Data Structures/Trees/Binary Tree/Examples/perfectBinarySearchTree';
+import perfectBinarySearchTreeRoot from '../../../Data Structures/Trees/Binary Tree/Examples/perfectBinarySearchTree (new)';
 
 describe('Pre-Order Traversal', () => {
 	it('Should visit all nodes in the correct order', () => {

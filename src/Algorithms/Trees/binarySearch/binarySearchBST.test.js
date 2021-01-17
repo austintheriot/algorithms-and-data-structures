@@ -1,5 +1,5 @@
 const search = require('./binarySearchBST');
-const root = require('../../../Data Structures/Trees/Binary Tree/Examples/perfectBinarySearchTree');
+const root = require('../../../Data Structures/Trees/Binary Tree/Examples/perfectBinarySearchTree (new)');
 
 describe('Binary Search (Binary Search Tree)', () => {
 	it('Should find the node of a number in the tree', () => {
