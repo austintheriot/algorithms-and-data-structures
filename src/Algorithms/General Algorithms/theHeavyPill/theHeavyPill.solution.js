@@ -5,7 +5,7 @@
   Put a different number of each pill on the scale, and 
   mark the bottle how many were placed in.
 
-  Take the toal weight, which SHOULD equal 1 + 2 + ... + 20 = n(n + 1)/2 = 20(21) / 2 = 210
+  Take the total weight, which SHOULD equal 1 + 2 + ... + 20 = n(n + 1)/2 = 20(21) / 2 = 210
   Subtract the 210 from the total, which will give you the remainder weight of the 
   heavy pills. Divide the remainder by 0.1, to tell you how many heavy pills were placed on the scale.
   Find the bottle marked with the number.
