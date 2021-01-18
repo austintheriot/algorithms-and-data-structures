@@ -30,8 +30,9 @@ export default class BinaryTreeNode {
 
 	find(data) {
 		if (data === this.data) return this;
-		else if (data < this.data) return this.left ? this.left.find(data) : null;
-		else if (data > this.data) return this.right ? this.right.find(data) : null;
-		return null;
+		else if (data < this.data)
+			return this.left ? this.left.find(data) : this.left;
+		else if (data > this.data)
+			return this.right ? this.right.find(data) : this.right;
 	}
 }
