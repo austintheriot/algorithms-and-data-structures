@@ -11,7 +11,7 @@ const resetGraph = (graph) => {
 	}
 };
 
-describe('Breadth First Search', () => {
+describe('Route Between Nodes', () => {
 	describe('Directed Graph', () => {
 		it('Should return true if a path exists between two nodes', () => {
 			resetGraph(dirGL);
