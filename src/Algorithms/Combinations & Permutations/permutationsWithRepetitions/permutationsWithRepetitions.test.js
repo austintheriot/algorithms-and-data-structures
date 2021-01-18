@@ -28,4 +28,8 @@ describe('Permutations with Repetitions', () => {
 			ERROR_TOO_LARGE
 		);
 	});
+
+	it('Should return an empty array when length === 0', () => {
+		expect(permutations('abcdefghijklmnopqrstuvwxyz', 0)).toEqual([]);
+	});
 });
