@@ -5,5 +5,4 @@
 
 */
 
-//Naive Recursive Solution
-function tripleStep(n) {}
+function tripleStep1(n, hashTable = {}) {}
