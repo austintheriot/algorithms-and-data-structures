@@ -6,4 +6,4 @@
 
 */
 
-export default function sortedMerge(arrA, arrB) {}
+export default function sortedMerge(aA, aB) {}
