@@ -21,8 +21,7 @@
 */
 
 //helper functions
-const isDisjoint = (min1, min2, max1, max2) =>
-	!(min1 <= max2 && max1 >= min2 && min2 <= max1 && max2 >= min1);
+const isDisjoint = (min1, min2, max1, max2) => !(min1 <= max2 && max1 >= min2);
 const getSlope = (line) => (line.b.y - line.a.y) / (line.b.x - line.a.x);
 const getConstant = (line, slope) => line.a.y - slope * line.a.x;
 const getXIntersection = (s1, s2, c1, c2) => (c2 - c1) / (s1 - s2);
