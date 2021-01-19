@@ -5,4 +5,4 @@
 
 */
 
-function tripleStep1(n, hashTable = {}) {}
+export default function tripleStep1(n) {}
