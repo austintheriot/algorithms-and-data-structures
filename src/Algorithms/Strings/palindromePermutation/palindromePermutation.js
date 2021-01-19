@@ -8,4 +8,4 @@
 
 */
 
-function palindromePermutation(string) {}
+export default function palindromePermutation(string) {}
