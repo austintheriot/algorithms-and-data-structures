@@ -1,12 +1,10 @@
-module.exports = (originalArray) => {
-	const array = [...originalArray];
-	let sorted;
+export default (array) => {
 	do {
-		sorted = true;
+		let sorted = true;
 		for (let i = 1; i < array.length; i++) {
-			if (array[i] < array[i - 1]) {
+			if (array[i - 1] > array[i]) {
 				sorted = false;
-				[array[i], array[i - 1]] = [array[i - 1], array[i]];
+				[array[i - 1], array[i]] = [array[i], array[i - 1]];
 			}
 		}
 	} while (!sorted);
