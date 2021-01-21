@@ -1,5 +1,5 @@
-const countDigits = require('../../../Numbers & Math/countDigits/countDigits.solution');
-const getDigit = require('../../../Numbers & Math/getDigit/getDigit.solution');
+import countDigits from '../../../Numbers & Math/countDigits/countDigits.solution';
+import getDigit from '../../../Numbers & Math/getDigit/getDigit.solution';
 
 function radixSort(array) {
 	//assume all array elements are integers
@@ -12,7 +12,7 @@ function radixSort(array) {
 		//sort elements into buckets
 		const buckets = placeElementsInNumberBuckets(array, i);
 		//flatten buckets into array, and repeat at next index
-		array = [].concat(...buckets);
+		array = buckets.flat(1);
 	}
 
 	return array;
@@ -32,13 +32,8 @@ function placeElementsInNumberBuckets(array, index) {
 }
 
 //find the length of the longest digit in the array
-function determineNumPasses(array) {
-	let maxDigitLength = 0;
-	for (let i = 0; i < array.length; i++) {
-		let digitLength = countDigits(array[i]);
-		if (digitLength > maxDigitLength) maxDigitLength = digitLength;
-	}
-	return maxDigitLength;
-}
+const determineNumPasses = (array) => {
+	return array.reduce((a, b) => Math.max(a, countDigits(b)), 0);
+};
 
 module.exports = radixSort;
