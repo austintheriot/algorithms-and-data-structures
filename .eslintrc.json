@@ -4,7 +4,6 @@
     "es2021": true
   },
   "ignorePatterns": ["**/*.test.js, **/Implementations/*.js"],
-  "extends": ["airbnb-base"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 12,
