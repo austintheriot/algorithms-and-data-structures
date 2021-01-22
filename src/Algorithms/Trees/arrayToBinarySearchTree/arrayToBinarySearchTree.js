@@ -1,4 +1,4 @@
-import Node from '../../../Data Structures/Trees/Binary Tree/Binary Search Tree Node/BinarySearchTreeNode.solution';
+import Node from "../../../Data Structures/Trees/Binary Tree/Binary Search Tree Node/BinarySearchTreeNode.solution";
 
 /* 
 
