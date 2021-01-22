@@ -1,4 +1,4 @@
-//optional data structures
+// optional data structures
 import Queue from '../../../Data Structures/Queues/Queue.solution';
 import Stack from '../../../Data Structures/Stacks/Stack.solution';
 
