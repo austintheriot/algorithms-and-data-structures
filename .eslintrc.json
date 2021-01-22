@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "ignorePatterns": ["**/*.test.js"],
+  "ignorePatterns": ["**/*.test.js, **/Implementations/*.js"],
   "extends": ["airbnb-base"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -12,9 +12,11 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "no-param-reassign": "off",
     "no-tabs": "off",
     "no-plusplus": "off",
     "eqeqeq": "off",
-    "max-classes-per-file": "off"
+    "max-classes-per-file": "off",
+    "no-restricted-syntax": "off"
   }
 }
