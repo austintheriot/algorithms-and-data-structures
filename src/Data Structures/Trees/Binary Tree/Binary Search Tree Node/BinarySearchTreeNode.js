@@ -1,5 +1,5 @@
-import BinaryTreeNode from '../Binary Tree Node/BinaryTreeNode.solution';
+import BinaryTreeNode from "../Binary Tree Node/BinaryTreeNode.solution";
 
-//insertInOrder(data)
+//insertInOrder(data){}
 
 export default class BinarySearchTreeNode extends BinaryTreeNode {}
