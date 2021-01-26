@@ -1,6 +1,6 @@
 /* 
 
-  Implement an algorithm to find the intersection of 2 sorted arrays.
+  Implement an algorithm to find the intersection of 2 arrays.
   The arrays are not necessarily sorted.
 
 */
