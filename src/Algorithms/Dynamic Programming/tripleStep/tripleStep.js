@@ -5,4 +5,4 @@
 
 */
 
-export default function tripleStep1(n) {}
+export default function tripleStep(n) {}
