@@ -1,4 +1,4 @@
-const toggleBit = require('./toggleBit');
+import toggleBit from './toggleBit';
 
 //test comparisons
 describe('Toggle Bit', () => {

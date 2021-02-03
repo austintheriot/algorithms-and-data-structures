@@ -1,3 +1,3 @@
-module.exports = function toggleBit(num, i) {
+export default function toggleBit(num, i) {
 	return num ^ (1 << i);
 };
