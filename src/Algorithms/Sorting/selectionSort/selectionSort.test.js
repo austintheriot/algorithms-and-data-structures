@@ -9,7 +9,7 @@ describe('Selection Sort', () => {
 	});
 
 	it('Should successfully sort edge cases,', () => {
-		let arr: any[] = [];
+		let arr = [];
 		expect(sort(arr)).toEqual([]);
 
 		arr = [1];
