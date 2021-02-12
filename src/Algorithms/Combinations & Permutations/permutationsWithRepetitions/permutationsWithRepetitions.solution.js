@@ -60,6 +60,8 @@ const MAX_ARRAY_LENGTH = 2 ** 32 - 1;
 
 //SOLUTION 1: Re-assigning multiple storage arrays
 export default function permutations1(iterable, length) {
+	if (length === 0) return [];
+
 	//copy over array/convert iterable (string) to array
 	const storage = [...iterable];
 
@@ -68,7 +70,7 @@ export default function permutations1(iterable, length) {
 
 	//throw if the resulting output array will to be too large
 	if (outputArraySize > MAX_ARRAY_LENGTH) {
-		throw new Error('Desired output too large!');
+		throw new Error(ERROR_TOO_LARGE);
 	}
 
 	while (length > 1) {
