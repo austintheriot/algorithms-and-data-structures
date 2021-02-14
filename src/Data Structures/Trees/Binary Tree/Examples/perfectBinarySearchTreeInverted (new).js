@@ -12,19 +12,19 @@ import Node from '../Binary Search Tree Node/BinarySearchTreeNode.solution';
 
 const root = new Node(10);
 
-root.insertInOrder(5);
-root.insertInOrder(15);
-root.insertInOrder(3);
-root.insertInOrder(8);
-root.insertInOrder(13);
-root.insertInOrder(17);
-root.insertInOrder(1);
-root.insertInOrder(4);
-root.insertInOrder(6);
-root.insertInOrder(9);
-root.insertInOrder(11);
-root.insertInOrder(14);
-root.insertInOrder(16);
-root.insertInOrder(18);
+root.insertInReverseOrder(5);
+root.insertInReverseOrder(15);
+root.insertInReverseOrder(3);
+root.insertInReverseOrder(8);
+root.insertInReverseOrder(13);
+root.insertInReverseOrder(17);
+root.insertInReverseOrder(1);
+root.insertInReverseOrder(4);
+root.insertInReverseOrder(6);
+root.insertInReverseOrder(9);
+root.insertInReverseOrder(11);
+root.insertInReverseOrder(14);
+root.insertInReverseOrder(16);
+root.insertInReverseOrder(18);
 
 export default root;
