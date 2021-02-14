@@ -3,6 +3,4 @@
   that returns the maximum width of the binary tree.
 */
 
-
-import Queue from '../../../Data Structures/Queues/Queue.solution';
 export default function maxWidth(node) {}
