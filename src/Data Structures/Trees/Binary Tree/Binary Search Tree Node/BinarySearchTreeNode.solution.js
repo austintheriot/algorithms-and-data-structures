@@ -11,6 +11,7 @@ export default class BinarySearchTreeNode extends BinaryTreeNode {
 		} else return this;
 	}
 
+	// inserts nodes from right to left instead of left to right
 	insertInReverseOrder(data) {
 		if (data > this.data) {
 			if (!this.left) this.setLeft(new BinarySearchTreeNode(data));
