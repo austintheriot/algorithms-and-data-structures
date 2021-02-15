@@ -1,7 +1,6 @@
 /* 
-  Given a random node from a connected graph, 
-  implement an algorithm to determine whether the graph 
-  is a tree or not.
+  Given a node from a connected graph, implement an algorithm
+  to determine whether the graph is a tree or not.
 */
 
 //recursive (DFS) implementation
