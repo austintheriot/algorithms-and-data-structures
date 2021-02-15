@@ -4,18 +4,9 @@
   is a tree or not.
 */
 
-//recursive (DFS) implementation
-function isGraphATree1(node, isATree = true) {
-  if (node.visited) return false;
-  node.visited = true;
-  node.children.forEach((child) => (isATree = isGraphATree(child, isATree)))
-  return isATree;
-}
-
-
-// iterative (BFS) implementation
 import Queue from '../../../Data Structures/Queues/Queue.solution';
-export default function isGraphATree2(node) {
+
+export default function isGraphATree1(node) {
   const queue = new Queue();
   queue.add(node);
 
@@ -30,4 +21,12 @@ export default function isGraphATree2(node) {
     }
   }
   return true;
+}
+
+//recursive (DFS) implementation
+function isGraphATree2(node, isATree = true) {
+  if (node.visited) return false;
+  node.visited = true;
+  node.children.forEach((child) => (isATree = isGraphATree(child, isATree)))
+  return isATree;
 }
