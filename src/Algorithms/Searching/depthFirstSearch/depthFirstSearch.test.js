@@ -2,7 +2,7 @@ import directedGraphSmall from '../../../Data Structures/Graphs/Examples/directe
 import directedGraphLarge from '../../../Data Structures/Graphs/Examples/directedGraphLarge';
 import undirectedGraphLarge from '../../../Data Structures/Graphs/Examples/undirectedGraphLarge';
 import treeGraph from '../../../Data Structures/Graphs/Examples/treeGraph';
-import makeSearch from './depthFirstSearch.solution';
+import makeSearch from './depthFirstSearch';
 
 let array;
 let visit;
