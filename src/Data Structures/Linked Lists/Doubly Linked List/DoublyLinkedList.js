@@ -1,12 +1,11 @@
 //implement a doubly linked list with the following functionalities:
 //return undefined for nonexistent indexes, etc.
 
-import { isThrowStatement } from 'typescript';
-
 //prepend(data){}
 //append(data){}
-//get(index){}
-//find(search){}
-//delete(index){}
+//get(index){} //return node
+//find(search){} //return node
+//delete(index){} //return this
 //toArray(){} //create array filled with node data
+
 export default class LinkedList {}
