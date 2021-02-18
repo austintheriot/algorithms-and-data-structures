@@ -15,6 +15,9 @@ import Queue from '../../../Data Structures/Queues/Queue.solution';
   At each visit, increment the index of an array corresponding 
   to that node's layer by 1. 
 
+  Since the structure is a tree, it doesn't matter what type of search
+  we use, so long as the search visits every node, since there 
+  are no cycles in a tree, and the order of the visit doesn't matter/
 */
 
 // iterative (BFS) solution
