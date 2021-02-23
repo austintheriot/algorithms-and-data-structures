@@ -4,10 +4,7 @@
 
 // top down
 function depthOfABinaryTree1(node, depth = 1) {
-  return Math.max(
-    node.left ? depthOfABinaryTree(node.left, depth + 1) : depth,
-    node.right ? depthOfABinaryTree(node.right, depth + 1) : depth,
-  )
+  return !node ? depth : Math.max(depth2(node.left, depth), depth2(node.right, depth)) + 1;
 }
 
 // bottom up
