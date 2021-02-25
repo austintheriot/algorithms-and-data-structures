@@ -53,17 +53,11 @@ export default function maxWidth1(node) {
 }
  
 // recursive (DFS) solution
-export function maxWidth2(node, layerWidths = [1]) {
-  node.layer = node.layer ?? 1;
-  layerWidths[node.layer] ??= 0;
-  layerWidths[node.layer]++;
-  if (node.left) {
-    node.left.layer = node.layer + 1;
-    maxWidth(node.left, layerWidths);
-  }
-  if (node.right) {
-    node.right.layer = node.layer + 1;
-    maxWidth(node.right, layerWidths);
-  }
-  if (node.layer === 1) return Math.max(...layerWidths);
+export default function maxWidth2(node, layer = 0, widths = []) {
+  if (!node) return;
+  widths[layer] ??= 0;
+  widths[layer]++;
+  maxWidth2(node.left, layer + 1, widths);
+  maxWidth2(node.right, layer + 1, widths);
+  if (layer === 0) return Math.max(...widths);
 }
