@@ -4,13 +4,15 @@
 */
 
 //recursive (DFS) implementation
-function isGraphATree1(node, isATree = true) {
+export default function isGraphATree(node) {
+  if (!node) return isATree;
   if (node.visited) return false;
   node.visited = true;
-  node.children.forEach((child) => (isATree = isGraphATree(child, isATree)))
-  return isATree;
+  for (let child of node.children) {
+    if (!isGraphATree(child)) return false;
+  }
+  return true;
 }
-
 
 // iterative (BFS) implementation
 import Queue from '../../../Data Structures/Queues/Queue.solution';
