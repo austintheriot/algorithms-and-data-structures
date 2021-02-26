@@ -1,4 +1,5 @@
-import rotate from './rotateArray';
+
+import rotate from './rotate1DArray';
 
 it('Should rotate an array to the right by indicated amount', () => {
 	const array = [0, 1, 2, 3, 4, 5];
