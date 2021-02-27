@@ -27,7 +27,7 @@ export default function rotate2DArray(array) {
   /*  
   Iterate through each layer of the 2D array.
     Iterate through each index of that layer 
-    (except for the last once, since it's the start of the next side)
+    (except for the last one, since it's the start of the next side)
       Swap each element in place
   */
   for (let layer = 0; layer < Math.ceil(array.length / 2); layer++) {
